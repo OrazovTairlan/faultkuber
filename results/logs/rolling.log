@@ -1,0 +1,60 @@
+##### rolling
+== rolling_update.json
+{
+  "experiment": "rolling_update",
+  "load_rps": 100,
+  "injected_at_epoch": 1792936309.26,
+  "k8s_detection_s": null,
+  "k8s_recovery_s": null,
+  "client_first_failure_s": null,
+  "client_last_failure_done_s": null,
+  "failed_requests_total": 0,
+  "failed_requests_in_affected_kinds": 0,
+  "during_window": null,
+  "whole_run": {
+    "total": 3105,
+    "failed": 0,
+    "success_pct": 100.0,
+    "latency_ms": {
+      "p50": 5.7,
+      "p95": 60.2,
+      "p99": 84.9,
+      "max": 258.0,
+      "mean": 19.1
+    },
+    "by_kind": {
+      "reg_write": {
+        "total": 454,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 483,
+        "failed": 0
+      },
+      "courses": {
+        "total": 598,
+        "failed": 0
+      },
+      "login": {
+        "total": 316,
+        "failed": 0
+      },
+      "timetable": {
+        "total": 1254,
+        "failed": 0
+      }
+    }
+  },
+  "audit": {
+    "db-0": {
+      "records": 4903,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 4903,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 454
+}
+

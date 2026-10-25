@@ -1,0 +1,34 @@
+{"config": "A: cpu limit 250m, gateway x2 (original)", "generator_pods": 4, "achieved_rps": 294.1, "failed": 5038, "success_pct": 59.709, "latency_ms": {"p50_worst_pod": 812.6, "p95_worst_pod": 2368.4, "p99_worst_pod": 3764.8}}
+{"config": "C: cpu limit 1000m, gateway x4", "generator_pods": 4, "achieved_rps": 347.6, "failed": 5381, "success_pct": 56.966, "latency_ms": {"p50_worst_pod": 693.2, "p95_worst_pod": 2095.1, "p99_worst_pod": 3790.8}}
+== capacity_500rps.json
+{
+  "target_rps": 500,
+  "seconds": 25,
+  "runs": [
+    {
+      "config": "A: cpu limit 250m, gateway x2 (original)",
+      "generator_pods": 4,
+      "achieved_rps": 294.1,
+      "failed": 5038,
+      "success_pct": 59.709,
+      "latency_ms": {
+        "p50_worst_pod": 812.6,
+        "p95_worst_pod": 2368.4,
+        "p99_worst_pod": 3764.8
+      }
+    },
+    {
+      "config": "C: cpu limit 1000m, gateway x4",
+      "generator_pods": 4,
+      "achieved_rps": 347.6,
+      "failed": 5381,
+      "success_pct": 56.966,
+      "latency_ms": {
+        "p50_worst_pod": 693.2,
+        "p95_worst_pod": 2095.1,
+        "p99_worst_pod": 3790.8
+      }
+    }
+  ]
+}
+

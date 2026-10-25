@@ -1,0 +1,82 @@
+##### exp3
+== exp3_database_unavailable.json
+{
+  "experiment": "exp3_database_unavailable",
+  "load_rps": 100,
+  "injected": "kubectl scale sts/db --replicas=0 for 30 s, then --replicas=2",
+  "db_outage_s": 30.1,
+  "k8s_detection_s": 0.06,
+  "client_first_failure_s": 0.13,
+  "first_successful_write_after_restore_s": 4.65,
+  "db_pods_ready_after_restore_s": 3.3,
+  "client_recovery_s_from_scale_up": 4.65,
+  "during_outage_by_kind": {
+    "reg_read": {
+      "total": 433,
+      "failed": 429
+    },
+    "courses": {
+      "total": 579,
+      "failed": 0
+    },
+    "login": {
+      "total": 300,
+      "failed": 0
+    },
+    "reg_write": {
+      "total": 467,
+      "failed": 465
+    },
+    "timetable": {
+      "total": 1234,
+      "failed": 0
+    }
+  },
+  "max_latency_during_outage_ms": 322.2,
+  "whole_run": {
+    "total": 6005,
+    "failed": 1035,
+    "success_pct": 82.764,
+    "latency_ms": {
+      "p50": 4.9,
+      "p95": 57.3,
+      "p99": 121.6,
+      "max": 425.1,
+      "mean": 16.6
+    },
+    "by_kind": {
+      "reg_read": {
+        "total": 902,
+        "failed": 511
+      },
+      "courses": {
+        "total": 1174,
+        "failed": 0
+      },
+      "login": {
+        "total": 580,
+        "failed": 0
+      },
+      "reg_write": {
+        "total": 918,
+        "failed": 524
+      },
+      "timetable": {
+        "total": 2431,
+        "failed": 0
+      }
+    }
+  },
+  "acked_writes": 394,
+  "audit": {
+    "db-0": {
+      "records": 5331,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 5331,
+      "acked_missing": 0
+    }
+  }
+}
+

@@ -1,0 +1,91 @@
+{
+  "experiment": "exp2_all_registration_replicas",
+  "load_rps": 100,
+  "injected_at_epoch": 1792936429.32,
+  "k8s_detection_s": 0.14,
+  "k8s_recovery_s": 3.2,
+  "client_first_failure_s": 1.24,
+  "client_last_failure_done_s": 5.19,
+  "failed_requests_total": 55,
+  "failed_requests_in_affected_kinds": 55,
+  "during_window": {
+    "total": 519,
+    "failed": 55,
+    "success_pct": 89.403,
+    "latency_ms": {
+      "p50": 10.7,
+      "p95": 88.8,
+      "p99": 212.5,
+      "max": 403.3,
+      "mean": 29.7
+    },
+    "by_kind": {
+      "timetable": {
+        "total": 193,
+        "failed": 0
+      },
+      "reg_write": {
+        "total": 89,
+        "failed": 38
+      },
+      "login": {
+        "total": 58,
+        "failed": 0
+      },
+      "courses": {
+        "total": 100,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 79,
+        "failed": 17
+      }
+    }
+  },
+  "whole_run": {
+    "total": 3349,
+    "failed": 55,
+    "success_pct": 98.358,
+    "latency_ms": {
+      "p50": 5.0,
+      "p95": 59.6,
+      "p99": 90.5,
+      "max": 403.3,
+      "mean": 19.3
+    },
+    "by_kind": {
+      "timetable": {
+        "total": 1353,
+        "failed": 0
+      },
+      "reg_write": {
+        "total": 499,
+        "failed": 38
+      },
+      "login": {
+        "total": 304,
+        "failed": 0
+      },
+      "courses": {
+        "total": 646,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 547,
+        "failed": 17
+      }
+    }
+  },
+  "injected": "kubectl delete --force --grace-period=0 pod/registration-5c754c649c-tpd6m pod/registration-5c754c649c-wmzxs",
+  "audit": {
+    "db-0": {
+      "records": 5208,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 5208,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 461
+}

@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-restore
+  namespace: aitu-sim
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: restore
+          image: aitu-sim:1.2
+          imagePullPolicy: IfNotPresent
+          securityContext: {runAsUser: 0}
+          command: ["python", "-c"]
+          args:
+            - |
+              import glob, json, urllib.request
+              latest = sorted(glob.glob("/backups/db-*.json"))[-1]
+              records = json.load(open(latest))["records"]
+              for r in records:
+                  req = urllib.request.Request("http://db-0.db-headless:8080/db/write",
+                        data=json.dumps(r).encode(), headers={"Content-Type": "application/json"})
+                  urllib.request.urlopen(req, timeout=5).read()
+              print(json.dumps({"restored_from": latest, "records": len(records)}))
+          volumeMounts:
+            - {name: backups, mountPath: /backups, readOnly: true}
+      volumes:
+        - name: backups
+          hostPath: {path: /backups, type: Directory}

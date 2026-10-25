@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration
+  namespace: aitu-sim
+  labels: {app: registration, tier: backend}
+spec:
+  replicas: 2
+  minReadySeconds: 3
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels: {app: registration}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels: {app: registration, tier: backend}
+    spec:
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 20
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels: {app: registration}
+      containers:
+        - name: registration
+          image: aitu-sim:1.2
+          imagePullPolicy: IfNotPresent
+          env:
+            - {name: SERVICE, value: registration}
+            - {name: PORT, value: "8080"}
+            - name: POD_NAME
+              valueFrom: {fieldRef: {fieldPath: metadata.name}}
+          envFrom:
+            - configMapRef: {name: aitu-config}
+          ports:
+            - {name: http, containerPort: 8080}
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 2
+            timeoutSeconds: 1
+            failureThreshold: 2
+            successThreshold: 1
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 1
+            failureThreshold: 3
+          resources:
+            requests: {cpu: 100m, memory: 64Mi}
+            limits: {cpu: 250m, memory: 128Mi}
+          lifecycle:
+            preStop:
+              exec: {command: ["sleep", "5"]}
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: ["ALL"]}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: registration
+  namespace: aitu-sim
+  labels: {app: registration}
+spec:
+  type: ClusterIP
+  selector: {app: registration}
+  ports:
+    - {name: http, port: 8080, targetPort: http}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: registration
+  namespace: aitu-sim
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: {app: registration}

@@ -1,0 +1,32 @@
+{
+  "subsystems": {
+    "Auth": 0.999975,
+    "Course": 0.999975,
+    "Registration": 0.999975,
+    "Database": 0.999991
+  },
+  "end_to_end": 0.9984166285041437,
+  "whatif": {
+    "Given design (1 LB, 1 API gateway)": 0.9984166285041437,
+    "+ 2nd API gateway replica": 0.9994150451326478,
+    "+ 2nd load balancer": 0.9989158368183958,
+    "+ 3rd Auth replica": 0.9984414647386836,
+    "+ 3rd Registration replica": 0.9984414647386836,
+    "+ 3rd database node": 0.9984255873771811,
+    "+ 2nd gateway AND 2nd load balancer": 0.999914752655214
+  },
+  "coverage": {
+    "coverage 100%": 0.9994150451326478,
+    "coverage 99%": 0.9992260154398439,
+    "coverage 95%": 0.9984701700455069,
+    "coverage 90%": 0.9975259781919265
+  },
+  "unavailability_share": {
+    "Load Balancer": 0.3156565656565028,
+    "API Gateway": 0.6313131313130758,
+    "Auth (2x)": 0.015782828282860185,
+    "Course (2x)": 0.015782828282860185,
+    "Registration (2x)": 0.015782828282860185,
+    "Database (2x)": 0.005681818181840882
+  }
+}

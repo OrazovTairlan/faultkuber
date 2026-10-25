@@ -1,0 +1,37 @@
+{
+  "experiment": "peak_500rps",
+  "target_rps": 500,
+  "achieved_rps": 377.2,
+  "total": 10001,
+  "failed": 3618,
+  "success_pct": 63.824,
+  "latency_ms": {
+    "p50": 160.1,
+    "p95": 360.0,
+    "p99": 531.0,
+    "max": 2680.6,
+    "mean": 181.5
+  },
+  "by_kind": {
+    "courses": {
+      "total": 2030,
+      "failed": 629
+    },
+    "reg_read": {
+      "total": 1512,
+      "failed": 666
+    },
+    "login": {
+      "total": 1026,
+      "failed": 323
+    },
+    "reg_write": {
+      "total": 1532,
+      "failed": 794
+    },
+    "timetable": {
+      "total": 3901,
+      "failed": 1206
+    }
+  }
+}

@@ -1,0 +1,31 @@
+Parallel subsystems (two independent replicas):
+  Auth          99.997500%   unavailability 2.500e-05
+  Course        99.997500%   unavailability 2.500e-05
+  Registration  99.997500%   unavailability 2.500e-05
+  Database      99.999100%   unavailability 9.000e-06
+
+End-to-end (series) = 99.9500% x 99.9000% x 99.9975% x 99.9975% x 99.9975% x 99.9991% = 99.8417%
+Target 99.90% met: False; downtime 13.9 h/year (target allows 8.76 h/year)
+
+Share of total unavailability:
+  API Gateway        1.000e-03   63.1%
+  Load Balancer      5.000e-04   31.6%
+  Auth (2x)          2.500e-05    1.6%
+  Course (2x)        2.500e-05    1.6%
+  Registration (2x)  2.500e-05    1.6%
+  Database (2x)      9.000e-06    0.6%
+
+What-if:
+  Given design (1 LB, 1 API gateway)       99.8417%  meets 99.9%: False  downtime 13.87 h/yr
+  + 2nd API gateway replica                99.9415%  meets 99.9%: True  downtime 5.12 h/yr
+  + 2nd load balancer                      99.8916%  meets 99.9%: False  downtime 9.50 h/yr
+  + 3rd Auth replica                       99.8441%  meets 99.9%: False  downtime 13.65 h/yr
+  + 3rd Registration replica               99.8441%  meets 99.9%: False  downtime 13.65 h/yr
+  + 3rd database node                      99.8426%  meets 99.9%: False  downtime 13.79 h/yr
+  + 2nd gateway AND 2nd load balancer      99.9915%  meets 99.9%: True  downtime 0.75 h/yr
+
+Failover-coverage sensitivity (2 units everywhere, 1 LB):
+  coverage 100%  99.9415%
+  coverage 99%   99.9226%
+  coverage 95%   99.8470%
+  coverage 90%   99.7526%

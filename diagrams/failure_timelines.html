@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure timelines</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
+<style>
+  :root { --bg:#fcfcfb; --ink:#0b0b0b; --muted:#52514e; --grid:#e6e5e1; --series:#2a78d6; }
+  body { margin:0; padding:24px 16px; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,Segoe UI,Arial,sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  p.sub { margin:0 0 16px; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .card { padding:8px 4px 0; }
+  .card h2 { font-size:14px; margin:0 8px 0; font-weight:600; }
+  @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+</style></head>
+<body><div class="wrap">
+  <h1>Share of failed client requests per second</h1>
+  <p class="sub">100 req/s mixed load; dashed line = failure injected (t = 0). Source: results/*_requests.csv</p>
+  <div class="grid"><div class="card"><h2>Exp 2 - all Registration replicas killed</h2><div id="c0"></div></div><div class="card"><h2>Exp 3 - database down 30 s</h2><div id="c1"></div></div><div class="card"><h2>Gateway BEFORE: 1 replica, pod killed</h2><div id="c2"></div></div><div class="card"><h2>Gateway AFTER: 2 replicas, 1 pod killed</h2><div id="c3"></div></div></div>
+</div>
+<script>
+const PANELS = [{"id": "c0", "title": "Exp 2 - all Registration replicas killed", "data": [{"x": "-5", "y": 0.0}, {"x": "-4", "y": 0.0}, {"x": "-3", "y": 0.0}, {"x": "-2", "y": 0.0}, {"x": "-1", "y": 0.0}, {"x": "0", "y": 0.0}, {"x": "1", "y": 18.2}, {"x": "2", "y": 29.0}, {"x": "3", "y": 2.0}, {"x": "4", "y": 5.9}, {"x": "5", "y": 0.0}, {"x": "6", "y": 0.0}, {"x": "7", "y": 0.0}, {"x": "8", "y": 0.0}, {"x": "9", "y": 0.0}, {"x": "10", "y": 0.0}, {"x": "11", "y": 0.0}, {"x": "12", "y": 0.0}, {"x": "13", "y": 0.0}, {"x": "14", "y": 0.0}, {"x": "15", "y": 0.0}]}, {"id": "c1", "title": "Exp 3 - database down 30 s", "data": [{"x": "-5", "y": 0.0}, {"x": "-4", "y": 0.0}, {"x": "-3", "y": 0.0}, {"x": "-2", "y": 0.0}, {"x": "-1", "y": 0.0}, {"x": "0", "y": 22.0}, {"x": "1", "y": 37.0}, {"x": "2", "y": 34.0}, {"x": "3", "y": 28.0}, {"x": "4", "y": 32.0}, {"x": "5", "y": 30.0}, {"x": "6", "y": 27.0}, {"x": "7", "y": 32.0}, {"x": "8", "y": 33.0}, {"x": "9", "y": 23.0}, {"x": "10", "y": 38.0}, {"x": "11", "y": 25.0}, {"x": "12", "y": 30.0}, {"x": "13", "y": 24.0}, {"x": "14", "y": 33.0}, {"x": "15", "y": 31.0}, {"x": "16", "y": 33.0}, {"x": "17", "y": 30.0}, {"x": "18", "y": 25.0}, {"x": "19", "y": 31.0}, {"x": "20", "y": 29.0}, {"x": "21", "y": 27.0}, {"x": "22", "y": 26.0}, {"x": "23", "y": 26.0}, {"x": "24", "y": 27.0}, {"x": "25", "y": 33.0}, {"x": "26", "y": 32.0}, {"x": "27", "y": 32.0}, {"x": "28", "y": 35.0}, {"x": "29", "y": 26.0}, {"x": "30", "y": 26.0}, {"x": "31", "y": 31.0}, {"x": "32", "y": 31.0}, {"x": "33", "y": 28.0}, {"x": "34", "y": 26.0}, {"x": "35", "y": 2.0}, {"x": "36", "y": 0.0}, {"x": "37", "y": 0.0}, {"x": "38", "y": 0.0}, {"x": "39", "y": 0.0}, {"x": "40", "y": 0.0}, {"x": "41", "y": 0.0}, {"x": "42", "y": 0.0}, {"x": "43", "y": 0.0}, {"x": "44", "y": 0.0}, {"x": "45", "y": 0.0}]}, {"id": "c2", "title": "Gateway BEFORE: 1 replica, pod killed", "data": [{"x": "-5", "y": 0.0}, {"x": "-4", "y": 0.0}, {"x": "-3", "y": 0.0}, {"x": "-2", "y": 0.0}, {"x": "-1", "y": 0.0}, {"x": "0", "y": 1.0}, {"x": "1", "y": 43.0}, {"x": "2", "y": 42.3}, {"x": "3", "y": 0.0}, {"x": "4", "y": 11.8}, {"x": "5", "y": 17.0}, {"x": "6", "y": 7.0}, {"x": "7", "y": 17.0}, {"x": "8", "y": 22.8}, {"x": "9", "y": 10.1}, {"x": "10", "y": 15.1}, {"x": "11", "y": 21.7}, {"x": "12", "y": 6.0}, {"x": "13", "y": 12.9}, {"x": "14", "y": 10.8}, {"x": "15", "y": 5.7}, {"x": "16", "y": 10.4}, {"x": "17", "y": 9.4}, {"x": "18", "y": 10.2}, {"x": "19", "y": 13.7}, {"x": "20", "y": 7.9}, {"x": "21", "y": 10.2}, {"x": "22", "y": 14.1}, {"x": "23", "y": 10.5}, {"x": "24", "y": 9.0}, {"x": "25", "y": 33.7}, {"x": "26", "y": 77.0}, {"x": "27", "y": 100.0}, {"x": "28", "y": 74.0}, {"x": "29", "y": 51.0}, {"x": "30", "y": 3.1}, {"x": "31", "y": 3.3}, {"x": "32", "y": 6.3}, {"x": "33", "y": 0.0}, {"x": "34", "y": null}, {"x": "35", "y": null}, {"x": "36", "y": null}, {"x": "37", "y": null}, {"x": "38", "y": null}, {"x": "39", "y": null}, {"x": "40", "y": null}]}, {"id": "c3", "title": "Gateway AFTER: 2 replicas, 1 pod killed", "data": [{"x": "-5", "y": 0.0}, {"x": "-4", "y": 0.0}, {"x": "-3", "y": 0.0}, {"x": "-2", "y": 0.0}, {"x": "-1", "y": 0.0}, {"x": "0", "y": 0.0}, {"x": "1", "y": 0.0}, {"x": "2", "y": 0.0}, {"x": "3", "y": 0.0}, {"x": "4", "y": 0.0}, {"x": "5", "y": 0.0}, {"x": "6", "y": 0.0}, {"x": "7", "y": 0.0}, {"x": "8", "y": 0.0}, {"x": "9", "y": 0.0}, {"x": "10", "y": 0.0}, {"x": "11", "y": 0.0}, {"x": "12", "y": 0.0}, {"x": "13", "y": 0.0}, {"x": "14", "y": 0.0}, {"x": "15", "y": 0.0}, {"x": "16", "y": 0.0}, {"x": "17", "y": 0.0}, {"x": "18", "y": 0.0}, {"x": "19", "y": 0.0}, {"x": "20", "y": 0.0}, {"x": "21", "y": 0.0}, {"x": "22", "y": 0.0}, {"x": "23", "y": 0.0}, {"x": "24", "y": 0.0}, {"x": "25", "y": 0.0}, {"x": "26", "y": 0.0}, {"x": "27", "y": 0.0}, {"x": "28", "y": 0.0}, {"x": "29", "y": 0.0}, {"x": "30", "y": 0.0}, {"x": "31", "y": 0.0}, {"x": "32", "y": 0.0}, {"x": "33", "y": 0.0}, {"x": "34", "y": null}, {"x": "35", "y": null}, {"x": "36", "y": null}, {"x": "37", "y": null}, {"x": "38", "y": null}, {"x": "39", "y": null}, {"x": "40", "y": null}]}];
+PANELS.forEach(p => {
+  new ApexCharts(document.getElementById(p.id), {
+    chart: { type: 'bar', height: 280, toolbar: { show: false }, animations: { enabled: false },
+             fontFamily: 'inherit', background: 'transparent' },
+    series: [{ name: 'Failed requests', data: p.data }],
+    colors: ['#2a78d6'],
+    plotOptions: { bar: { columnWidth: '80%', borderRadius: 2 } },
+    dataLabels: { enabled: false },
+    stroke: { show: false },
+    grid: { borderColor: '#e6e5e1', strokeDashArray: 0, xaxis: { lines: { show: false } } },
+    xaxis: { type: 'category', tickAmount: 9, tooltip: { enabled: false },
+             labels: { rotate: 0, hideOverlappingLabels: true, style: { colors: '#52514e', fontSize: '11px' } },
+             title: { text: 'seconds since injection', style: { color: '#52514e', fontWeight: 400, fontSize: '12px' } },
+             axisTicks: { show: false } },
+    yaxis: { min: 0, max: 100, tickAmount: 5,
+             labels: { style: { colors: '#52514e', fontSize: '11px' }, formatter: v => v + '%' },
+             title: { text: 'failed requests (%)', style: { color: '#52514e', fontWeight: 400, fontSize: '12px' } } },
+    annotations: { xaxis: [{ x: '0', borderColor: '#52514e', strokeDashArray: 4,
+                            label: { text: 'failure injected', orientation: 'horizontal', borderWidth: 0,
+                                     style: { color: '#52514e', background: 'transparent', fontSize: '11px' } } }] },
+    tooltip: { y: { formatter: v => v + '% failed' }, x: { formatter: v => 't = ' + v + ' s' } },
+    legend: { show: false }
+  }).render();
+});
+</script></body></html>

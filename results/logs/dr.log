@@ -1,0 +1,18 @@
+##### dr
+== dr_full_recovery.json
+{
+  "experiment": "dr_full_recovery",
+  "backup_used": "db-20261025T135528.json",
+  "records_before_disaster": 5331,
+  "records_after_restore_db1": 5331,
+  "namespace_delete_s": 28.2,
+  "db_ready_s": 10.9,
+  "restore_done_s": 133.9,
+  "full_recovery_RTO_s": 162.4,
+  "functional_check": {
+    "timetable": 200,
+    "login": 200,
+    "registrations_read": 200
+  }
+}
+

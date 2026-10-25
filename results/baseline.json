@@ -1,0 +1,48 @@
+{
+  "experiment": "baseline",
+  "load_rps": 100,
+  "seconds": 60,
+  "total": 6001,
+  "failed": 0,
+  "success_pct": 100.0,
+  "latency_ms": {
+    "p50": 12.3,
+    "p95": 36.6,
+    "p99": 61.7,
+    "max": 218.5,
+    "mean": 16.3
+  },
+  "by_kind": {
+    "reg_read": {
+      "total": 876,
+      "failed": 0
+    },
+    "reg_write": {
+      "total": 934,
+      "failed": 0
+    },
+    "login": {
+      "total": 612,
+      "failed": 0
+    },
+    "courses": {
+      "total": 1184,
+      "failed": 0
+    },
+    "timetable": {
+      "total": 2395,
+      "failed": 0
+    }
+  },
+  "audit": {
+    "db-0": {
+      "records": 4788,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 4788,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 934
+}

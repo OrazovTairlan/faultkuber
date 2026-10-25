@@ -1,0 +1,47 @@
+{
+  "experiment": "gw_after_two_replicas",
+  "load_source": "in-cluster Job -> Service gateway:8080",
+  "load_rps": 100,
+  "clock_offset_s": 0.047,
+  "injected_at_epoch": 1792938317.66,
+  "k8s_detection_s": 0.11,
+  "k8s_recovery_s": 4.37,
+  "client_first_failure_s": null,
+  "client_last_failure_done_s": null,
+  "failed_requests_total": 0,
+  "whole_run": {
+    "total": 5001,
+    "failed": 0,
+    "success_pct": 100.0,
+    "latency_ms": {
+      "p50": 4.9,
+      "p95": 49.7,
+      "p99": 57.6,
+      "max": 102.7,
+      "mean": 12.2
+    },
+    "by_kind": {
+      "timetable": {
+        "total": 2010,
+        "failed": 0
+      },
+      "courses": {
+        "total": 975,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 783,
+        "failed": 0
+      },
+      "reg_write": {
+        "total": 744,
+        "failed": 0
+      },
+      "login": {
+        "total": 489,
+        "failed": 0
+      }
+    }
+  },
+  "injected": "kubectl delete --force --grace-period=0 pod/gateway-fc9d658d8-rb6bn"
+}

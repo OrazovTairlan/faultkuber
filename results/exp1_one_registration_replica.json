@@ -1,0 +1,58 @@
+{
+  "experiment": "exp1_one_registration_replica",
+  "load_rps": 100,
+  "injected_at_epoch": 1792936347.59,
+  "k8s_detection_s": 0.1,
+  "k8s_recovery_s": 2.52,
+  "client_first_failure_s": null,
+  "client_last_failure_done_s": null,
+  "failed_requests_total": 0,
+  "failed_requests_in_affected_kinds": 0,
+  "during_window": null,
+  "whole_run": {
+    "total": 3305,
+    "failed": 0,
+    "success_pct": 100.0,
+    "latency_ms": {
+      "p50": 4.2,
+      "p95": 58.8,
+      "p99": 78.1,
+      "max": 110.3,
+      "mean": 18.1
+    },
+    "by_kind": {
+      "timetable": {
+        "total": 1314,
+        "failed": 0
+      },
+      "courses": {
+        "total": 667,
+        "failed": 0
+      },
+      "login": {
+        "total": 353,
+        "failed": 0
+      },
+      "reg_write": {
+        "total": 464,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 507,
+        "failed": 0
+      }
+    }
+  },
+  "injected": "kubectl delete --force --grace-period=0 pod/registration-5c754c649c-5n4vj",
+  "audit": {
+    "db-0": {
+      "records": 5023,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 5023,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 464
+}

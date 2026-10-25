@@ -1,0 +1,81 @@
+# captured 2026-10-25T14:27:02Z from kind cluster ft-aitu
+
+## kubectl get pods -o wide
+NAME                            READY   STATUS      RESTARTS       AGE     IP            NODE              NOMINATED NODE   READINESS GATES
+auth-c8b8cbffd-7pn9b            1/1     Running     0              6m53s   10.244.1.61   ft-aitu-worker2   <none>           <none>
+auth-c8b8cbffd-psh4p            1/1     Running     0              6m46s   10.244.2.69   ft-aitu-worker    <none>           <none>
+course-6d49f554d9-7dsm9         1/1     Running     0              6m48s   10.244.2.68   ft-aitu-worker    <none>           <none>
+course-6d49f554d9-dqd4p         1/1     Running     0              6m53s   10.244.2.66   ft-aitu-worker    <none>           <none>
+db-0                            1/1     Running     0              6m16s   10.244.2.70   ft-aitu-worker    <none>           <none>
+db-1                            1/1     Running     1 (8m6s ago)   30m     10.244.1.28   ft-aitu-worker2   <none>           <none>
+db-backup-29882295-pxfjl        0/1     Completed   0              12m     10.244.1.44   ft-aitu-worker2   <none>           <none>
+db-backup-29882300-nfdgp        0/1     Completed   0              7m2s    10.244.2.65   ft-aitu-worker    <none>           <none>
+db-backup-29882305-xcsg8        0/1     Completed   0              2m2s    10.244.2.74   ft-aitu-worker    <none>           <none>
+db-restore-dn7ts                0/1     Completed   0              30m     10.244.2.34   ft-aitu-worker    <none>           <none>
+gateway-fc9d658d8-blpsl         1/1     Running     0              105s    10.244.1.68   ft-aitu-worker2   <none>           <none>
+gateway-fc9d658d8-zh6cs         1/1     Running     0              2m16s   10.244.2.73   ft-aitu-worker    <none>           <none>
+registration-5c754c649c-4p49c   1/1     Running     0              6m53s   10.244.1.62   ft-aitu-worker2   <none>           <none>
+registration-5c754c649c-n44zg   1/1     Running     0              6m46s   10.244.1.63   ft-aitu-worker2   <none>           <none>
+
+## kubectl get deploy,sts,svc,pdb
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/auth           2/2     2            2           31m
+deployment.apps/course         2/2     2            2           30m
+deployment.apps/gateway        2/2     2            2           30m
+deployment.apps/registration   2/2     2            2           30m
+
+NAME                  READY   AGE
+statefulset.apps/db   2/2     31m
+
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/auth           ClusterIP   10.96.41.250    <none>        8080/TCP         30m
+service/course         ClusterIP   10.96.192.178   <none>        8080/TCP         30m
+service/db-headless    ClusterIP   None            <none>        8080/TCP         31m
+service/gateway        NodePort    10.96.4.60      <none>        8080:30080/TCP   30m
+service/registration   ClusterIP   10.96.28.82     <none>        8080/TCP         30m
+
+NAME                                      MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/auth           1               N/A               1                     30m
+poddisruptionbudget.policy/course         1               N/A               1                     30m
+poddisruptionbudget.policy/db             1               N/A               1                     31m
+poddisruptionbudget.policy/gateway        1               N/A               1                     30m
+poddisruptionbudget.policy/registration   1               N/A               1                     30m
+
+## kubectl get endpoints registration
+NAME           ENDPOINTS                           AGE
+registration   10.244.1.62:8080,10.244.1.63:8080   30m
+
+## registration Deployment: replicas / strategy / probes / resources
+replicas: 2
+strategy: {"rollingUpdate":{"maxSurge":1,"maxUnavailable":0},"type":"RollingUpdate"}
+readiness: {"failureThreshold":2,"httpGet":{"path":"/readyz","port":"http","scheme":"HTTP"},"periodSeconds":2,"successThreshold":1,"timeoutSeconds":1}
+liveness: {"failureThreshold":3,"httpGet":{"path":"/healthz","port":"http","scheme":"HTTP"},"initialDelaySeconds":5,"periodSeconds":5,"successThreshold":1,"timeoutSeconds":1}
+resources: {"limits":{"cpu":"250m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"64Mi"}}
+restartPolicy: Always
+
+## service discovery from inside the gateway pod
+registration -> 10.96.28.82
+db-0.db-headless -> 10.244.2.70
+
+## CronJob backups
+NAME        SCHEDULE      TIMEZONE   SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+db-backup   */5 * * * *   <none>     False     0        2m3s            30m
+-rw-r--r-- 1 orazo 197609 654975 Oct 25 19:05 db-20261025T140501.json
+-rw-r--r-- 1 orazo 197609 734059 Oct 25 19:10 db-20261025T141001.json
+-rw-r--r-- 1 orazo 197609 881389 Oct 25 19:15 db-20261025T141501.json
+-rw-r--r-- 1 orazo 197609 911639 Oct 25 19:20 db-20261025T142001.json
+-rw-r--r-- 1 orazo 197609 920056 Oct 25 19:25 db-20261025T142501.json
+
+## registration pod events
+2m          Normal    SawCompletedJob         cronjob/db-backup                    Saw completed job: db-backup-29882305, condition: Complete
+2m          Normal    Completed               job/db-backup-29882305               Job completed
+2m          Normal    SuccessfulDelete        cronjob/db-backup                    Deleted job db-backup-29882290
+106s        Normal    Scheduled               pod/gateway-fc9d658d8-blpsl          Successfully assigned aitu-sim/gateway-fc9d658d8-blpsl to ft-aitu-worker2
+106s        Normal    SuccessfulCreate        replicaset/gateway-fc9d658d8         (combined from similar events): Created pod: gateway-fc9d658d8-blpsl
+106s        Normal    Killing                 pod/gateway-fc9d658d8-rb6bn          Stopping container gateway
+105s        Normal    Created                 pod/gateway-fc9d658d8-blpsl          Created container: gateway
+105s        Normal    Started                 pod/gateway-fc9d658d8-blpsl          Started container gateway
+105s        Normal    Pulled                  pod/gateway-fc9d658d8-blpsl          Container image "aitu-sim:1.2" already present on machine
+104s        Warning   FailedPreStopHook       pod/gateway-fc9d658d8-rb6bn          PreStopHook failed
+103s        Warning   Unhealthy               pod/gateway-fc9d658d8-blpsl          Readiness probe failed: Get "http://10.244.1.68:8080/readyz": dial tcp 10.244.1.68:8080: connect: connection refused
+69s         Normal    Completed               job/loadgen                          Job completed

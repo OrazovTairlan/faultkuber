@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: db-backup
+  namespace: aitu-sim
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: backup
+              image: aitu-sim:1.2
+              imagePullPolicy: IfNotPresent
+              securityContext: {runAsUser: 0}
+              command: ["python", "-c"]
+              args:
+                - |
+                  import json, time, urllib.request, glob, os
+                  for node in ("db-0.db-headless", "db-1.db-headless"):
+                      try:
+                          data = urllib.request.urlopen(f"http://{node}:8080/db/dump", timeout=5).read()
+                          break
+                      except OSError:
+                          continue
+                  else:
+                      raise SystemExit("no database node reachable")
+                  name = time.strftime("/backups/db-%Y%m%dT%H%M%S.json", time.gmtime())
+                  open(name, "wb").write(data)
+                  n = len(json.loads(data)["records"])
+                  print(json.dumps({"backup": name, "records": n}))
+                  for old in sorted(glob.glob("/backups/db-*.json"))[:-12]:
+                      os.remove(old)
+              volumeMounts:
+                - {name: backups, mountPath: /backups}
+          volumes:
+            - name: backups
+              hostPath: {path: /backups, type: DirectoryOrCreate}

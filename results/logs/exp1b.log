@@ -1,0 +1,188 @@
+##### exp1b
+== exp1b_container_crash_restart.json
+{
+  "experiment": "exp1b_container_crash_restart",
+  "load_rps": 100,
+  "injected_at_epoch": 1792936387.88,
+  "k8s_detection_s": 1.35,
+  "k8s_recovery_s": 3.32,
+  "client_first_failure_s": 0.47,
+  "client_last_failure_done_s": 1.2,
+  "failed_requests_total": 8,
+  "failed_requests_in_affected_kinds": 8,
+  "during_window": {
+    "total": 120,
+    "failed": 8,
+    "success_pct": 93.333,
+    "latency_ms": {
+      "p50": 5.2,
+      "p95": 59.9,
+      "p99": 64.4,
+      "max": 67.3,
+      "mean": 17.7
+    },
+    "by_kind": {
+      "reg_write": {
+        "total": 22,
+        "failed": 5
+      },
+      "courses": {
+        "total": 24,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 17,
+        "failed": 3
+      },
+      "login": {
+        "total": 11,
+        "failed": 0
+      },
+      "timetable": {
+        "total": 46,
+        "failed": 0
+      }
+    }
+  },
+  "whole_run": {
+    "total": 3400,
+    "failed": 8,
+    "success_pct": 99.765,
+    "latency_ms": {
+      "p50": 5.2,
+      "p95": 59.8,
+      "p99": 77.6,
+      "max": 107.2,
+      "mean": 19.1
+    },
+    "by_kind": {
+      "reg_write": {
+        "total": 532,
+        "failed": 5
+      },
+      "courses": {
+        "total": 637,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 511,
+        "failed": 3
+      },
+      "login": {
+        "total": 337,
+        "failed": 0
+      },
+      "timetable": {
+        "total": 1383,
+        "failed": 0
+      }
+    }
+  },
+  "injected": "crictl stop dbabc684bf40 (container of registration-5c754c649c-tpd6m on ft-aitu-worker)",
+  "audit": {
+    "db-0": {
+      "records": 5129,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 5129,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 527
+}
+
+== exp1b_container_crash_restart.json
+{
+  "experiment": "exp1b_container_crash_restart",
+  "load_rps": 100,
+  "injected_at_epoch": 1792936387.88,
+  "k8s_detection_s": 1.35,
+  "k8s_recovery_s": 3.32,
+  "client_first_failure_s": 0.47,
+  "client_last_failure_done_s": 1.2,
+  "failed_requests_total": 8,
+  "failed_requests_in_affected_kinds": 8,
+  "during_window": {
+    "total": 120,
+    "failed": 8,
+    "success_pct": 93.333,
+    "latency_ms": {
+      "p50": 5.2,
+      "p95": 59.9,
+      "p99": 64.4,
+      "max": 67.3,
+      "mean": 17.7
+    },
+    "by_kind": {
+      "reg_write": {
+        "total": 22,
+        "failed": 5
+      },
+      "courses": {
+        "total": 24,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 17,
+        "failed": 3
+      },
+      "login": {
+        "total": 11,
+        "failed": 0
+      },
+      "timetable": {
+        "total": 46,
+        "failed": 0
+      }
+    }
+  },
+  "whole_run": {
+    "total": 3400,
+    "failed": 8,
+    "success_pct": 99.765,
+    "latency_ms": {
+      "p50": 5.2,
+      "p95": 59.8,
+      "p99": 77.6,
+      "max": 107.2,
+      "mean": 19.1
+    },
+    "by_kind": {
+      "reg_write": {
+        "total": 532,
+        "failed": 5
+      },
+      "courses": {
+        "total": 637,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 511,
+        "failed": 3
+      },
+      "login": {
+        "total": 337,
+        "failed": 0
+      },
+      "timetable": {
+        "total": 1383,
+        "failed": 0
+      }
+    }
+  },
+  "injected": "crictl stop dbabc684bf40 (container of registration-5c754c649c-tpd6m on ft-aitu-worker)",
+  "audit": {
+    "db-0": {
+      "records": 5129,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 5129,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 527,
+  "restart_count": "1"
+}
+

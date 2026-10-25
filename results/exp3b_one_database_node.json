@@ -1,0 +1,58 @@
+{
+  "experiment": "exp3b_one_database_node",
+  "load_rps": 100,
+  "injected_at_epoch": 1792938046.8,
+  "k8s_detection_s": 0.11,
+  "k8s_recovery_s": 4.23,
+  "client_first_failure_s": null,
+  "client_last_failure_done_s": null,
+  "failed_requests_total": 0,
+  "failed_requests_in_affected_kinds": 0,
+  "during_window": null,
+  "whole_run": {
+    "total": 3932,
+    "failed": 0,
+    "success_pct": 100.0,
+    "latency_ms": {
+      "p50": 4.9,
+      "p95": 59.8,
+      "p99": 86.5,
+      "max": 239.4,
+      "mean": 19.0
+    },
+    "by_kind": {
+      "reg_write": {
+        "total": 569,
+        "failed": 0
+      },
+      "timetable": {
+        "total": 1595,
+        "failed": 0
+      },
+      "login": {
+        "total": 383,
+        "failed": 0
+      },
+      "courses": {
+        "total": 822,
+        "failed": 0
+      },
+      "reg_read": {
+        "total": 563,
+        "failed": 0
+      }
+    }
+  },
+  "injected": "kubectl delete --force --grace-period=0 pod/db-0",
+  "audit": {
+    "db-0": {
+      "records": 9341,
+      "acked_missing": 0
+    },
+    "db-1": {
+      "records": 9341,
+      "acked_missing": 0
+    }
+  },
+  "acked_writes": 569
+}
