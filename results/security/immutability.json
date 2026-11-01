@@ -1,0 +1,50 @@
+{
+  "target_file": "db-20261101T140501Z.json",
+  "lsattr": "----i---------e------- /vault/db-20261101T140501Z.json",
+  "attempts": [
+    {
+      "cmd": "rm -f /vault/db-20261101T140501Z.json",
+      "exit": 1,
+      "output": "rm: cannot remove '/vault/db-20261101T140501Z.json': Operation not permitted",
+      "blocked": true
+    },
+    {
+      "cmd": "mv /vault/db-20261101T140501Z.json /vault/renamed.json",
+      "exit": 1,
+      "output": "mv: cannot move '/vault/db-20261101T140501Z.json' to '/vault/renamed.json': Operation not permitted",
+      "blocked": true
+    },
+    {
+      "cmd": "echo tampered > /vault/db-20261101T140501Z.json",
+      "exit": 2,
+      "output": "sh: 1: cannot create /vault/db-20261101T140501Z.json: Operation not permitted",
+      "blocked": true
+    },
+    {
+      "cmd": "echo x >> /vault/db-20261101T140501Z.json",
+      "exit": 2,
+      "output": "sh: 1: cannot create /vault/db-20261101T140501Z.json: Operation not permitted",
+      "blocked": true
+    },
+    {
+      "cmd": "truncate -s 0 /vault/db-20261101T140501Z.json",
+      "exit": 1,
+      "output": "truncate: cannot open '/vault/db-20261101T140501Z.json' for writing: Operation not permitted",
+      "blocked": true
+    },
+    {
+      "cmd": "rm -f /vault/db-20261101T140501Z.manifest.json",
+      "exit": 1,
+      "output": "rm: cannot remove '/vault/db-20261101T140501Z.manifest.json': Operation not permitted",
+      "blocked": true
+    },
+    {
+      "cmd": "rm -rf /vault",
+      "exit": 1,
+      "output": "rm: cannot remove '/vault/db-20261101T134502Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T134209Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T140501Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T135403Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T134209Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T135502Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T133501Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T133131Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T140421Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T135403Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T133501Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T132002Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T140421Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T134502Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T133131Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T135502Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T131707Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T140501Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T132502Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T132002Z.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T132502Z.manifest.json': Operation not permitted\nrm: cannot remove '/vault/db-20261101T131707Z.json': Operation not permitted",
+      "blocked": true
+    }
+  ],
+  "intact_after_attempts": "-rw-r--r-- 1 root root 664773 Nov  1 14:05 /vault/db-20261101T140501Z.json\n3a760bab03c06df207b85fb41b59d509a19444ddd34aad04b60866e8b369c461  /vault/db-20261101T140501Z.json",
+  "all_blocked": true
+}

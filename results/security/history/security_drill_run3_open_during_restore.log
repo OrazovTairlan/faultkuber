@@ -1,0 +1,81 @@
+P0: waiting for a fresh vault backup ...
+P1: credential attack with live detector
+{"detected_at": 1793540781.3802683, "rule": "R1a", "level": "WARNING", "message": "10 failed logins in 3 min"}
+{"detected_at": 1793540795.2721767, "rule": "R1b", "level": "CRITICAL", "message": "20 failed logins in 3 min - brute force"}
+{
+ "failed_logins_sent": 36,
+ "successful_login_status": 200,
+ "alerts": [
+  {
+   "detected_at": 1793540781.3802683,
+   "rule": "R1a",
+   "level": "WARNING",
+   "message": "10 failed logins in 3 min",
+   "after_first_failed_login_s": 2.1
+  },
+  {
+   "detected_at": 1793540795.2721767,
+   "rule": "R1b",
+   "level": "CRITICAL",
+   "message": "20 failed logins in 3 min - brute force",
+   "after_first_failed_login_s": 16.0
+  }
+ ],
+ "seconds_from_first_failure_to_success": 19.5
+}
+P2: lateral movement attempts from the compromised Registration pod
+{
+ "compromised_pod": "registration-5c754c649c-mt4vn",
+ "attempts": {
+  "auth": "BLOCKED",
+  "course": "BLOCKED",
+  "internet 1.1.1.1:443": "BLOCKED",
+  "db (allowed by design)": "ALLOWED"
+ },
+ "records_readable_via_allowed_db_path": 5738
+}
+P3: IMPACT - ransomware on the database nodes
+{
+ "encrypted_bytes_per_node": [
+  556447,
+  556738
+ ],
+ "encryption_and_restart_s": 1.6,
+ "backup_deletion_attempt_blocked": true,
+ "backup_deletion_output": [
+  "rm: cannot remove '/vault/db-20261101T134502Z.json': Operation not permitted",
+  "rm: cannot remove '/vault/db-20261101T134502Z.manifest.json': Operation not permitted"
+ ],
+ "backup_used_age_at_impact_s": 111.6
+}
+step 2 Isolate affected system: 6.7s
+step 3 Preserve evidence: 3.3s
+step 4 Activate backup: 1.9s
+step 5 Restore services: 383.0s
+step 6 Verify integrity: 8.6s
+step 7 Return to production: 19.9s
+{
+ "rpo": {
+  "backup_created_before_impact_s": 111.6,
+  "target_s": 300,
+  "writes_acked_after_backup_before_impact": 335,
+  "lost_of_those": 335,
+  "acked_before_backup_lost": 0,
+  "acked_between_impact_and_restore_done": 1704,
+  "lost_of_those_accepted_while_data_missing": 7,
+  "acked_after_restore": 50,
+  "lost_after_restore": 0
+ },
+ "rto": {
+  "impact_to_registration_service_restored_s": 400.5,
+  "impact_to_fully_back_in_production_s": 429.0,
+  "target_s": 1800,
+  "first_successful_registration_write_after_impact_s": 1.1
+ },
+ "user_impact": {
+  "registration_requests_failed": 448,
+  "timetable_courses_login_failed": 35,
+  "total_requests": 15259,
+  "monitor_alert_after_impact_s": 5.3
+ }
+}

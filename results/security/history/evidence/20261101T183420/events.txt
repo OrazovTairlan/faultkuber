@@ -1,0 +1,223 @@
+LAST SEEN   TYPE      REASON                  OBJECT                               MESSAGE
+27m         Normal    WaitForFirstConsumer    persistentvolumeclaim/data-db-0      waiting for first consumer to be created before binding
+27m         Normal    Scheduled               pod/registration-5c754c649c-mt4vn    Successfully assigned aitu-sim/registration-5c754c649c-mt4vn to ft-aitu-worker
+27m         Normal    SuccessfulCreate        replicaset/registration-5c754c649c   Created pod: registration-5c754c649c-mt4vn
+27m         Normal    SuccessfulCreate        replicaset/course-6d49f554d9         Created pod: course-6d49f554d9-6vhxc
+27m         Normal    Scheduled               pod/course-6d49f554d9-r5mjs          Successfully assigned aitu-sim/course-6d49f554d9-r5mjs to ft-aitu-worker2
+27m         Normal    Provisioning            persistentvolumeclaim/data-db-0      External provisioner is provisioning volume for claim "aitu-sim/data-db-0"
+27m         Normal    ScalingReplicaSet       deployment/course                    Scaled up replica set course-6d49f554d9 from 0 to 2
+27m         Normal    Scheduled               pod/course-6d49f554d9-6vhxc          Successfully assigned aitu-sim/course-6d49f554d9-6vhxc to ft-aitu-worker
+27m         Normal    SuccessfulCreate        replicaset/course-6d49f554d9         Created pod: course-6d49f554d9-r5mjs
+27m         Normal    Provisioning            persistentvolumeclaim/data-db-1      External provisioner is provisioning volume for claim "aitu-sim/data-db-1"
+27m         Normal    ExternalProvisioning    persistentvolumeclaim/data-db-1      Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+27m         Normal    WaitForFirstConsumer    persistentvolumeclaim/data-db-1      waiting for first consumer to be created before binding
+27m         Normal    Scheduled               pod/auth-c8b8cbffd-88m4n             Successfully assigned aitu-sim/auth-c8b8cbffd-88m4n to ft-aitu-worker
+27m         Normal    Pulled                  pod/auth-c8b8cbffd-88m4n             Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Created                 pod/auth-c8b8cbffd-88m4n             Created container: auth
+27m         Normal    ScalingReplicaSet       deployment/auth                      Scaled up replica set auth-c8b8cbffd from 0 to 2
+27m         Normal    ExternalProvisioning    persistentvolumeclaim/data-db-0      Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+27m         Normal    Scheduled               pod/registration-5c754c649c-j55sz    Successfully assigned aitu-sim/registration-5c754c649c-j55sz to ft-aitu-worker2
+27m         Normal    Scheduled               pod/auth-c8b8cbffd-vkx26             Successfully assigned aitu-sim/auth-c8b8cbffd-vkx26 to ft-aitu-worker2
+27m         Normal    SuccessfulCreate        replicaset/auth-c8b8cbffd            Created pod: auth-c8b8cbffd-88m4n
+27m         Normal    SuccessfulCreate        replicaset/registration-5c754c649c   Created pod: registration-5c754c649c-j55sz
+27m         Normal    ScalingReplicaSet       deployment/registration              Scaled up replica set registration-5c754c649c from 0 to 2
+27m         Normal    SuccessfulCreate        replicaset/auth-c8b8cbffd            Created pod: auth-c8b8cbffd-vkx26
+27m         Normal    Pulled                  pod/course-6d49f554d9-6vhxc          Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Created                 pod/course-6d49f554d9-6vhxc          Created container: course
+27m         Normal    Scheduled               pod/gateway-fc9d658d8-jmfg8          Successfully assigned aitu-sim/gateway-fc9d658d8-jmfg8 to ft-aitu-worker
+27m         Normal    Pulled                  pod/registration-5c754c649c-mt4vn    Container image "aitu-sim:1.2" already present on machine
+27m         Normal    SuccessfulCreate        replicaset/gateway-fc9d658d8         Created pod: gateway-fc9d658d8-8b5bm
+27m         Normal    Started                 pod/course-6d49f554d9-6vhxc          Started container course
+27m         Normal    Started                 pod/auth-c8b8cbffd-88m4n             Started container auth
+27m         Normal    SuccessfulCreate        replicaset/gateway-fc9d658d8         Created pod: gateway-fc9d658d8-jmfg8
+27m         Normal    Scheduled               pod/gateway-fc9d658d8-8b5bm          Successfully assigned aitu-sim/gateway-fc9d658d8-8b5bm to ft-aitu-worker2
+27m         Normal    Created                 pod/registration-5c754c649c-mt4vn    Created container: registration
+27m         Warning   FailedMount             pod/auth-c8b8cbffd-vkx26             MountVolume.SetUp failed for volume "kube-api-access-qnpn7" : failed to sync configmap cache: timed out waiting for the condition
+27m         Normal    ScalingReplicaSet       deployment/gateway                   Scaled up replica set gateway-fc9d658d8 from 0 to 2
+27m         Normal    Created                 pod/gateway-fc9d658d8-8b5bm          Created container: gateway
+27m         Normal    Created                 pod/gateway-fc9d658d8-jmfg8          Created container: gateway
+27m         Warning   Unhealthy               pod/auth-c8b8cbffd-88m4n             Readiness probe failed: Get "http://10.244.1.3:8080/readyz": dial tcp 10.244.1.3:8080: connect: connection refused
+27m         Normal    Pulled                  pod/gateway-fc9d658d8-jmfg8          Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Started                 pod/registration-5c754c649c-mt4vn    Started container registration
+27m         Normal    Pulled                  pod/gateway-fc9d658d8-8b5bm          Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Created                 pod/auth-c8b8cbffd-vkx26             Created container: auth
+27m         Normal    Pulled                  pod/auth-c8b8cbffd-vkx26             Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Started                 pod/registration-5c754c649c-j55sz    Started container registration
+27m         Normal    Created                 pod/course-6d49f554d9-r5mjs          Created container: course
+27m         Normal    Pulled                  pod/course-6d49f554d9-r5mjs          Container image "aitu-sim:1.2" already present on machine
+27m         Warning   Unhealthy               pod/course-6d49f554d9-6vhxc          Readiness probe failed: Get "http://10.244.1.4:8080/readyz": dial tcp 10.244.1.4:8080: connect: connection refused
+27m         Normal    Started                 pod/gateway-fc9d658d8-jmfg8          Started container gateway
+27m         Normal    Created                 pod/registration-5c754c649c-j55sz    Created container: registration
+27m         Normal    Pulled                  pod/registration-5c754c649c-j55sz    Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Started                 pod/course-6d49f554d9-r5mjs          Started container course
+27m         Normal    Started                 pod/gateway-fc9d658d8-8b5bm          Started container gateway
+27m         Warning   Unhealthy               pod/gateway-fc9d658d8-8b5bm          Readiness probe failed: Get "http://10.244.2.2:8080/readyz": dial tcp 10.244.2.2:8080: connect: connection refused
+27m         Normal    Started                 pod/auth-c8b8cbffd-vkx26             Started container auth
+27m         Warning   Unhealthy               pod/gateway-fc9d658d8-jmfg8          Readiness probe failed: Get "http://10.244.1.6:8080/readyz": dial tcp 10.244.1.6:8080: connect: connection refused
+27m         Warning   Unhealthy               pod/registration-5c754c649c-j55sz    Readiness probe failed: Get "http://10.244.2.3:8080/readyz": dial tcp 10.244.2.3:8080: connect: connection refused
+27m         Warning   Unhealthy               pod/course-6d49f554d9-r5mjs          Readiness probe failed: Get "http://10.244.2.4:8080/readyz": dial tcp 10.244.2.4:8080: connect: connection refused
+27m         Normal    ProvisioningSucceeded   persistentvolumeclaim/data-db-0      Successfully provisioned volume pvc-cbcb4f88-6631-477f-bed9-de3c56f0feef
+27m         Normal    Started                 pod/db-0                             Started container db
+27m         Normal    ProvisioningSucceeded   persistentvolumeclaim/data-db-1      Successfully provisioned volume pvc-2b587fe4-438d-4431-9a9a-11e35cd6a575
+27m         Normal    Scheduled               pod/db-0                             Successfully assigned aitu-sim/db-0 to ft-aitu-worker
+27m         Normal    Pulled                  pod/db-0                             Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Created                 pod/db-0                             Created container: db
+27m         Normal    Created                 pod/db-1                             Created container: db
+27m         Normal    Pulled                  pod/db-1                             Container image "aitu-sim:1.2" already present on machine
+27m         Normal    Scheduled               pod/db-1                             Successfully assigned aitu-sim/db-1 to ft-aitu-worker2
+27m         Normal    Started                 pod/db-1                             Started container db
+27m         Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.7:8080/readyz": dial tcp 10.244.2.7:8080: connect: connection refused
+26m         Normal    Started                 pod/db-backup-29892310-vmpl9         Started container backup
+26m         Normal    Scheduled               pod/db-backup-29892310-vmpl9         Successfully assigned aitu-sim/db-backup-29892310-vmpl9 to ft-aitu-worker
+26m         Normal    Pulled                  pod/db-backup-29892310-vmpl9         Container image "aitu-sim:1.2" already present on machine
+26m         Normal    SuccessfulCreate        cronjob/db-backup                    Created job db-backup-29892310
+26m         Normal    Created                 pod/db-backup-29892310-vmpl9         Created container: backup
+26m         Normal    SuccessfulCreate        job/db-backup-29892310               Created pod: db-backup-29892310-vmpl9
+26m         Normal    Completed               job/db-backup-29892310               Job completed
+26m         Normal    SawCompletedJob         cronjob/db-backup                    Saw completed job: db-backup-29892310, condition: Complete
+21m         Normal    SuccessfulCreate        job/db-backup-29892315               Created pod: db-backup-29892315-p4mvx
+21m         Normal    Pulled                  pod/db-backup-29892315-p4mvx         Container image "aitu-sim:1.2" already present on machine
+21m         Normal    Scheduled               pod/db-backup-29892315-p4mvx         Successfully assigned aitu-sim/db-backup-29892315-p4mvx to ft-aitu-worker2
+21m         Normal    Created                 pod/db-backup-29892315-p4mvx         Created container: backup
+21m         Normal    SuccessfulCreate        cronjob/db-backup                    Created job db-backup-29892315
+21m         Normal    Started                 pod/db-backup-29892315-p4mvx         Started container backup
+21m         Normal    Completed               job/db-backup-29892315               Job completed
+21m         Normal    SawCompletedJob         cronjob/db-backup                    Saw completed job: db-backup-29892315, condition: Complete
+10m         Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.7:8080/readyz": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+10m         Normal    Scheduled               pod/db-0                             Successfully assigned aitu-sim/db-0 to ft-aitu-worker
+10m         Normal    Scheduled               pod/db-1                             Successfully assigned aitu-sim/db-1 to ft-aitu-worker2
+10m         Normal    Killing                 pod/db-1                             Stopping container db
+10m         Normal    Killing                 pod/db-0                             Stopping container db
+10m         Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.7:8080/readyz": dial tcp 10.244.1.7:8080: connect: connection refused
+10m         Normal    Pulled                  pod/db-0                             Container image "aitu-sim:1.2" already present on machine
+10m         Normal    Started                 pod/db-1                             Started container db
+10m         Normal    Created                 pod/db-1                             Created container: db
+10m         Normal    Started                 pod/db-0                             Started container db
+10m         Normal    Pulled                  pod/db-1                             Container image "aitu-sim:1.2" already present on machine
+10m         Normal    Created                 pod/db-0                             Created container: db
+10m         Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.14:8080/readyz": dial tcp 10.244.1.14:8080: connect: connection refused
+10m         Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.11:8080/readyz": dial tcp 10.244.2.11:8080: connect: connection refused
+10m         Normal    SuccessfulCreate        replicaset/registration-5c754c649c   Created pod: registration-5c754c649c-ckz9d
+10m         Normal    Scheduled               pod/registration-5c754c649c-ckz9d    Successfully assigned aitu-sim/registration-5c754c649c-ckz9d to ft-aitu-worker2
+10m         Normal    Pulled                  pod/registration-5c754c649c-ckz9d    Container image "aitu-sim:1.2" already present on machine
+10m         Normal    Started                 pod/registration-5c754c649c-ckz9d    Started container registration
+10m         Normal    Created                 pod/registration-5c754c649c-ckz9d    Created container: registration
+10m         Warning   Unhealthy               pod/registration-5c754c649c-ckz9d    Readiness probe failed: Get "http://10.244.2.12:8080/readyz": dial tcp 10.244.2.12:8080: connect: connection refused
+9m54s       Normal    Killing                 pod/db-1                             Stopping container db
+9m54s       Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.11:8080/readyz": read tcp 10.244.2.1:60348->10.244.2.11:8080: read: connection reset by peer
+9m54s       Normal    Killing                 pod/db-0                             Stopping container db
+9m53s       Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.14:8080/readyz": read tcp 10.244.1.1:51010->10.244.1.14:8080: read: connection reset by peer
+9m52s       Normal    WaitForFirstConsumer    persistentvolumeclaim/data-db-1      waiting for first consumer to be created before binding
+9m52s       Normal    SuccessfulCreate        statefulset/db                       create Claim data-db-0 Pod db-0 in StatefulSet db success
+9m52s       Normal    Provisioning            persistentvolumeclaim/data-db-1      External provisioner is provisioning volume for claim "aitu-sim/data-db-1"
+9m52s       Normal    SuccessfulCreate        statefulset/db                       create Claim data-db-1 Pod db-1 in StatefulSet db success
+9m52s       Normal    WaitForFirstConsumer    persistentvolumeclaim/data-db-0      waiting for first consumer to be created before binding
+9m52s       Normal    Provisioning            persistentvolumeclaim/data-db-0      External provisioner is provisioning volume for claim "aitu-sim/data-db-0"
+9m49s       Normal    ExternalProvisioning    persistentvolumeclaim/data-db-0      Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+9m48s       Normal    ExternalProvisioning    persistentvolumeclaim/data-db-1      Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+9m47s       Normal    ProvisioningSucceeded   persistentvolumeclaim/data-db-1      Successfully provisioned volume pvc-bcc1fd7d-91a8-4743-bfff-92594723cedc
+9m47s       Normal    Scheduled               pod/db-1                             Successfully assigned aitu-sim/db-1 to ft-aitu-worker2
+9m47s       Normal    Scheduled               pod/db-0                             Successfully assigned aitu-sim/db-0 to ft-aitu-worker
+9m47s       Normal    ProvisioningSucceeded   persistentvolumeclaim/data-db-0      Successfully provisioned volume pvc-04307fd5-75e5-430a-b652-ecb3bdce5b72
+9m46s       Normal    Started                 pod/db-1                             Started container db
+9m46s       Normal    Created                 pod/db-1                             Created container: db
+9m46s       Normal    Pulled                  pod/db-1                             Container image "aitu-sim:1.2" already present on machine
+9m46s       Normal    Started                 pod/db-0                             Started container db
+9m46s       Normal    Created                 pod/db-0                             Created container: db
+9m46s       Normal    Pulled                  pod/db-0                             Container image "aitu-sim:1.2" already present on machine
+9m45s       Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.15:8080/readyz": dial tcp 10.244.2.15:8080: connect: connection refused
+9m44s       Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.17:8080/readyz": dial tcp 10.244.1.17:8080: connect: connection refused
+5m17s       Normal    ScalingReplicaSet       deployment/auth                      Scaled up replica set auth-6648b45465 from 0 to 1
+5m17s       Normal    Scheduled               pod/auth-6648b45465-74ctl            Successfully assigned aitu-sim/auth-6648b45465-74ctl to ft-aitu-worker
+5m17s       Normal    SuccessfulCreate        replicaset/auth-6648b45465           Created pod: auth-6648b45465-74ctl
+5m17s       Normal    SuccessfulCreate        replicaset/gateway-7856d4bdf7        Created pod: gateway-7856d4bdf7-wzlqt
+5m17s       Normal    ScalingReplicaSet       deployment/gateway                   Scaled up replica set gateway-7856d4bdf7 from 0 to 1
+5m17s       Normal    Scheduled               pod/gateway-7856d4bdf7-wzlqt         Successfully assigned aitu-sim/gateway-7856d4bdf7-wzlqt to ft-aitu-worker2
+5m16s       Normal    Pulled                  pod/auth-6648b45465-74ctl            Container image "aitu-sim:1.2" already present on machine
+5m16s       Normal    Created                 pod/auth-6648b45465-74ctl            Created container: auth
+5m16s       Normal    Started                 pod/auth-6648b45465-74ctl            Started container auth
+5m16s       Normal    Created                 pod/gateway-7856d4bdf7-wzlqt         Created container: gateway
+5m16s       Normal    Started                 pod/gateway-7856d4bdf7-wzlqt         Started container gateway
+5m16s       Normal    Pulled                  pod/gateway-7856d4bdf7-wzlqt         Container image "aitu-sim:1.2" already present on machine
+5m15s       Warning   Unhealthy               pod/gateway-7856d4bdf7-wzlqt         Readiness probe failed: Get "http://10.244.2.16:8080/readyz": dial tcp 10.244.2.16:8080: connect: connection refused
+5m15s       Warning   Unhealthy               pod/auth-6648b45465-74ctl            Readiness probe failed: Get "http://10.244.1.19:8080/readyz": dial tcp 10.244.1.19:8080: connect: connection refused
+5m11s       Normal    Killing                 pod/auth-c8b8cbffd-88m4n             Stopping container auth
+5m11s       Normal    Pulled                  pod/auth-6648b45465-ksgmd            Container image "aitu-sim:1.2" already present on machine
+5m11s       Normal    Scheduled               pod/auth-6648b45465-ksgmd            Successfully assigned aitu-sim/auth-6648b45465-ksgmd to ft-aitu-worker
+5m11s       Normal    SuccessfulCreate        replicaset/auth-6648b45465           Created pod: auth-6648b45465-ksgmd
+5m11s       Normal    SuccessfulDelete        replicaset/auth-c8b8cbffd            Deleted pod: auth-c8b8cbffd-88m4n
+5m11s       Normal    ScalingReplicaSet       deployment/auth                      Scaled down replica set auth-c8b8cbffd from 2 to 1
+5m11s       Normal    ScalingReplicaSet       deployment/auth                      Scaled up replica set auth-6648b45465 from 1 to 2
+5m10s       Normal    SuccessfulDelete        replicaset/gateway-fc9d658d8         Deleted pod: gateway-fc9d658d8-8b5bm
+5m10s       Normal    Created                 pod/auth-6648b45465-ksgmd            Created container: auth
+5m10s       Normal    Killing                 pod/gateway-fc9d658d8-8b5bm          Stopping container gateway
+5m10s       Normal    Started                 pod/auth-6648b45465-ksgmd            Started container auth
+5m10s       Normal    ScalingReplicaSet       deployment/gateway                   Scaled down replica set gateway-fc9d658d8 from 2 to 1
+5m9s        Normal    Scheduled               pod/gateway-7856d4bdf7-h2x8r         Successfully assigned aitu-sim/gateway-7856d4bdf7-h2x8r to ft-aitu-worker2
+5m9s        Normal    SuccessfulCreate        replicaset/gateway-7856d4bdf7        Created pod: gateway-7856d4bdf7-h2x8r
+5m9s        Normal    ScalingReplicaSet       deployment/gateway                   Scaled up replica set gateway-7856d4bdf7 from 1 to 2
+5m8s        Warning   Unhealthy               pod/auth-6648b45465-ksgmd            Readiness probe failed: Get "http://10.244.1.20:8080/readyz": dial tcp 10.244.1.20:8080: connect: connection refused
+5m8s        Normal    Started                 pod/gateway-7856d4bdf7-h2x8r         Started container gateway
+5m8s        Normal    Created                 pod/gateway-7856d4bdf7-h2x8r         Created container: gateway
+5m8s        Normal    Pulled                  pod/gateway-7856d4bdf7-h2x8r         Container image "aitu-sim:1.2" already present on machine
+5m7s        Warning   Unhealthy               pod/gateway-7856d4bdf7-h2x8r         Readiness probe failed: Get "http://10.244.2.17:8080/readyz": dial tcp 10.244.2.17:8080: connect: connection refused
+5m4s        Warning   Unhealthy               pod/gateway-fc9d658d8-8b5bm          Readiness probe failed: Get "http://10.244.2.2:8080/readyz": read tcp 10.244.2.1:44968->10.244.2.2:8080: read: connection reset by peer
+5m3s        Normal    Killing                 pod/auth-c8b8cbffd-vkx26             Stopping container auth
+5m3s        Normal    SuccessfulDelete        replicaset/auth-c8b8cbffd            Deleted pod: auth-c8b8cbffd-vkx26
+5m3s        Normal    ScalingReplicaSet       deployment/auth                      Scaled down replica set auth-c8b8cbffd from 1 to 0
+5m2s        Normal    SuccessfulDelete        replicaset/gateway-fc9d658d8         Deleted pod: gateway-fc9d658d8-jmfg8
+5m2s        Normal    ScalingReplicaSet       deployment/gateway                   Scaled down replica set gateway-fc9d658d8 from 1 to 0
+5m2s        Normal    Killing                 pod/gateway-fc9d658d8-jmfg8          Stopping container gateway
+5m1s        Normal    Killing                 pod/registration-5c754c649c-j55sz    Stopping container registration
+5m          Warning   FailedPreStopHook       pod/registration-5c754c649c-j55sz    PreStopHook failed
+4m57s       Warning   Unhealthy               pod/auth-c8b8cbffd-vkx26             Readiness probe failed: Get "http://10.244.2.6:8080/readyz": dial tcp 10.244.2.6:8080: connect: connection refused
+4m55s       Warning   Unhealthy               pod/gateway-fc9d658d8-jmfg8          Readiness probe failed: Get "http://10.244.1.6:8080/readyz": read tcp 10.244.1.1:37230->10.244.1.6:8080: read: connection reset by peer
+3m12s       Normal    Killing                 pod/db-1                             Stopping container db
+3m10s       Normal    Created                 pod/db-1                             Created container: db
+3m10s       Normal    Pulled                  pod/db-1                             Container image "aitu-sim:1.3" already present on machine
+3m10s       Normal    Scheduled               pod/db-1                             Successfully assigned aitu-sim/db-1 to ft-aitu-worker2
+3m9s        Normal    Started                 pod/db-1                             Started container db
+3m8s        Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.18:8080/readyz": dial tcp 10.244.2.18:8080: connect: connection refused
+3m6s        Normal    Killing                 pod/db-0                             Stopping container db
+3m5s        Normal    Scheduled               pod/db-0                             Successfully assigned aitu-sim/db-0 to ft-aitu-worker
+3m4s        Normal    Pulled                  pod/db-0                             Container image "aitu-sim:1.3" already present on machine
+3m4s        Normal    Started                 pod/db-0                             Started container db
+3m4s        Normal    Created                 pod/db-0                             Created container: db
+3m3s        Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.22:8080/readyz": dial tcp 10.244.1.22:8080: connect: connection refused
+2m49s       Normal    SuccessfulDelete        statefulset/db                       delete Pod db-1 in StatefulSet db successful
+2m49s       Normal    Killing                 pod/db-1                             Stopping container db
+2m48s       Normal    Scheduled               pod/db-1                             Successfully assigned aitu-sim/db-1 to ft-aitu-worker2
+2m47s       Normal    Pulled                  pod/db-1                             Container image "aitu-sim:1.3" already present on machine
+2m47s       Normal    Created                 pod/db-1                             Created container: db
+2m47s       Normal    Started                 pod/db-1                             Started container db
+2m46s       Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.19:8080/readyz": dial tcp 10.244.2.19:8080: connect: connection refused
+2m45s       Normal    Killing                 pod/db-0                             Stopping container db
+2m45s       Normal    SuccessfulDelete        statefulset/db                       delete Pod db-0 in StatefulSet db successful
+2m44s       Normal    Scheduled               pod/db-0                             Successfully assigned aitu-sim/db-0 to ft-aitu-worker
+2m43s       Normal    Pulled                  pod/db-0                             Container image "aitu-sim:1.3" already present on machine
+2m43s       Normal    Created                 pod/db-0                             Created container: db
+2m42s       Normal    Started                 pod/db-0                             Started container db
+2m41s       Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.23:8080/readyz": dial tcp 10.244.1.23:8080: connect: connection refused
+44s         Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.23:8080/readyz": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+8s          Normal    Killing                 pod/db-1                             Stopping container db
+8s          Normal    SuccessfulCreate        statefulset/db                       create Pod db-0 in StatefulSet db successful
+8s          Normal    SuccessfulCreate        replicaset/registration-5c754c649c   Created pod: registration-5c754c649c-vql9t
+8s          Normal    SuccessfulCreate        statefulset/db                       create Pod db-1 in StatefulSet db successful
+8s          Normal    Killing                 pod/db-0                             Stopping container db
+8s          Normal    NoPods                  poddisruptionbudget/db               No matching pods found
+8s          Normal    Scheduled               pod/db-0                             Successfully assigned aitu-sim/db-0 to ft-aitu-worker
+8s          Normal    Pulled                  pod/db-0                             Container image "aitu-sim:1.3" already present on machine
+8s          Normal    Scheduled               pod/db-1                             Successfully assigned aitu-sim/db-1 to ft-aitu-worker2
+8s          Normal    Scheduled               pod/registration-5c754c649c-vql9t    Successfully assigned aitu-sim/registration-5c754c649c-vql9t to ft-aitu-worker2
+7s          Normal    Pulled                  pod/db-1                             Container image "aitu-sim:1.3" already present on machine
+7s          Normal    Created                 pod/db-0                             Created container: db
+7s          Normal    Started                 pod/db-0                             Started container db
+7s          Normal    Pulled                  pod/registration-5c754c649c-vql9t    Container image "aitu-sim:1.2" already present on machine
+7s          Normal    Created                 pod/registration-5c754c649c-vql9t    Created container: registration
+7s          Normal    Started                 pod/db-1                             Started container db
+7s          Normal    Created                 pod/db-1                             Created container: db
+6s          Normal    Started                 pod/registration-5c754c649c-vql9t    Started container registration
+6s          Warning   Unhealthy               pod/db-1                             Readiness probe failed: Get "http://10.244.2.20:8080/readyz": dial tcp 10.244.2.20:8080: connect: connection refused
+5s          Warning   Unhealthy               pod/registration-5c754c649c-vql9t    Readiness probe failed: Get "http://10.244.2.21:8080/readyz": dial tcp 10.244.2.21:8080: connect: connection refused
+5s          Warning   Unhealthy               pod/db-0                             Readiness probe failed: Get "http://10.244.1.25:8080/readyz": dial tcp 10.244.1.25:8080: connect: connection refused
+2s          Warning   Unhealthy               pod/db-1                             Readiness probe failed: HTTP probe failed with statuscode: 503

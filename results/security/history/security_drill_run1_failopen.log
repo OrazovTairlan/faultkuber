@@ -1,0 +1,77 @@
+P0: waiting for a fresh vault backup ...
+P1: credential attack with live detector
+{"detected_at": 1793539549.1774433, "rule": "R1a", "level": "WARNING", "message": "10 failed logins in 3 min"}
+{"detected_at": 1793539563.54409, "rule": "R1b", "level": "CRITICAL", "message": "20 failed logins in 3 min - brute force"}
+{
+ "failed_logins_sent": 36,
+ "successful_login_status": 200,
+ "alerts": [
+  {
+   "detected_at": 1793539549.1774433,
+   "rule": "R1a",
+   "level": "WARNING",
+   "message": "10 failed logins in 3 min",
+   "after_first_failed_login_s": 2.0
+  },
+  {
+   "detected_at": 1793539563.54409,
+   "rule": "R1b",
+   "level": "CRITICAL",
+   "message": "20 failed logins in 3 min - brute force",
+   "after_first_failed_login_s": 16.4
+  }
+ ],
+ "seconds_from_first_failure_to_success": 19.3
+}
+P2: lateral movement attempts from the compromised Registration pod
+{
+ "compromised_pod": "registration-5c754c649c-j55sz",
+ "attempts": {
+  "auth": "BLOCKED",
+  "course": "BLOCKED",
+  "internet 1.1.1.1:443": "BLOCKED",
+  "db (allowed by design)": "ALLOWED"
+ },
+ "records_readable_via_allowed_db_path": 3350
+}
+P3: IMPACT - ransomware on the database nodes
+{
+ "encrypted_bytes_per_node": [
+  324889,
+  325274
+ ],
+ "encryption_and_restart_s": 1.2,
+ "backup_deletion_attempt_blocked": true,
+ "backup_deletion_output": [
+  "rm: cannot remove '/vault/db-20261101T132502Z.json': Operation not permitted",
+  "rm: cannot remove '/vault/db-20261101T132502Z.manifest.json': Operation not permitted"
+ ],
+ "backup_used_age_at_impact_s": 77.7
+}
+step 2 Isolate affected system: 6.9s
+step 3 Preserve evidence: 2.7s
+step 4 Activate backup: 1.1s
+step 5 Restore services: 209.7s
+step 6 Verify integrity: 66.5s
+step 7 Return to production: 18.0s
+{
+ "rpo": {
+  "backup_created_before_impact_s": 77.7,
+  "target_s": 300,
+  "writes_acked_after_backup_before_impact": 342,
+  "lost_of_those": 342,
+  "acked_before_backup_lost": 0
+ },
+ "rto": {
+  "impact_to_registration_service_restored_s": 226.1,
+  "impact_to_fully_back_in_production_s": 310.5,
+  "target_s": 1800,
+  "first_successful_registration_write_after_impact_s": 7.2
+ },
+ "user_impact": {
+  "registration_requests_failed": 355,
+  "timetable_courses_login_failed": 2,
+  "total_requests": 11907,
+  "monitor_alert_after_impact_s": 5.6
+ }
+}

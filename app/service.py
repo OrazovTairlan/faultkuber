@@ -185,22 +185,32 @@ class Store:
         self.records = {}
         os.makedirs(DATA_DIR, exist_ok=True)
         self.path = os.path.join(DATA_DIR, "records.jsonl")
+        self.marker = os.path.join(DATA_DIR, ".initialized")
+        expected = 0
+        if os.path.exists(self.marker):
+            try:
+                expected = int(open(self.marker).read() or 0)
+            except ValueError:
+                expected = 0
         if os.path.exists(self.path):
             with open(self.path) as f:
                 for line in f:
                     if line.strip():
                         rec = json.loads(line)
                         self.records[rec["id"]] = rec
+        self.damaged = len(self.records) < expected
 
     def put(self, rec):
         with self.lock:
-            if rec["id"] in self.records:
+            if self.damaged or rec["id"] in self.records:
                 return False
             self.records[rec["id"]] = rec
             with open(self.path, "a") as f:
                 f.write(json.dumps(rec) + "\n")
                 f.flush()
                 os.fsync(f.fileno())
+            with open(self.marker, "w") as f:
+                f.write(str(len(self.records)))
             return True
 
 
@@ -223,7 +233,14 @@ def anti_entropy():
 
 
 class DbHandler(Handler):
+    def ready(self):
+        if STORE.damaged:
+            return False, "data store missing: restore required"
+        return True, ""
+
     def handle_api(self, method, path, query):
+        if STORE.damaged:
+            return self.reply(503, {"error": "data store missing: restore required"})
         if method == "POST" and path == "/db/write":
             rec = self.read_json()
             STORE.put(rec)

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security charts</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
+<style>
+  body { margin:0; padding:24px 16px; background:#fcfcfb; color:#0b0b0b; font:14px/1.4 system-ui,Segoe UI,Arial,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  h2 { font-size:15px; margin:28px 0 2px; }
+  p.sub { margin:0 0 6px; color:#52514e; }
+</style></head>
+<body><div class="wrap">
+  <h1>Assignment 4 - security charts</h1>
+  <p class="sub">Data: results/security/analysis.json and drill.json</p>
+  <h2>Figure E1 - Anomaly scores: normal vs observed (threshold 0.75)</h2><div id="a"></div>
+  <h2>Figure D1 - Recovery drill: measured vs target minutes per step</h2><div id="d"></div>
+  <h2>Figure B1 - Risk score per threat (Likelihood x Impact)</h2><div id="r"></div>
+</div>
+<script>
+const DATA = {"anomalies": {"events": ["Login failures", "File modifications", "CPU usage", "Outbound traffic", "Database requests"], "normal": [0.1, 0.12, 0.2, 0.15, 0.18], "observed": [0.81, 0.96, 0.88, 0.79, 0.91]}, "steps": {"names": ["Detect", "Isolate", "Preserve evidence", "Activate backup", "Restore services", "Verify integrity", "Return to production"], "target": [2, 3, 5, 2, 10, 5, 3], "measured": [0.08, 0.12, 0.05, 0.04, 7.22, 0.14, 0.39]}, "risks": {"threats": ["Backup destruction", "Ransomware", "Credential compromise", "Privilege escalation", "Data exfiltration"], "score": [20, 20, 20, 16, 12], "level": ["Critical", "Critical", "Critical", "High", "High"]}};
+const ink = '#52514e';
+new ApexCharts(document.getElementById('a'), {
+  chart: { type: 'bar', height: 340, toolbar: { show: false }, animations: { enabled: false } },
+  series: [{ name: 'normal score', data: DATA.anomalies.normal }, { name: 'observed score', data: DATA.anomalies.observed }],
+  colors: ['#b7d3f6', '#2a78d6'], plotOptions: { bar: { columnWidth: '60%', borderRadius: 3 } },
+  dataLabels: { enabled: true, formatter: v => v.toFixed(2), style: { colors: ['#0b0b0b'], fontSize: '11px' }, offsetY: -18 },
+  xaxis: { categories: DATA.anomalies.events, labels: { style: { colors: ink } } },
+  yaxis: { min: 0, max: 1.1, tickAmount: 5, labels: { formatter: v => v.toFixed(2), style: { colors: ink } } },
+  annotations: { yaxis: [{ y: 0.75, borderColor: '#c0392b', strokeDashArray: 4, label: { text: 'anomaly threshold 0.75', style: { color: '#c0392b', background: 'transparent' }, position: 'left', textAnchor: 'start' } }] },
+  grid: { borderColor: '#e6e5e1' }, legend: { position: 'top', horizontalAlign: 'left' }
+}).render();
+new ApexCharts(document.getElementById('d'), {
+  chart: { type: 'bar', height: 380, toolbar: { show: false }, animations: { enabled: false } },
+  series: [{ name: 'target budget (min)', data: DATA.steps.target }, { name: 'measured in drill (min)', data: DATA.steps.measured }],
+  colors: ['#b7d3f6', '#2a78d6'], plotOptions: { bar: { horizontal: true, barHeight: '70%', borderRadius: 3 } },
+  dataLabels: { enabled: true, formatter: v => v + ' min', style: { colors: ['#0b0b0b'], fontSize: '11px' } },
+  xaxis: { categories: DATA.steps.names.map((n, i) => (i + 1) + '. ' + n), title: { text: 'minutes' }, labels: { style: { colors: ink } } },
+  grid: { borderColor: '#e6e5e1' }, legend: { position: 'top', horizontalAlign: 'left' }
+}).render();
+const levelColor = { Critical: '#e34948', High: '#ec835a', Medium: '#eda100', Low: '#1baf7a' };
+new ApexCharts(document.getElementById('r'), {
+  chart: { type: 'bar', height: 300, toolbar: { show: false }, animations: { enabled: false } },
+  series: [{ name: 'risk score', data: DATA.risks.score }],
+  colors: [({ dataPointIndex }) => levelColor[DATA.risks.level[dataPointIndex]]],
+  plotOptions: { bar: { horizontal: true, distributed: true, barHeight: '60%', borderRadius: 3 } },
+  dataLabels: { enabled: true, formatter: (v, o) => v + ' ' + DATA.risks.level[o.dataPointIndex] },
+  xaxis: { categories: DATA.risks.threats, min: 0, max: 25, tickAmount: 5, labels: { style: { colors: ink } } },
+  legend: { show: false }, grid: { borderColor: '#e6e5e1' }
+}).render();
+</script></body></html>

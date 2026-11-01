@@ -1,0 +1,152 @@
+{
+  "started": "20261101T184534",
+  "time_compression": "dataset minutes are shortened to seconds; intervals between phases are NOT real-time",
+  "baseline_records": 5593,
+  "P1_credential_attack": {
+    "failed_logins_sent": 36,
+    "successful_login_status": 200,
+    "alerts": [
+      {
+        "detected_at": 1793540781.3802683,
+        "rule": "R1a",
+        "level": "WARNING",
+        "message": "10 failed logins in 3 min",
+        "after_first_failed_login_s": 2.1
+      },
+      {
+        "detected_at": 1793540795.2721767,
+        "rule": "R1b",
+        "level": "CRITICAL",
+        "message": "20 failed logins in 3 min - brute force",
+        "after_first_failed_login_s": 16.0
+      }
+    ],
+    "seconds_from_first_failure_to_success": 19.5
+  },
+  "P2_lateral_movement": {
+    "compromised_pod": "registration-5c754c649c-mt4vn",
+    "attempts": {
+      "auth": "BLOCKED",
+      "course": "BLOCKED",
+      "internet 1.1.1.1:443": "BLOCKED",
+      "db (allowed by design)": "ALLOWED"
+    },
+    "records_readable_via_allowed_db_path": 5738
+  },
+  "P3_impact": {
+    "encrypted_bytes_per_node": [
+      556447,
+      556738
+    ],
+    "encryption_and_restart_s": 1.6,
+    "backup_deletion_attempt_blocked": true,
+    "backup_deletion_output": [
+      "rm: cannot remove '/vault/db-20261101T134502Z.json': Operation not permitted",
+      "rm: cannot remove '/vault/db-20261101T134502Z.manifest.json': Operation not permitted"
+    ],
+    "backup_used_age_at_impact_s": 111.6
+  },
+  "steps": {
+    "1": {
+      "action": "Detect incident",
+      "started_after_impact_s": 0,
+      "duration_s": 5.3,
+      "how": "synthetic probe: 5 consecutive failed registration reads; credential attack was detected earlier by R1a/R1b"
+    },
+    "2": {
+      "action": "Isolate affected system",
+      "started_after_impact_s": 5.6,
+      "duration_s": 6.7,
+      "quarantined_pod": "registration-5c754c649c-mt4vn",
+      "db_reachable_from_quarantined_pod": "BLOCKED",
+      "backup_cronjob_suspended": true
+    },
+    "3": {
+      "action": "Preserve evidence",
+      "started_after_impact_s": 12.3,
+      "duration_s": 3.3,
+      "evidence_dir": "results/security/evidence/20261101T184534",
+      "files": 10
+    },
+    "4": {
+      "action": "Activate backup",
+      "started_after_impact_s": 15.6,
+      "duration_s": 1.9,
+      "backup": "db-20261101T134502Z.json",
+      "manifest_sha256_matches_file": true,
+      "immutable_flag_set": true,
+      "backup_records": 5399,
+      "backup_age_at_impact_s": 111.6
+    },
+    "5": {
+      "action": "Restore services",
+      "started_after_impact_s": 17.5,
+      "duration_s": 383.0,
+      "restore_job": {
+        "restored_from": "db-20261101T134502Z.json",
+        "records": 5399,
+        "verified_sha256": true,
+        "backup_age_s": 143.6,
+        "restore_s": 365.9
+      }
+    },
+    "6": {
+      "action": "Verify integrity",
+      "started_after_impact_s": 400.5,
+      "duration_s": 8.6,
+      "records_restored_db0": 6735,
+      "records_restored_db1": 6735,
+      "nodes_identical": true,
+      "all_backup_records_present": true,
+      "backup_records": 5399,
+      "backup_ids_sha256": "76d02573f86c9630b292bfe73e0745d8e04e5ed6343bddbd49480e278977ac2a",
+      "ids_sha256_db0": "768fd9cfad9e6f379e327755c8d274e646c15d43c5c6058ac48eb2affd0ced5e",
+      "ids_sha256_db1": "768fd9cfad9e6f379e327755c8d274e646c15d43c5c6058ac48eb2affd0ced5e",
+      "traffic_held_during_verification": true,
+      "functional_check": {
+        "timetable": 200,
+        "login": 200,
+        "register": 201,
+        "read": 200
+      }
+    },
+    "7": {
+      "action": "Return to production",
+      "started_after_impact_s": 409.1,
+      "duration_s": 19.9,
+      "auth_secret_rotated": true,
+      "compromised_pod_deleted": true,
+      "backup_cronjob_resumed": true,
+      "functional_check": {
+        "timetable": 502,
+        "login": 200,
+        "register": 503,
+        "read": 200
+      }
+    }
+  },
+  "rpo": {
+    "backup_created_before_impact_s": 111.6,
+    "target_s": 300,
+    "writes_acked_after_backup_before_impact": 335,
+    "lost_of_those": 335,
+    "acked_before_backup_lost": 0,
+    "acked_between_impact_and_restore_done": 1704,
+    "lost_of_those_accepted_while_data_missing": 7,
+    "acked_after_restore": 50,
+    "lost_after_restore": 0
+  },
+  "rto": {
+    "impact_to_registration_service_restored_s": 400.5,
+    "impact_to_fully_back_in_production_s": 429.0,
+    "target_s": 1800,
+    "first_successful_registration_write_after_impact_s": 1.1
+  },
+  "user_impact": {
+    "registration_requests_failed": 448,
+    "timetable_courses_login_failed": 35,
+    "total_requests": 15259,
+    "monitor_alert_after_impact_s": 5.3
+  },
+  "final_audit_records": 6791
+}

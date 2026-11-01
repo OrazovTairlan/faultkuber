@@ -1,0 +1,73 @@
+flowchart LR
+    subgraph Z1["1 Untrusted"]
+        U["Students and researchers"]
+        X["Attacker: brute force, ransomware"]
+    end
+
+    subgraph Z2["2 Edge zone - DMZ"]
+        WAF["WAF + rate limit<br/>DESIGN"]
+        MFA["MFA / IdP: TOTP, lockout<br/>DESIGN"]
+        GW["API Gateway x2<br/>only public entry - BUILT"]
+    end
+
+    subgraph Z3["3 App zone - default-deny NetworkPolicy"]
+        AUTH["Auth x2"]
+        COURSE["Course x2"]
+        REG["Registration x2<br/>only service allowed to reach DB"]
+    end
+
+    subgraph Z4["4 Data zone"]
+        DB0["DB node db-0<br/>PV, fsync, fail-closed"]
+        DB1["DB node db-1<br/>PV, fsync, fail-closed"]
+    end
+
+    subgraph Z5["5 Vault zone - own namespace, no inbound"]
+        BK["vault-backup CronJob<br/>every 5 min, sha256 manifest"]
+        IMM["Immutable store<br/>chattr +i, retention 7 d"]
+        AIR["Offline air-gapped copy in Kazakhstan<br/>weekly - DESIGN"]
+    end
+
+    subgraph Z6["6 Monitoring and intrusion detection"]
+        LOG["Log collector"]
+        RULES["Rule engine R1-R8"]
+        PROBE["Synthetic probe: 5 failed reads = alert"]
+        AI["AI anomaly score >= 0.75<br/>advisory - DESIGN"]
+    end
+
+    subgraph Z7["7 Recovery environment - clean room"]
+        CLEAN["Clean data tier: volumes recreated from YAML, secrets rotated"]
+        RESTORE["Restore job: verify sha256, write, compare ids, cut over"]
+    end
+
+    U -->|"1"| WAF --> MFA --> GW
+    X -.->|"attack path"| GW
+    GW -->|"2"| AUTH
+    GW --> COURSE
+    GW --> REG
+    REG -->|"3"| DB0
+    REG --> DB1
+    DB0 <-->|"sync replication"| DB1
+    DB0 -->|"4"| BK --> IMM -.-> AIR
+    GW -.->|"5 logs"| LOG
+    REG -.-> LOG
+    DB0 -.-> LOG
+    LOG --> RULES --> AI
+    PROBE -.-> REG
+    IMM -->|"6 restore source"| RESTORE
+    CLEAN --> RESTORE
+    RESTORE -->|"7 cut over"| DB0
+
+    classDef edge fill:#e8eef7,stroke:#3b6fb6,color:#1f2933
+    classDef app fill:#e3f4ea,stroke:#2e8b57,color:#1f2933
+    classDef data fill:#fdf1d6,stroke:#c28a00,color:#1f2933
+    classDef mon fill:#fde9e4,stroke:#c0562f,color:#1f2933
+    classDef vault fill:#f3e5f5,stroke:#7b3f98,color:#1f2933
+    classDef rec fill:#e0f3f5,stroke:#1b8a96,color:#1f2933
+    classDef ext fill:#eeeeee,stroke:#666666,color:#1f2933
+    class WAF,MFA,GW edge
+    class AUTH,COURSE,REG app
+    class DB0,DB1 data
+    class LOG,RULES,PROBE,AI mon
+    class BK,IMM,AIR vault
+    class CLEAN,RESTORE rec
+    class U,X ext

@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata: {name: vault-restore, namespace: vault}
+spec:
+  backoffLimit: 2
+  template:
+    metadata:
+      labels: {role: vault}
+    spec:
+      restartPolicy: OnFailure
+      automountServiceAccountToken: false
+      nodeSelector: {kubernetes.io/hostname: ft-aitu-worker}
+      containers:
+        - name: restore
+          image: aitu-sim:1.2
+          imagePullPolicy: IfNotPresent
+          command: ["python", "/scripts/restore.py"]
+          securityContext: {runAsUser: 0, allowPrivilegeEscalation: false, capabilities: {drop: ["ALL"]}}
+          volumeMounts:
+            - {name: scripts, mountPath: /scripts, readOnly: true}
+            - {name: vault, mountPath: /vault, readOnly: true}
+      volumes:
+        - {name: scripts, configMap: {name: vault-scripts}}
+        - {name: vault, hostPath: {path: /vault, type: Directory}}

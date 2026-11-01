@@ -1,0 +1,286 @@
+{
+  "stages": [
+    {
+      "time": "09:01",
+      "event": "15 failed logins",
+      "source": "10.20.4.15",
+      "dataset_severity": "Medium",
+      "stage": "Credential attack",
+      "evidence": "15 failed logins in the first minute from one source (10.20.4.15); no success yet - password guessing / spraying. First indicator of the incident.",
+      "risk": "Medium: no access gained yet, but it is the earliest and cheapest point to stop the attack."
+    },
+    {
+      "time": "09:03",
+      "event": "21 failed logins",
+      "source": "10.20.4.15",
+      "dataset_severity": "High",
+      "stage": "Credential attack",
+      "evidence": "21 more failures from the same source, 36 in total within 3 min; the dataset raises severity to High - the attack is persistent, not a typo.",
+      "risk": "High: failure count is rising 15 -> 21, so a success is likely next."
+    },
+    {
+      "time": "09:04",
+      "event": "Successful login",
+      "source": "10.20.4.15",
+      "dataset_severity": "High",
+      "stage": "Privilege compromise",
+      "evidence": "A successful login from the same IP 10.20.4.15 right after 36 failures = valid credentials obtained (account takeover). All later events follow within 14 minutes.",
+      "risk": "Critical in my assessment (dataset: High): attacker is now authenticated; this is the point of no return."
+    },
+    {
+      "time": "09:07",
+      "event": "320 files modified",
+      "source": "10.20.4.15",
+      "dataset_severity": "Critical",
+      "stage": "Data destruction",
+      "evidence": "320 files modified, source still 10.20.4.15, three minutes after the login - bulk write activity typical of ransomware staging/encryption start.",
+      "risk": "Critical: integrity of research data is being destroyed."
+    },
+    {
+      "time": "09:08",
+      "event": "CPU usage increased to 95%",
+      "source": "Research-Server-01",
+      "dataset_severity": "High",
+      "stage": "Data destruction",
+      "evidence": "CPU 95% on Research-Server-01 one minute after the file burst - encryption routine is running (cryptographic work is CPU-bound).",
+      "risk": "High: confirms the file activity is automated; resource exhaustion also degrades the service."
+    },
+    {
+      "time": "09:10",
+      "event": "1,200 files encrypted",
+      "source": "Research-Server-01",
+      "dataset_severity": "Critical",
+      "stage": "Data destruction",
+      "evidence": "1,200 files encrypted: 3.75x the 320 files modified at 09:07, i.e. about 400 files/min over the 3 minutes since 09:07.",
+      "risk": "Critical: impact reached; data unavailable without a backup."
+    },
+    {
+      "time": "09:12",
+      "event": "Backup deletion attempt",
+      "source": "Research-Server-01",
+      "dataset_severity": "Critical",
+      "stage": "Recovery attack",
+      "evidence": "Backup deletion attempt from the same host 2 min after encryption - the attacker removes the recovery path so that ransom is the only option.",
+      "risk": "Critical: if it succeeds, RPO and RTO targets become impossible."
+    },
+    {
+      "time": "09:13",
+      "event": "Outbound connection to unknown IP",
+      "source": "Research-Server-01",
+      "dataset_severity": "High",
+      "stage": "Exfiltration",
+      "evidence": "Outbound connection from the server to an unknown IP - possible command-and-control or data theft (double extortion).",
+      "risk": "High: a confidentiality breach may carry personal-data and research-IP obligations."
+    },
+    {
+      "time": "09:15",
+      "event": "Database access spike",
+      "source": "Research-Server-01",
+      "dataset_severity": "High",
+      "stage": "Exfiltration",
+      "evidence": "Database access spike two minutes after the outbound connection - data collection/staging before upload.",
+      "risk": "High: mass reads of the research database; scope of theft unknown."
+    },
+    {
+      "time": "09:18",
+      "event": "Antivirus disabled",
+      "source": "Research-Server-01",
+      "dataset_severity": "Critical",
+      "stage": "Persistence",
+      "evidence": "Antivirus disabled (needs administrative rights) - defence evasion that keeps the foothold and blocks clean-up. Mapped to the nearest allowed stage.",
+      "risk": "Critical: attacker holds admin rights and detection is now blind on this host."
+    }
+  ],
+  "risks": [
+    {
+      "threat": "Backup destruction",
+      "likelihood": 4,
+      "impact": 5,
+      "score": 20,
+      "level": "Critical",
+      "priority": 1,
+      "justification": "A deletion attempt at 09:12 proves intent (likelihood 4). Impact 5: it removes the only recovery path - without backups ransomware becomes unrecoverable."
+    },
+    {
+      "threat": "Ransomware",
+      "likelihood": 4,
+      "impact": 5,
+      "score": 20,
+      "level": "Critical",
+      "priority": 2,
+      "justification": "Encryption of 1,200 files is already in the dataset; likelihood 4 (not 5) because recurrence depends on the controls added. Impact 5: research data and service unavailable."
+    },
+    {
+      "threat": "Credential compromise",
+      "likelihood": 5,
+      "impact": 4,
+      "score": 20,
+      "level": "Critical",
+      "priority": 3,
+      "justification": "Occurred: 36 failures then a success within 3 minutes; no MFA evidence in the dataset. Impact 4: full account takeover but initially limited to one user's rights."
+    },
+    {
+      "threat": "Privilege escalation",
+      "likelihood": 4,
+      "impact": 4,
+      "score": 16,
+      "level": "High",
+      "priority": 4,
+      "justification": "Disabling antivirus needs admin rights, so escalation very likely already happened (4). Impact 4: attacker can switch off defences and reach other systems."
+    },
+    {
+      "threat": "Data exfiltration",
+      "likelihood": 3,
+      "impact": 4,
+      "score": 12,
+      "level": "High",
+      "priority": 5,
+      "justification": "Outbound connection and DB spike are indicators, not proof of theft (likelihood 3). Impact 4: research IP and personal data, with regulatory and reputation cost."
+    }
+  ],
+  "anomalies": [
+    {
+      "event": "Login failures",
+      "normal": 0.1,
+      "observed": 0.81,
+      "delta": 0.71,
+      "ratio": 8.1,
+      "anomaly": true,
+      "weight": 3,
+      "priority_score": 2.43
+    },
+    {
+      "event": "File modifications",
+      "normal": 0.12,
+      "observed": 0.96,
+      "delta": 0.84,
+      "ratio": 8.0,
+      "anomaly": true,
+      "weight": 5,
+      "priority_score": 4.8
+    },
+    {
+      "event": "CPU usage",
+      "normal": 0.2,
+      "observed": 0.88,
+      "delta": 0.68,
+      "ratio": 4.4,
+      "anomaly": true,
+      "weight": 2,
+      "priority_score": 1.76
+    },
+    {
+      "event": "Outbound traffic",
+      "normal": 0.15,
+      "observed": 0.79,
+      "delta": 0.64,
+      "ratio": 5.3,
+      "anomaly": true,
+      "weight": 4,
+      "priority_score": 3.16
+    },
+    {
+      "event": "Database requests",
+      "normal": 0.18,
+      "observed": 0.91,
+      "delta": 0.73,
+      "ratio": 5.1,
+      "anomaly": true,
+      "weight": 4,
+      "priority_score": 3.64
+    }
+  ],
+  "anomaly_count": 5,
+  "anomaly_total": 5,
+  "anomaly_rate_pct": 100.0,
+  "highest_priority_by_score": "File modifications",
+  "highest_priority_weighted": "File modifications",
+  "ranking_weighted": [
+    "File modifications",
+    "Database requests",
+    "Outbound traffic",
+    "Login failures",
+    "CPU usage"
+  ],
+  "timeline": {
+    "first_indicator_to_compromise_min": 3,
+    "compromise_to_first_file_burst_min": 3,
+    "compromise_to_encryption_min": 6,
+    "first_indicator_to_backup_attack_min": 11,
+    "first_indicator_to_av_disabled_min": 17,
+    "total_incident_window_min": 17,
+    "failed_logins_total": 36,
+    "failed_login_rate_per_min_first_3min": 12.0
+  },
+  "detector_replay": {
+    "alerts": [
+      {
+        "time": "09:01",
+        "rule": "R1a",
+        "level": "WARNING",
+        "message": "15 failed logins in 3 min"
+      },
+      {
+        "time": "09:03",
+        "rule": "R1b",
+        "level": "CRITICAL",
+        "message": "36 failed logins in 3 min - brute force"
+      },
+      {
+        "time": "09:04",
+        "rule": "R2",
+        "level": "CRITICAL",
+        "message": "successful login after 36 failures from 10.20.4.15 - suspected account takeover"
+      },
+      {
+        "time": "09:07",
+        "rule": "R3",
+        "level": "CRITICAL",
+        "message": "320 files modified in 1 min - ransomware behaviour"
+      },
+      {
+        "time": "09:08",
+        "rule": "R7",
+        "level": "HIGH",
+        "message": "CPU 95%"
+      },
+      {
+        "time": "09:10",
+        "rule": "R3b",
+        "level": "CRITICAL",
+        "message": "1200 files encrypted"
+      },
+      {
+        "time": "09:12",
+        "rule": "R4",
+        "level": "CRITICAL",
+        "message": "backup deletion attempt - recovery attack"
+      },
+      {
+        "time": "09:13",
+        "rule": "R5",
+        "level": "HIGH",
+        "message": "outbound connection to non-allow-listed IP"
+      },
+      {
+        "time": "09:15",
+        "rule": "R8",
+        "level": "HIGH",
+        "message": "database request rate far above baseline - possible data collection"
+      },
+      {
+        "time": "09:18",
+        "rule": "R6",
+        "level": "CRITICAL",
+        "message": "endpoint protection disabled"
+      }
+    ],
+    "events_covered": 10,
+    "events_total": 10,
+    "first_alert": "09:01",
+    "first_critical_alert": "09:03",
+    "minutes_first_alert_before_encryption": 9,
+    "minutes_first_critical_before_encryption": 7,
+    "uncovered_events": []
+  }
+}

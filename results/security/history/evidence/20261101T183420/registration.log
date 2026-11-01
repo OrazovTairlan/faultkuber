@@ -1,0 +1,2000 @@
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793539882.13, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793539882.398, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793539882.491, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539882.531, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793539882.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539882.818, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539883.063, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539883.066, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539883.536, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793539883.581, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539883.589, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539883.918, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539884.044, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793539884.098, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539884.364, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539884.586, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539884.77, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793539884.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539885.635, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539886.339, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539886.776, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539886.778, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539887.662, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539888.775, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539890.539, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539890.775, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539890.862, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539891.338, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539891.987, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539892.505, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539892.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539894.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539895.786, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539896.338, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539896.427, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539896.773, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539896.944, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539897.462, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539898.495, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539898.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539900.054, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539900.569, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793539900.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539901.338, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539902.774, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539904.776, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539906.338, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539906.775, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539908.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539910.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539911.336, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539912.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539914.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539916.336, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539916.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539918.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539920.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539921.336, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539922.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539924.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539926.336, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539926.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539928.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539930.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539931.337, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539932.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539934.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539936.335, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539936.772, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539938.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539940.77, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539941.333, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539942.77, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539944.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539946.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539946.77, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539948.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539950.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539951.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539952.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539954.77, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539956.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539956.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539958.77, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539960.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539961.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539962.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539964.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539966.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539966.771, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539968.767, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539970.768, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539971.335, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539972.767, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539974.767, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539976.332, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539976.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539978.768, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539980.768, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539981.331, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539982.768, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539984.778, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539986.337, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539986.799, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539988.783, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539990.767, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539991.332, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539992.768, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539994.767, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539996.332, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793539996.768, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793539998.766, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540000.766, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540001.329, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540002.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540004.766, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540006.331, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540006.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540008.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540010.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540011.33, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540012.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540014.766, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540016.33, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540016.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540018.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540020.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540021.33, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540022.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540024.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540026.329, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540026.765, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540028.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540030.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540031.327, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540032.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540034.762, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540036.328, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540036.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540038.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540040.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540041.327, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540042.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540044.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540046.328, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540046.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540048.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540050.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540051.328, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540052.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540054.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540056.328, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540056.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540058.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540060.761, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540061.325, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540062.761, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540064.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540066.325, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540066.763, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540068.762, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540070.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540071.325, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540072.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540074.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540076.325, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540076.761, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540078.762, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540080.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540081.324, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540082.761, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540084.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540086.324, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540086.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540088.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540090.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540091.324, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540092.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540094.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540096.324, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540096.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540098.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540100.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540101.323, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540102.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540103.946, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540104.092, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540104.234, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540104.521, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540104.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540104.937, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540105.104, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540105.114, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540105.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540105.535, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540105.639, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540106.234, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540106.323, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540106.491, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540106.562, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540106.761, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540106.773, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540106.848, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540107.044, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540107.056, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540107.403, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540107.837, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540107.85, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540108.662, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540108.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540108.937, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540109.129, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540109.135, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540109.269, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540109.526, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540109.536, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540109.889, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540110.037, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540110.058, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540110.236, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540110.705, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540110.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540110.841, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540110.966, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540111.323, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540111.336, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540111.429, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540111.48, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540111.631, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540111.64, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540111.838, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540111.858, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540111.963, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540112.03, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540112.529, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540112.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540112.769, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540113.005, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540113.009, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540113.105, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540113.143, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540113.234, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540113.621, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540113.835, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540114.016, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540114.085, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540114.435, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540114.468, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540114.59, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540114.737, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540114.738, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540114.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540114.84, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540115.474, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540115.632, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540115.941, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540115.941, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540116.134, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540116.322, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540116.342, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540116.439, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540116.639, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540116.758, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540117.01, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540117.039, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540117.111, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540117.967, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540118.157, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540118.335, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540118.583, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540118.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540119.088, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540120.069, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540120.667, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540120.727, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540120.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540120.97, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540121.133, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540121.229, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540121.238, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540121.321, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540121.384, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540121.705, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540121.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540121.802, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540122.282, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540122.295, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540122.513, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540122.532, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540122.633, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540122.738, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540122.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540122.833, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540122.899, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540122.986, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540123.046, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540123.17, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540123.261, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540123.328, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540123.347, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540123.624, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540123.809, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540123.906, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540124.09, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540124.267, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540124.402, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540124.436, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540124.535, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540124.734, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540124.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540125.429, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540125.461, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540125.978, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540126.306, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540126.322, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540126.5, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540126.527, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540126.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540126.799, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540126.921, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540127.472, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540127.544, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540127.626, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540127.636, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540127.906, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540127.941, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540128.113, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540128.228, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540128.235, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540128.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540128.437, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540128.505, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540128.608, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540128.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540129.035, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540129.491, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540129.637, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540129.945, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540130.006, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540130.132, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540130.251, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540130.33, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540130.5, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540130.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540131.321, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540131.325, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540131.74, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540131.899, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540132.035, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540132.188, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540132.244, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540132.416, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540132.512, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540132.622, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540132.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540132.924, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540132.932, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540133.0, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540133.123, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540133.393, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540133.926, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540134.105, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540134.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540134.938, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540134.942, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540134.97, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540135.125, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540135.439, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540135.745, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540135.847, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540136.322, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540136.438, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540136.703, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540136.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540137.353, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540137.594, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540137.934, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540138.046, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540138.149, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540138.346, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540138.691, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540138.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540138.792, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540138.926, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540139.447, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540139.536, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540140.233, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540140.304, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540140.336, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540140.542, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540140.633, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540140.709, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540140.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540140.906, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540141.204, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540141.303, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540141.321, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540141.492, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540141.549, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540141.737, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540141.831, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540142.047, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540142.155, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540142.471, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540142.73, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540142.744, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540142.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540143.132, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540143.238, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540143.24, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540143.33, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540143.792, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540144.005, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540144.631, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540144.67, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540144.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540144.836, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540144.902, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540144.902, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 42232)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.002, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.002, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52140)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 42234)
+{"ts": 1793540145.074, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}{"ts": 1793540145.077, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.078, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.278, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.278, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52150)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+{"ts": 1793540145.279, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.279, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+
+During handling of the above exception, another exception occurred:
+
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52156)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.34, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540145.366, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540145.368, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540145.371, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 42240)
+Traceback (most recent call last):
+  File "/app/service.py", line 288, in handle_api
+    return self.reply(200, {"student_id": sid, "registrations": resp["records"]})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 126, in do_GET
+    self.route("GET")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.464, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540145.464, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540145.464, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 42266)
+Traceback (most recent call last):
+  File "/app/service.py", line 288, in handle_api
+    return self.reply(200, {"student_id": sid, "registrations": resp["records"]})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 126, in do_GET
+    self.route("GET")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.58, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.58, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52204)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.879, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.879, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52214)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540145.98, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540145.98, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52234)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540146.026, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540146.032, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540146.032, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540146.032, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52236)
+Traceback (most recent call last):
+  File "/app/service.py", line 288, in handle_api
+    return self.reply(200, {"student_id": sid, "registrations": resp["records"]})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 126, in do_GET
+    self.route("GET")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540146.138, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52252)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+{"ts": 1793540146.181, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540146.182, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540146.231, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+----------------------------------------
+{"ts": 1793540146.231, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}{"ts": 1793540146.231, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+
+{"ts": 1793540146.232, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+Exception occurred during processing of request from----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 52294)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+ ('10.244.2.17', 52282)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540146.301, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540146.322, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540146.425, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540146.465, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540146.625, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540146.634, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540146.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540146.81, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540147.428, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540147.463, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540147.666, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540147.85, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540148.024, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540148.324, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540148.69, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540148.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540148.829, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540149.828, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540150.263, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540150.5, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540150.601, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540150.638, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540150.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540151.006, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540151.123, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540151.198, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540151.246, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540151.319, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540151.854, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540152.438, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540152.734, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540152.753, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540152.802, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540152.925, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540152.934, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540153.391, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540153.442, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540153.688, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540153.724, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540153.949, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540154.033, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540154.209, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540154.499, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540154.753, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540154.759, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540155.039, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540155.434, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540155.788, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540155.929, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540156.106, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540156.167, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540156.305, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540156.318, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540156.567, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540156.755, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540156.846, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540156.848, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540157.341, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540157.443, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 44042)
+{"ts": 1793540157.444, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540157.445, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540157.729, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 44052)
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540157.73, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540157.73, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+{"ts": 1793540157.737, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540157.737, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540157.738, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540157.738, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 44054)
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+{"ts": 1793540157.743, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+{"ts": 1793540157.744, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540157.744, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 40574)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540157.954, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540157.955, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540157.955, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 40618)
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 40644)
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+{"ts": 1793540158.037, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}{"ts": 1793540158.037, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540158.039, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540158.039, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+
+{"ts": 1793540158.042, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 44058)
+{"ts": 1793540158.042, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+Traceback (most recent call last):
+  File "/app/service.py", line 283, in handle_api
+    return self.reply(201, {"registered": rec["id"],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540158.136, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540158.225, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540158.236, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540158.372, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540158.534, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540158.64, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540158.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540158.932, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540158.951, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540159.027, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540159.268, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540159.403, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540159.554, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540159.702, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540159.784, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540159.802, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540159.837, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540160.167, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540160.278, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540160.303, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540160.454, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540160.562, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540160.658, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540160.736, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540160.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540161.156, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540161.187, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540161.257, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540161.318, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540161.353, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540161.47, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540161.638, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540161.944, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540162.135, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540162.201, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540162.387, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540162.469, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540162.575, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540162.638, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540162.704, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540162.753, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540162.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540162.897, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540163.029, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540163.229, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540163.337, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540163.444, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540163.689, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540163.732, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540164.234, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540164.438, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540164.612, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540164.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540164.933, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540165.127, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540165.133, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540165.228, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540165.238, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540165.389, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540165.916, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540166.297, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540166.318, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540166.428, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540166.669, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540166.756, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540166.939, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540166.959, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540167.225, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540167.25, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540167.502, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540167.827, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540167.899, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540168.303, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540168.346, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540168.398, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540168.668, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540168.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540168.889, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540169.055, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540169.469, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540169.943, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540170.446, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540170.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540170.803, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540170.892, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540171.036, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540171.309, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540171.318, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540171.328, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540171.418, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540171.745, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540172.404, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540172.625, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540172.645, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540172.743, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540172.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540173.135, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540173.144, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540173.661, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540173.73, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540174.137, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540174.237, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540174.302, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540174.305, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540174.754, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540174.819, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540174.902, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540175.133, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540175.303, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540175.685, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540175.803, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540175.849, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540176.171, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540176.245, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540176.319, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540176.329, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540176.435, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540176.661, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540176.757, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540176.76, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540177.079, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540177.164, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540177.597, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540177.698, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540177.701, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540177.914, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540178.024, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540178.044, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540178.214, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540178.597, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540178.799, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540178.803, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540178.912, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540178.932, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540179.203, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540179.301, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540179.423, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540179.804, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540179.845, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540180.334, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540180.459, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540180.698, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540180.728, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540180.739, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540180.752, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540181.167, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540181.316, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540181.473, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540181.523, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540181.536, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540181.649, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 201 -"}
+{"ts": 1793540181.75, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540181.99, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 200 -"}
+{"ts": 1793540182.764, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540183.458, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 503 -"}
+{"ts": 1793540183.46, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "POST /registrations HTTP/1.1", "msg": "\"POST /registrations HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.16', 43368)
+Traceback (most recent call last):
+  File "/app/service.py", line 282, in handle_api
+    resp = db_request("POST", "/db/write", rec)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 129, in do_POST
+    self.route("POST")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 38934)
+Traceback (most recent call last):
+  File "/app/service.py", line 287, in handle_api
+    resp = db_request("GET", f"/db/records?student_id={sid}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 126, in do_GET
+    self.route("GET")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540183.494, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540183.494, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 500 -"}
+{"ts": 1793540183.536, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 503 -"}
+{"ts": 1793540183.536, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /registrations/S0001 HTTP/1.1", "msg": "\"GET /registrations/S0001 HTTP/1.1\" 500 -"}
+----------------------------------------
+Exception occurred during processing of request from ('10.244.2.17', 38942)
+Traceback (most recent call last):
+  File "/app/service.py", line 287, in handle_api
+    resp = db_request("GET", f"/db/records?student_id={sid}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 269, in db_request
+    raise ConnectionError("no database node reachable")
+ConnectionError: no database node reachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/service.py", line 139, in route
+    self.handle_api(method, url.path, urllib.parse.parse_qs(url.query))
+  File "/app/service.py", line 290, in handle_api
+    return self.reply(503, {"error": "registration database unavailable",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/service.py", line 119, in reply
+    self.wfile.write(data)
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/app/service.py", line 126, in do_GET
+    self.route("GET")
+  File "/app/service.py", line 141, in route
+    self.reply(500, {"error": type(exc).__name__, "detail": str(exc)})
+  File "/app/service.py", line 118, in reply
+    self.end_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 542, in end_headers
+    self.flush_headers()
+  File "/usr/local/lib/python3.12/http/server.py", line 546, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "/usr/local/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+{"ts": 1793540184.751, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540186.316, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /healthz HTTP/1.1", "msg": "\"GET /healthz HTTP/1.1\" 200 -"}
+{"ts": 1793540186.751, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}
+{"ts": 1793540188.751, "svc": "registration", "pod": "registration-5c754c649c-ckz9d", "req": "GET /readyz HTTP/1.1", "msg": "\"GET /readyz HTTP/1.1\" 200 -"}

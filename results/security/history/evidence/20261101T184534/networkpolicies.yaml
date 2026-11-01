@@ -1,0 +1,205 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"allow-dns","namespace":"aitu-sim"},"spec":{"egress":[{"ports":[{"port":53,"protocol":"UDP"},{"port":53,"protocol":"TCP"}],"to":[{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"kube-system"}},"podSelector":{"matchLabels":{"k8s-app":"kube-dns"}}}]}],"podSelector":{},"policyTypes":["Egress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: allow-dns
+    namespace: aitu-sim
+    resourceVersion: "1643"
+    uid: 90e55c4b-7434-400b-9101-3076a6b45f14
+  spec:
+    egress:
+    - ports:
+      - port: 53
+        protocol: UDP
+      - port: 53
+        protocol: TCP
+      to:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: kube-system
+        podSelector:
+          matchLabels:
+            k8s-app: kube-dns
+    podSelector: {}
+    policyTypes:
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"db-ingress-registration-peer-vault","namespace":"aitu-sim"},"spec":{"egress":[{"ports":[{"port":8080,"protocol":"TCP"}],"to":[{"podSelector":{"matchLabels":{"app":"db"}}}]}],"ingress":[{"from":[{"podSelector":{"matchLabels":{"app":"registration"}}},{"podSelector":{"matchLabels":{"app":"db"}}},{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"vault"}},"podSelector":{"matchLabels":{"role":"vault"}}}],"ports":[{"port":8080,"protocol":"TCP"}]}],"podSelector":{"matchLabels":{"app":"db"}},"policyTypes":["Ingress","Egress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: db-ingress-registration-peer-vault
+    namespace: aitu-sim
+    resourceVersion: "1648"
+    uid: 87bc105b-05fb-4b0a-830c-d2dd3a5ce855
+  spec:
+    egress:
+    - ports:
+      - port: 8080
+        protocol: TCP
+      to:
+      - podSelector:
+          matchLabels:
+            app: db
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: registration
+      - podSelector:
+          matchLabels:
+            app: db
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: vault
+        podSelector:
+          matchLabels:
+            role: vault
+      ports:
+      - port: 8080
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: db
+    policyTypes:
+    - Ingress
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"default-deny-all","namespace":"aitu-sim"},"spec":{"podSelector":{},"policyTypes":["Ingress","Egress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: default-deny-all
+    namespace: aitu-sim
+    resourceVersion: "1642"
+    uid: 032f4c57-0689-4699-8c24-d4feffac3789
+  spec:
+    podSelector: {}
+    policyTypes:
+    - Ingress
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"gateway-egress-services","namespace":"aitu-sim"},"spec":{"egress":[{"ports":[{"port":8080,"protocol":"TCP"}],"to":[{"podSelector":{"matchExpressions":[{"key":"app","operator":"In","values":["auth","course","registration"]}]}}]}],"podSelector":{"matchLabels":{"app":"gateway"}},"policyTypes":["Egress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: gateway-egress-services
+    namespace: aitu-sim
+    resourceVersion: "1645"
+    uid: 46002d88-66f3-4ef0-b95f-cba70ce29a62
+  spec:
+    egress:
+    - ports:
+      - port: 8080
+        protocol: TCP
+      to:
+      - podSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - auth
+            - course
+            - registration
+    podSelector:
+      matchLabels:
+        app: gateway
+    policyTypes:
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"gateway-ingress-public","namespace":"aitu-sim"},"spec":{"ingress":[{"ports":[{"port":8080,"protocol":"TCP"}]}],"podSelector":{"matchLabels":{"app":"gateway"}},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: gateway-ingress-public
+    namespace: aitu-sim
+    resourceVersion: "1644"
+    uid: 5e0be034-d97d-42a1-bd55-bc22f3da7942
+  spec:
+    ingress:
+    - ports:
+      - port: 8080
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: gateway
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"registration-egress-db","namespace":"aitu-sim"},"spec":{"egress":[{"ports":[{"port":8080,"protocol":"TCP"}],"to":[{"podSelector":{"matchLabels":{"app":"db"}}}]}],"podSelector":{"matchLabels":{"app":"registration"}},"policyTypes":["Egress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: registration-egress-db
+    namespace: aitu-sim
+    resourceVersion: "1647"
+    uid: 9fcbff7a-5051-48fd-bbf2-2a5a128a15ce
+  spec:
+    egress:
+    - ports:
+      - port: 8080
+        protocol: TCP
+      to:
+      - podSelector:
+          matchLabels:
+            app: db
+    podSelector:
+      matchLabels:
+        app: registration
+    policyTypes:
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"services-ingress-from-gateway","namespace":"aitu-sim"},"spec":{"ingress":[{"from":[{"podSelector":{"matchLabels":{"app":"gateway"}}}],"ports":[{"port":8080,"protocol":"TCP"}]}],"podSelector":{"matchExpressions":[{"key":"app","operator":"In","values":["auth","course","registration"]}]},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2026-11-01T13:16:47Z"
+    generation: 1
+    name: services-ingress-from-gateway
+    namespace: aitu-sim
+    resourceVersion: "1646"
+    uid: 50004b8a-5bbd-4a73-a904-961ef090b934
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: gateway
+      ports:
+      - port: 8080
+        protocol: TCP
+    podSelector:
+      matchExpressions:
+      - key: app
+        operator: In
+        values:
+        - auth
+        - course
+        - registration
+    policyTypes:
+    - Ingress
+kind: List
+metadata:
+  resourceVersion: ""

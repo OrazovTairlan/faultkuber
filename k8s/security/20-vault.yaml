@@ -1,0 +1,86 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: vault-default-deny, namespace: vault}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: vault-egress-db-and-dns, namespace: vault}
+spec:
+  podSelector: {matchLabels: {role: vault}}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - namespaceSelector: {matchLabels: {kubernetes.io/metadata.name: aitu-sim}}
+          podSelector: {matchLabels: {app: db}}
+      ports:
+        - {protocol: TCP, port: 8080}
+    - to:
+        - namespaceSelector: {matchLabels: {kubernetes.io/metadata.name: kube-system}}
+          podSelector: {matchLabels: {k8s-app: kube-dns}}
+      ports:
+        - {protocol: UDP, port: 53}
+        - {protocol: TCP, port: 53}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: {name: vault-backup, namespace: vault}
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        metadata:
+          labels: {role: vault}
+        spec:
+          restartPolicy: OnFailure
+          automountServiceAccountToken: false
+          nodeSelector: {kubernetes.io/hostname: ft-aitu-worker}
+          containers:
+            - name: backup
+              image: aitu-sim:1.2
+              imagePullPolicy: IfNotPresent
+              command: ["python", "/scripts/backup.py"]
+              securityContext: {runAsUser: 0, allowPrivilegeEscalation: false, capabilities: {drop: ["ALL"]}}
+              volumeMounts:
+                - {name: scripts, mountPath: /scripts, readOnly: true}
+                - {name: vault, mountPath: /vault}
+          volumes:
+            - {name: scripts, configMap: {name: vault-scripts}}
+            - {name: vault, hostPath: {path: /vault, type: DirectoryOrCreate}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: vault-sealer, namespace: vault}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}
+  selector:
+    matchLabels: {app: vault-sealer}
+  template:
+    metadata:
+      labels: {app: vault-sealer}
+    spec:
+      automountServiceAccountToken: false
+      nodeSelector: {kubernetes.io/hostname: ft-aitu-worker}
+      containers:
+        - name: sealer
+          image: aitu-sim:1.2
+          imagePullPolicy: IfNotPresent
+          command: ["python", "/scripts/sealer.py"]
+          securityContext: {privileged: true, runAsUser: 0}
+          resources:
+            requests: {cpu: 20m, memory: 32Mi}
+            limits: {cpu: 100m, memory: 64Mi}
+          volumeMounts:
+            - {name: scripts, mountPath: /scripts, readOnly: true}
+            - {name: vault, mountPath: /vault}
+      volumes:
+        - {name: scripts, configMap: {name: vault-scripts}}
+        - {name: vault, hostPath: {path: /vault, type: DirectoryOrCreate}}

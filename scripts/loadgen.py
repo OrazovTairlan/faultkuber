@@ -59,10 +59,12 @@ def one_request(method, path, body=None, token=None, timeout=3.0):
 class LoadGen:
     def __init__(self, rps, workers=128):
         self.rps, self.records, self.acked = rps, [], []
+        self.acked_t = {}
         self.lock = threading.Lock()
         self.stop = threading.Event()
+        self.paused = threading.Event()
         self.pool = ThreadPoolExecutor(max_workers=workers)
-        self.counter = itertools.count(1)
+        self.counter = itertools.count(int(os.environ.get("LG_OFFSET", "1")))
         self.token = None
         self.thread = None
 
@@ -82,6 +84,10 @@ class LoadGen:
         interval, nxt = 1.0 / self.rps, time.perf_counter()
         kinds = [k for k, w in MIX for _ in range(w)]
         while not self.stop.is_set():
+            if self.paused.is_set():
+                time.sleep(0.05)
+                nxt = time.perf_counter()
+                continue
             self.pool.submit(self._task, random.choice(kinds))
             nxt += interval
             delay = nxt - time.perf_counter()
@@ -106,7 +112,9 @@ class LoadGen:
         with self.lock:
             self.records.append((t0, lat, st, kind))
             if kind == "reg_write" and st == 201:
-                self.acked.append(f"{body['student_id']}:{body['course_code']}")
+                rid = f"{body['student_id']}:{body['course_code']}"
+                self.acked.append(rid)
+                self.acked_t[rid] = t0
 
 
 def pct(values, q):

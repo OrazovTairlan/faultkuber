@@ -1,0 +1,20 @@
+{
+  "attempts": [
+    {
+      "attempt": "privileged container",
+      "rejected_by_pod_security": true,
+      "message": "Error from server (Forbidden): pods \"pss-test\" is forbidden: violates PodSecurity \"baseline:latest\": privileged (container \"x\" must not set securityContext.privileged=true)"
+    },
+    {
+      "attempt": "hostPath volume",
+      "rejected_by_pod_security": true,
+      "message": "Error from server (Forbidden): pods \"pss-test\" is forbidden: violates PodSecurity \"baseline:latest\": hostPath volumes (volume \"h\")"
+    },
+    {
+      "attempt": "host network",
+      "rejected_by_pod_security": true,
+      "message": "Error from server (Forbidden): pods \"pss-test\" is forbidden: violates PodSecurity \"baseline:latest\": host namespaces (hostNetwork=true)"
+    }
+  ],
+  "all_rejected": true
+}

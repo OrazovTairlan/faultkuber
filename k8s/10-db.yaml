@@ -26,7 +26,7 @@ spec:
       labels: {app: db}
     spec:
       terminationGracePeriodSeconds: 20
-      securityContext: {fsGroup: 10001}
+      securityContext: {fsGroup: 10001, runAsNonRoot: true, runAsUser: 10001, seccompProfile: {type: RuntimeDefault}}
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -37,7 +37,7 @@ spec:
                   matchLabels: {app: db}
       containers:
         - name: db
-          image: aitu-sim:1.2
+          image: aitu-sim:1.4
           imagePullPolicy: IfNotPresent
           env:
             - {name: SERVICE, value: db}
@@ -58,6 +58,7 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 5
             failureThreshold: 3
+          securityContext: {allowPrivilegeEscalation: false, capabilities: {drop: ["ALL"]}}
           resources:
             requests: {cpu: 100m, memory: 64Mi}
             limits: {cpu: 250m, memory: 128Mi}
