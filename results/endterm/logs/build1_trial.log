@@ -1,0 +1,12 @@
+E2 baseline rep1: FAIL (5/6) 60s
+E2 endterm rep1: PASS (6/6) 61s
+E3 baseline rep1: PASS (4/4) 47s
+E3 endterm rep1: PASS (4/4) 48s
+E4 baseline rep1: FAIL (2/5) 52s
+E4 endterm rep1: PASS (5/5) 52s
+E5 baseline rep1: FAIL (0/5) 28s
+E5 endterm rep1: FAIL (4/5) 28s
+E6 baseline rep1: FAIL (2/7) 55s
+E6 endterm rep1: FAIL (6/7) 64s
+E7 baseline rep1: PASS (5/5) 65s
+E7 endterm rep1: PASS (5/5) 68s

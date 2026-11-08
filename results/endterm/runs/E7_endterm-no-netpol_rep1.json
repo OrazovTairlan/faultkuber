@@ -1,0 +1,349 @@
+{
+ "rps_normal": 0,
+ "t0_epoch": 1794155607.3492086,
+ "summary_whole": {
+  "total": 300,
+  "ok": 300,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": null,
+  "p95_ms": null,
+  "max_ms": null
+ },
+ "summary_pre": {
+  "total": 0,
+  "ok": 0,
+  "failed": 0,
+  "success_pct": null,
+  "avg_ms": null,
+  "p95_ms": null,
+  "p99_ms": null,
+  "max_ms": null,
+  "degraded_responses": 0,
+  "status_counts": {}
+ },
+ "timing": {
+  "k8s_detection_s": 3.3,
+  "k8s_recovery_s": 9.3,
+  "client_first_failure_s": null,
+  "client_last_failure_s": null,
+  "client_failed_requests": 0
+ },
+ "alerts": {
+  "available": true,
+  "fired": [
+   {
+    "alert": "ReplicaUnavailable",
+    "severity": "warning",
+    "fired_at": 1794155612.616307,
+    "resolved_at": 1794155617.616307,
+    "fired_after_s": 5.3,
+    "resolved_after_s": 10.3
+   }
+  ],
+  "expected": [
+   "ReplicaUnavailable"
+  ],
+  "optional": [
+   "DatabaseUnavailable",
+   "HighErrorRate",
+   "HighLatencyP95"
+  ],
+  "true_positive": [
+   "ReplicaUnavailable"
+  ],
+  "false_negative": [],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": 5.3
+ },
+ "per_second": [],
+ "dashboard": [
+  {
+   "t": -11.7,
+   "rps": 0,
+   "errors_5xx": 0,
+   "p95_ms": null,
+   "ready_pods": 10,
+   "degraded": 0
+  },
+  {
+   "t": -10.7,
+   "rps": 0,
+   "errors_5xx": 0,
+   "p95_ms": null,
+   "ready_pods": 10,
+   "degraded": 0
+  },
+  {
+   "t": -9.7,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": null,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -8.7,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": null,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -7.7,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": null,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -6.7,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": null,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -5.7,
+   "rps": 1.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 4.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -4.7,
+   "rps": 11.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 48.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -3.7,
+   "rps": 11.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 48.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -2.7,
+   "rps": 11.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 48.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -1.7,
+   "rps": 11.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 48.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -0.7,
+   "rps": 11.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 48.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 0.3,
+   "rps": 11.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 48.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 1.3,
+   "rps": 15.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 63.1,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 2.3,
+   "rps": 30.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 94.1,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 3.3,
+   "rps": 30.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 96.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 4.3,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 96.8,
+   "ready_pods": 9,
+   "degraded": 0.0
+  },
+  {
+   "t": 5.3,
+   "rps": 35.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 98.8,
+   "ready_pods": 9,
+   "degraded": 0.0
+  },
+  {
+   "t": 6.3,
+   "rps": 30.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 98.8,
+   "ready_pods": 9,
+   "degraded": 0.0
+  },
+  {
+   "t": 7.3,
+   "rps": 29.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 99.5,
+   "ready_pods": 8,
+   "degraded": 0.0
+  },
+  {
+   "t": 8.3,
+   "rps": 30.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 99.8,
+   "ready_pods": 9,
+   "degraded": 0.0
+  },
+  {
+   "t": 9.3,
+   "rps": 30.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 105.6,
+   "ready_pods": 9,
+   "degraded": 0.0
+  },
+  {
+   "t": 10.3,
+   "rps": 29.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 99.1,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 11.3,
+   "rps": 26.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 99.9,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 12.3,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 99.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 13.3,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 99.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 14.3,
+   "rps": 0.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 112.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  }
+ ],
+ "integrity": {
+  "records_db0": 300,
+  "records_db1": 300,
+  "nodes_identical": true,
+  "seconds_to_identical": 1.8,
+  "acked_writes": 300,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "writes_attempted": 300,
+ "writes_acknowledged": 300,
+ "writes_failed_after_retries": 0,
+ "client_attempts": 300,
+ "client_retries": 0,
+ "unacknowledged_but_stored": 0,
+ "replay_new_records": 0,
+ "replay_status_counts": {
+  "200": 300
+ },
+ "injected": "300 unique registrations (30/s, client retries up to 5x); db-0 killed at +3 s, a Registration pod at +6 s",
+ "criteria": [
+  {
+   "name": "lost acknowledged writes",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "duplicate records",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "both database nodes identical after recovery",
+   "value": 1.8,
+   "limit": "<= 60",
+   "unit": "s",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "replaying all 300 requests creates no new records",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "every write acknowledged after bounded retries",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  }
+ ],
+ "experiment": "E7",
+ "config": "endterm-no-netpol",
+ "rep": 1,
+ "netpol_enabled": false,
+ "passed": true
+}

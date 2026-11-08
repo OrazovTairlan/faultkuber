@@ -1,0 +1,473 @@
+{
+ "rps_normal": 50,
+ "t0_epoch": 1794147518.2190082,
+ "summary_whole": {
+  "total": 2417,
+  "ok": 1978,
+  "failed": 439,
+  "success_pct": 81.837,
+  "avg_ms": 17.8,
+  "p95_ms": 72.0,
+  "p99_ms": 97.4,
+  "max_ms": 450.4,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 1789,
+   "201": 189,
+   "502": 25,
+   "503": 414
+  }
+ },
+ "summary_pre": {
+  "total": 400,
+  "ok": 400,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 18.7,
+  "p95_ms": 92.3,
+  "p99_ms": 99.8,
+  "max_ms": 116.1,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 347,
+   "201": 53
+  }
+ },
+ "timing": {
+  "k8s_detection_s": null,
+  "k8s_recovery_s": null,
+  "client_first_failure_s": 0.2,
+  "client_last_failure_s": 22.27,
+  "client_failed_requests": 439
+ },
+ "alerts": {
+  "available": false,
+  "note": "baseline exposes no metrics and defines no alerts",
+  "fired": [],
+  "expected": [
+   "DatabaseUnavailable",
+   "HighErrorRate"
+  ],
+  "true_positive": [],
+  "false_negative": [
+   "DatabaseUnavailable",
+   "HighErrorRate"
+  ],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": null
+ },
+ "per_second": [
+  {
+   "t": -10,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 94.1
+  },
+  {
+   "t": -9,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 94.3
+  },
+  {
+   "t": -8,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 94.0
+  },
+  {
+   "t": -7,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 93.9
+  },
+  {
+   "t": -6,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 89.5
+  },
+  {
+   "t": -5,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 95.0
+  },
+  {
+   "t": -4,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 93.3
+  },
+  {
+   "t": -3,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 92.3
+  },
+  {
+   "t": -2,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 90.6
+  },
+  {
+   "t": -1,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 77.4
+  },
+  {
+   "t": 0,
+   "total": 50,
+   "failed": 15,
+   "p95_ms": 75.9
+  },
+  {
+   "t": 1,
+   "total": 50,
+   "failed": 19,
+   "p95_ms": 47.1
+  },
+  {
+   "t": 2,
+   "total": 51,
+   "failed": 18,
+   "p95_ms": 51.0
+  },
+  {
+   "t": 3,
+   "total": 49,
+   "failed": 19,
+   "p95_ms": 46.4
+  },
+  {
+   "t": 4,
+   "total": 50,
+   "failed": 15,
+   "p95_ms": 48.4
+  },
+  {
+   "t": 5,
+   "total": 50,
+   "failed": 26,
+   "p95_ms": 51.3
+  },
+  {
+   "t": 6,
+   "total": 50,
+   "failed": 19,
+   "p95_ms": 47.2
+  },
+  {
+   "t": 7,
+   "total": 50,
+   "failed": 17,
+   "p95_ms": 50.4
+  },
+  {
+   "t": 8,
+   "total": 50,
+   "failed": 27,
+   "p95_ms": 50.4
+  },
+  {
+   "t": 9,
+   "total": 51,
+   "failed": 22,
+   "p95_ms": 49.9
+  },
+  {
+   "t": 10,
+   "total": 49,
+   "failed": 14,
+   "p95_ms": 45.8
+  },
+  {
+   "t": 11,
+   "total": 51,
+   "failed": 19,
+   "p95_ms": 62.8
+  },
+  {
+   "t": 12,
+   "total": 49,
+   "failed": 23,
+   "p95_ms": 45.8
+  },
+  {
+   "t": 13,
+   "total": 50,
+   "failed": 19,
+   "p95_ms": 47.4
+  },
+  {
+   "t": 14,
+   "total": 51,
+   "failed": 20,
+   "p95_ms": 47.3
+  },
+  {
+   "t": 15,
+   "total": 49,
+   "failed": 14,
+   "p95_ms": 52.9
+  },
+  {
+   "t": 16,
+   "total": 51,
+   "failed": 18,
+   "p95_ms": 50.9
+  },
+  {
+   "t": 17,
+   "total": 49,
+   "failed": 20,
+   "p95_ms": 48.4
+  },
+  {
+   "t": 18,
+   "total": 50,
+   "failed": 19,
+   "p95_ms": 46.3
+  },
+  {
+   "t": 19,
+   "total": 51,
+   "failed": 25,
+   "p95_ms": 53.1
+  },
+  {
+   "t": 20,
+   "total": 49,
+   "failed": 19,
+   "p95_ms": 51.0
+  },
+  {
+   "t": 21,
+   "total": 50,
+   "failed": 25,
+   "p95_ms": 8.8
+  },
+  {
+   "t": 22,
+   "total": 50,
+   "failed": 7,
+   "p95_ms": 66.3
+  },
+  {
+   "t": 23,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 91.0
+  },
+  {
+   "t": 24,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 90.7
+  },
+  {
+   "t": 25,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 73.2
+  },
+  {
+   "t": 26,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 68.0
+  },
+  {
+   "t": 27,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 66.5
+  },
+  {
+   "t": 28,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 95.5
+  },
+  {
+   "t": 29,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 74.8
+  },
+  {
+   "t": 30,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 90.9
+  },
+  {
+   "t": 31,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 89.1
+  },
+  {
+   "t": 32,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 70.2
+  },
+  {
+   "t": 33,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 64.5
+  },
+  {
+   "t": 34,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 240.0
+  },
+  {
+   "t": 35,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 64.7
+  },
+  {
+   "t": 36,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 91.9
+  },
+  {
+   "t": 37,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 69.1
+  },
+  {
+   "t": 38,
+   "total": 17,
+   "failed": 0,
+   "p95_ms": 51.4
+  }
+ ],
+ "dashboard": [],
+ "integrity": {
+  "records_db0": 1412,
+  "records_db1": 1412,
+  "nodes_identical": true,
+  "seconds_to_identical": 2.7,
+  "acked_writes": 183,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "during_fault": {
+  "total": 960,
+  "ok": 585,
+  "failed": 375,
+  "success_pct": 60.938,
+  "avg_ms": 11.4,
+  "p95_ms": 50.3,
+  "p99_ms": 59.2,
+  "max_ms": 133.3,
+  "degraded_responses": 0,
+  "status_counts": {
+   "503": 359,
+   "200": 585,
+   "502": 16
+  }
+ },
+ "db_dependent_during_fault": {
+  "total": 375,
+  "ok": 0,
+  "failed": 375,
+  "success_pct": 0.0,
+  "avg_ms": null,
+  "p95_ms": null,
+  "p99_ms": null,
+  "max_ms": null,
+  "degraded_responses": 0,
+  "status_counts": {
+   "503": 359,
+   "502": 16
+  }
+ },
+ "independent_during_fault": {
+  "total": 585,
+  "ok": 585,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 11.4,
+  "p95_ms": 50.3,
+  "p99_ms": 59.2,
+  "max_ms": 133.3,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 585
+  }
+ },
+ "recovery_after_unblock_s": 2.2,
+ "failed_db_request_p95_ms": 252.9,
+ "max_latency_during_fault_ms": 476.7,
+ "injected": "NetworkPolicy blocks all ingress to the database pods for 20 s (packets dropped -> timeouts)",
+ "criteria": [
+  {
+   "name": "requests independent of the DB (timetable, courses, login) succeed",
+   "value": 100.0,
+   "limit": ">= 99.0",
+   "unit": "%",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "failed DB-dependent requests fail fast (p95 latency)",
+   "value": 252.9,
+   "limit": "<= 500",
+   "unit": "ms",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "no request slower than 1 s during the fault",
+   "value": 476.7,
+   "limit": "<= 1000",
+   "unit": "ms",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "registration works again after the block is removed",
+   "value": 2.2,
+   "limit": "<= 15",
+   "unit": "s",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "lost acknowledged writes",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "automated alert (DatabaseUnavailable / HighErrorRate)",
+   "value": null,
+   "limit": "<= 10",
+   "unit": "s",
+   "pass": false,
+   "note": "baseline has no alerting"
+  }
+ ],
+ "experiment": "E2",
+ "config": "baseline",
+ "rep": 3,
+ "netpol_enabled": true,
+ "passed": false
+}

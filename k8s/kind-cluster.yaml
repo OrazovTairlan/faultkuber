@@ -6,6 +6,9 @@ nodes:
       - containerPort: 30080
         hostPort: 18080
         protocol: TCP
+      - containerPort: 30081
+        hostPort: 18081
+        protocol: TCP
   - role: worker
     extraMounts:
       - hostPath: C:/Users/orazo/PycharmProjects/faulttolerancemicroservices/results/backups

@@ -1,0 +1,133 @@
+[
+ {
+  "ts": 1794156816.274,
+  "svc": "auth",
+  "pod": "auth-6d94b774f9-8qrjd",
+  "rid": "demo-trace-0001",
+  "method": "GET",
+  "route": "/auth/verify",
+  "status": 200,
+  "ms": 0.3,
+  "client": "10.244.2.123"
+ },
+ {
+  "ts": 1794156816.287,
+  "svc": "db",
+  "pod": "db-0",
+  "rid": "demo-trace-0001",
+  "method": "POST",
+  "route": "/db/replicate",
+  "status": 200,
+  "ms": 3.4,
+  "client": "10.244.1.128"
+ },
+ {
+  "ts": 1794156816.287,
+  "svc": "db",
+  "pod": "db-1",
+  "rid": "demo-trace-0001",
+  "method": "POST",
+  "route": "/db/write",
+  "status": 200,
+  "ms": 9.8,
+  "client": "10.244.2.125"
+ },
+ {
+  "ts": 1794156816.288,
+  "svc": "gateway",
+  "pod": "gateway-7ccd688cb5-4q86v",
+  "rid": "demo-trace-0001",
+  "method": "POST",
+  "route": "/registrations",
+  "status": 201,
+  "ms": 62.1,
+  "client": "172.20.0.4"
+ },
+ {
+  "audit": true,
+  "ts": 1794156816.288,
+  "svc": "registration",
+  "pod": "registration-7796bc5946-z6nrg",
+  "rid": "demo-trace-0001",
+  "event": "REGISTRATION_CREATED",
+  "subject": "S9901",
+  "record": "S9901:MA101"
+ },
+ {
+  "ts": 1794156816.288,
+  "svc": "registration",
+  "pod": "registration-7796bc5946-z6nrg",
+  "rid": "demo-trace-0001",
+  "method": "POST",
+  "route": "/registrations",
+  "status": 201,
+  "ms": 12.2,
+  "client": "10.244.2.123"
+ },
+ {
+  "ts": 1794156816.378,
+  "svc": "gateway",
+  "pod": "gateway-7ccd688cb5-4q86v",
+  "rid": "demo-failed-login",
+  "method": "POST",
+  "route": "/auth/login",
+  "status": 401,
+  "ms": 45.5,
+  "client": "172.20.0.4"
+ },
+ {
+  "audit": true,
+  "ts": 1794156816.378,
+  "svc": "auth",
+  "pod": "auth-6d94b774f9-8qrjd",
+  "rid": "demo-failed-login",
+  "event": "LOGIN_FAILED",
+  "subject": "S9901",
+  "client": "172.20.0.4",
+  "locked": false
+ },
+ {
+  "ts": 1794156816.378,
+  "svc": "auth",
+  "pod": "auth-6d94b774f9-8qrjd",
+  "rid": "demo-failed-login",
+  "method": "POST",
+  "route": "/auth/login",
+  "status": 401,
+  "ms": 0.8,
+  "client": "10.244.2.123"
+ },
+ {
+  "ts": 1794156816.428,
+  "svc": "gateway",
+  "pod": "gateway-7ccd688cb5-4q86v",
+  "rid": "demo-forbidden",
+  "method": "GET",
+  "route": "/registrations/{id}",
+  "status": 403,
+  "ms": 3.0,
+  "client": "172.20.0.4"
+ },
+ {
+  "audit": true,
+  "ts": 1794156816.428,
+  "svc": "registration",
+  "pod": "registration-7796bc5946-z6nrg",
+  "rid": "demo-forbidden",
+  "event": "FORBIDDEN_ACCESS",
+  "subject": "S9901",
+  "target": "S9902",
+  "action": "read"
+ },
+ {
+  "ts": 1794156816.428,
+  "svc": "registration",
+  "pod": "registration-7796bc5946-z6nrg",
+  "rid": "demo-forbidden",
+  "method": "GET",
+  "route": "/registrations/{id}",
+  "status": 403,
+  "ms": 0.2,
+  "client": "10.244.2.123"
+ }
+]

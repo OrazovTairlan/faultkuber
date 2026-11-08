@@ -1,0 +1,92 @@
+[
+  {
+    "name": "HighErrorRate",
+    "severity": "critical",
+    "detects": "User-visible failures: share of gateway responses with a 5xx status.",
+    "condition": "5xx / all gateway responses > 5 % over 5 s, with at least 20 requests in the window",
+    "response": "Page on-call. Check which upstream is failing (ReplicaUnavailable, DatabaseUnavailable), follow the matching runbook; if a release caused it, roll back.",
+    "expr": {"type": "error_ratio", "service": "gateway", "window_s": 5, "min_requests": 20, "threshold": 0.05},
+    "for_s": 0
+  },
+  {
+    "name": "HighLatencyP95",
+    "severity": "warning",
+    "detects": "Slow service: gateway p95 latency approaching the 500 ms requirement (load spike, slow dependency).",
+    "condition": "p95 of gateway latency > 300 ms over 10 s, at least 20 requests",
+    "response": "Check load and CPU throttling; scale the gateway/services out or shed load (rate limits stay on). Investigate slow dependencies.",
+    "expr": {"type": "latency_p95", "service": "gateway", "window_s": 10, "threshold_ms": 300, "min_requests": 20},
+    "for_s": 0
+  },
+  {
+    "name": "ReplicaUnavailable",
+    "severity": "warning",
+    "detects": "Lost redundancy: a Deployment or StatefulSet has fewer Ready pods than designed.",
+    "condition": "ready pods < desired (gateway 2, auth 2, course 2, registration 2, db 2) for 1 s",
+    "response": "Kubernetes restarts the pod automatically. If not back within 60 s, page on-call; check events and the node.",
+    "expr": {"type": "ready_replicas", "desired": {"gateway": 2, "auth": 2, "course": 2, "registration": 2, "db": 2}},
+    "for_s": 1
+  },
+  {
+    "name": "DatabaseUnavailable",
+    "severity": "critical",
+    "detects": "Registration cannot reach any database node (blocked network, both nodes down, circuit open).",
+    "condition": ">= 3 'db_unavailable' events in registration within 10 s",
+    "response": "System: registration answers 503 + Retry-After and stays up. Team: run the data-tier runbook, check db pods and NetworkPolicies, restore from the vault only if data is damaged.",
+    "expr": {"type": "event_rate", "service": "registration", "event": "db_unavailable", "window_s": 10, "threshold": 3},
+    "for_s": 0
+  },
+  {
+    "name": "DegradedMode",
+    "severity": "warning",
+    "detects": "A non-critical feature is served from the stale cache because the Course service is unreachable.",
+    "condition": ">= 1 'degraded_response' at the gateway within 10 s",
+    "response": "System: stale data is served with an X-Degraded header. Team: restore the Course service; data older than 10 minutes is no longer served.",
+    "expr": {"type": "event_rate", "service": "gateway", "event": "degraded_response", "window_s": 10, "threshold": 1},
+    "for_s": 0
+  },
+  {
+    "name": "BruteForceLogin",
+    "severity": "critical",
+    "detects": "Password guessing: repeated failed logins.",
+    "condition": ">= 5 failed logins (auth) within 30 s (the account lockout threshold)",
+    "response": "System: accounts lock for 30 s after 5 failures. Team: identify the source in the audit log, block it at the edge, notify the account owner.",
+    "expr": {"type": "event_rate", "service": "auth", "event": "login_failed", "window_s": 30, "threshold": 5},
+    "for_s": 0
+  },
+  {
+    "name": "UnauthorizedAccessSpike",
+    "severity": "critical",
+    "detects": "Requests without valid credentials: missing, forged or expired tokens.",
+    "condition": ">= 5 'unauthorized_request' events at the gateway within 30 s",
+    "response": "System: request denied and audited. Team: review audit events by subject and source, revoke the token or lock the account if misuse is confirmed.",
+    "expr": {"type": "event_rate", "service": "gateway", "event": "unauthorized_request", "window_s": 30, "threshold": 5},
+    "for_s": 0
+  },
+  {
+    "name": "ForbiddenAccessSpike",
+    "severity": "critical",
+    "detects": "An authenticated user repeatedly tries to read or change data of another user (broken-authorization probing).",
+    "condition": ">= 3 'forbidden_access' events within 30 s",
+    "response": "System: 403 returned and audited. Team: inspect the subject in the audit log; lock the account if the pattern continues.",
+    "expr": {"type": "event_rate", "service": "registration", "event": "forbidden_access", "window_s": 30, "threshold": 3},
+    "for_s": 0
+  },
+  {
+    "name": "RateLimiting",
+    "severity": "warning",
+    "detects": "A client exceeds its request budget (abuse or a misbehaving client).",
+    "condition": ">= 20 'rate_limited' events at the gateway within 10 s",
+    "response": "System: excess requests get 429 + Retry-After. Team: identify the client; raise the limit only for a verified legitimate client.",
+    "expr": {"type": "event_rate", "service": "gateway", "event": "rate_limited", "window_s": 10, "threshold": 20},
+    "for_s": 0
+  },
+  {
+    "name": "MalformedRequestBurst",
+    "severity": "warning",
+    "detects": "Fuzzing or a broken client: many requests rejected by input validation.",
+    "condition": ">= 10 'validation_rejected' events (gateway + registration) within 30 s",
+    "response": "System: 400/413 returned, nothing stored. Team: check the source and the client version in the access log.",
+    "expr": {"type": "event_rate", "service": ["gateway", "registration", "auth"], "event": "validation_rejected", "window_s": 30, "threshold": 10},
+    "for_s": 0
+  }
+]

@@ -1,0 +1,32 @@
+E1 baseline rep1: FAIL (3/4) 32s
+E1 baseline rep2: FAIL (3/4) 32s
+E1 baseline rep3: FAIL (3/4) 32s
+E1 endterm rep1: PASS (4/4) 32s
+E1 endterm rep2: PASS (4/4) 33s
+E1 endterm rep3: PASS (4/4) 33s
+E2 baseline rep1: FAIL (5/6) 62s
+E2 baseline rep2: FAIL (5/6) 61s
+E2 baseline rep3: FAIL (5/6) 61s
+E2 endterm rep1: FAIL (4/6) 62s
+E2 endterm rep2: PASS (6/6) 62s
+E2 endterm rep3: PASS (6/6) 62s
+E3 baseline rep1: PASS (4/4) 48s
+E3 baseline rep2: PASS (4/4) 49s
+E3 baseline rep3: PASS (4/4) 49s
+E3 endterm rep1: FAIL (2/4) 50s
+E3 endterm rep2: FAIL (2/4) 50s
+E3 endterm rep3: FAIL (2/4) 50s
+Traceback (most recent call last):
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 766, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 747, in main
+    res = EXPERIMENTS[name](stack, rep)
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 427, in e4
+    run = Observed(stack, NORMAL_RPS, scenario, pre_s=10, post_s=18).run()
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 214, in run
+    self.gen = L.LoadGen(st.port, self.rps, next_users(self.users), users=self.users, mix=self.mix).start()
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_load.py", line 83, in start
+    raise RuntimeError(f"only {len(self.tokens)} of {self.users_n} users could log in")
+RuntimeError: only 163 of 200 users could log in

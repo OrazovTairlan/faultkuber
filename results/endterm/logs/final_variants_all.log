@@ -1,0 +1,15 @@
+E1 endterm-no-netpol rep1: PASS (4/4) 38s
+E1 endterm-no-netpol rep2: PASS (4/4) 38s
+E1 endterm-no-netpol rep3: PASS (4/4) 39s
+E2 endterm-no-netpol rep1: PASS (6/6) 71s
+E2 endterm-no-netpol rep2: PASS (6/6) 71s
+E2 endterm-no-netpol rep3: PASS (6/6) 71s
+E5 endterm-no-netpol rep1: PASS (5/5) 34s
+E5 endterm-no-netpol rep2: PASS (5/5) 34s
+E5 endterm-no-netpol rep3: PASS (5/5) 34s
+E6 endterm-no-netpol rep1: PASS (7/7) 61s
+E6 endterm-no-netpol rep2: PASS (7/7) 63s
+E6 endterm-no-netpol rep3: PASS (7/7) 63s
+E7 endterm-no-netpol rep1: PASS (5/5) 70s
+E7 endterm-no-netpol rep2: PASS (5/5) 70s
+E7 endterm-no-netpol rep3: PASS (5/5) 70s

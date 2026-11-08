@@ -10,11 +10,18 @@ metadata:
   namespace: aitu-sim
 data:
   AUTH_URL: "auth:8080"
+  AUTH_HEADLESS: "auth-headless:8080"
   COURSE_URL: "course:8080"
   REGISTRATION_URL: "registration:8080"
   DB_NODES: "db-0.db-headless:8080,db-1.db-headless:8080"
   UPSTREAM_TIMEOUT: "0.20"
   DB_TIMEOUT: "0.15"
+  ENV: "production"
+  TOKEN_TTL_S: "900"
+  RATE_SUBJECT_PER_S: "20"
+  RATE_SUBJECT_BURST: "40"
+  LOGIN_MAX_FAILURES: "5"
+  LOGIN_LOCK_S: "30"
 ---
 apiVersion: v1
 kind: Secret

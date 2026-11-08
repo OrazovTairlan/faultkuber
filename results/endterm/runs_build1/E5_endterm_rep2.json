@@ -1,0 +1,737 @@
+{
+ "rps_normal": 30,
+ "t0_epoch": 1794148841.2788014,
+ "summary_whole": {
+  "total": 762,
+  "ok": 757,
+  "failed": 5,
+  "success_pct": 99.344,
+  "avg_ms": 44.1,
+  "p95_ms": 163.8,
+  "p99_ms": 555.6,
+  "max_ms": 1130.8,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 730,
+   "502": 5,
+   "201": 27
+  }
+ },
+ "summary_pre": {
+  "total": 195,
+  "ok": 195,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 23.1,
+  "p95_ms": 68.4,
+  "p99_ms": 170.9,
+  "max_ms": 207.1,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 195
+  }
+ },
+ "timing": {
+  "k8s_detection_s": null,
+  "k8s_recovery_s": null,
+  "client_first_failure_s": 3.2,
+  "client_last_failure_s": 4.98,
+  "client_failed_requests": 5
+ },
+ "alerts": {
+  "available": true,
+  "fired": [
+   {
+    "alert": "UnauthorizedAccessSpike",
+    "severity": "critical",
+    "fired_at": 1794148842.7788644,
+    "resolved_at": null,
+    "fired_after_s": 1.5,
+    "resolved_after_s": null
+   },
+   {
+    "alert": "ForbiddenAccessSpike",
+    "severity": "critical",
+    "fired_at": 1794148842.7788644,
+    "resolved_at": null,
+    "fired_after_s": 1.5,
+    "resolved_after_s": null
+   },
+   {
+    "alert": "DatabaseUnavailable",
+    "severity": "critical",
+    "fired_at": 1794148846.7788644,
+    "resolved_at": 1794148856.7788644,
+    "fired_after_s": 5.5,
+    "resolved_after_s": 15.5
+   },
+   {
+    "alert": "HighLatencyP95",
+    "severity": "warning",
+    "fired_at": 1794148853.7788644,
+    "resolved_at": 1794148855.7788644,
+    "fired_after_s": 12.5,
+    "resolved_after_s": 14.5
+   }
+  ],
+  "expected": [
+   "ForbiddenAccessSpike",
+   "UnauthorizedAccessSpike"
+  ],
+  "optional": [
+   "BruteForceLogin",
+   "MalformedRequestBurst"
+  ],
+  "true_positive": [
+   "ForbiddenAccessSpike",
+   "UnauthorizedAccessSpike"
+  ],
+  "false_negative": [],
+  "false_positive": [
+   "DatabaseUnavailable",
+   "HighLatencyP95"
+  ],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": 1.5
+ },
+ "per_second": [
+  {
+   "t": -8,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 62.2
+  },
+  {
+   "t": -7,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 93.8
+  },
+  {
+   "t": -6,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 170.9
+  },
+  {
+   "t": -5,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.0
+  },
+  {
+   "t": -4,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 72.9
+  },
+  {
+   "t": -3,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 54.4
+  },
+  {
+   "t": -2,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.7
+  },
+  {
+   "t": -1,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 68.4
+  },
+  {
+   "t": 0,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 136.8
+  },
+  {
+   "t": 1,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 54.6
+  },
+  {
+   "t": 2,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 139.9
+  },
+  {
+   "t": 3,
+   "total": 30,
+   "failed": 4,
+   "p95_ms": 847.2
+  },
+  {
+   "t": 4,
+   "total": 30,
+   "failed": 1,
+   "p95_ms": 864.1
+  },
+  {
+   "t": 5,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 24.1
+  },
+  {
+   "t": 6,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 57.5
+  },
+  {
+   "t": 7,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 59.7
+  },
+  {
+   "t": 8,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 62.6
+  },
+  {
+   "t": 9,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 73.1
+  },
+  {
+   "t": 10,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 509.7
+  },
+  {
+   "t": 11,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 116.0
+  },
+  {
+   "t": 12,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 65.7
+  },
+  {
+   "t": 13,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.2
+  },
+  {
+   "t": 14,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 72.8
+  },
+  {
+   "t": 15,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 67.1
+  },
+  {
+   "t": 16,
+   "total": 27,
+   "failed": 0,
+   "p95_ms": 64.2
+  }
+ ],
+ "dashboard": [
+  {
+   "t": -8.5,
+   "rps": 84.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 82.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -7.5,
+   "rps": 36.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 84.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -6.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 84.9,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -5.5,
+   "rps": 27.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 85.1,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -4.5,
+   "rps": 26.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 86.4,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -3.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 87.4,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -2.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 86.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -1.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 86.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -0.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 86.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 0.5,
+   "rps": 29.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 88.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 1.5,
+   "rps": 28.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 93.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 2.5,
+   "rps": 31.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 92.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 3.5,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 95.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 4.5,
+   "rps": 17.0,
+   "errors_5xx": 2.0,
+   "p95_ms": 277.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 5.5,
+   "rps": 28.0,
+   "errors_5xx": 2.0,
+   "p95_ms": 450.0,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 6.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 462.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 7.5,
+   "rps": 19.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 483.9,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 8.5,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 485.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 9.5,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 237.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 10.5,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 86.4,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 11.5,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 89.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 12.5,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 89.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 13.5,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 89.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 14.5,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 90.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 15.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 90.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 16.5,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 88.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  }
+ ],
+ "integrity": {
+  "records_db0": 2643,
+  "records_db1": 2643,
+  "nodes_identical": true,
+  "seconds_to_identical": 3.4,
+  "acked_writes": 98,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "attempts": [
+  {
+   "attempt": "A1 write without any token",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A1 write without any token",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A1 write without any token",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A2 write with a forged signature",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A2 write with a forged signature",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A2 write with a forged signature",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A3 write on behalf of another student (valid token of the attacker)",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A3 write on behalf of another student (valid token of the attacker)",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A3 write on behalf of another student (valid token of the attacker)",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A4 read another student's registrations",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A4 read another student's registrations",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A4 read another student's registrations",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A5 token with the subject replaced by the victim",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A5 token with the subject replaced by the victim",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A5 token with the subject replaced by the victim",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A6 student calls the administrator endpoint",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A6 student calls the administrator endpoint",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A6 student calls the administrator endpoint",
+   "status": 403,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A7 login without a password",
+   "status": 400,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A7 login without a password",
+   "status": 400,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A7 login without a password",
+   "status": 400,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A8 login with a wrong password",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A8 login with a wrong password",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A8 login with a wrong password",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  }
+ ],
+ "attempt_count": 24,
+ "denied_count": 24,
+ "violation_count": 0,
+ "violations": [],
+ "data_exposed_responses": 0,
+ "victim_records_before": 1,
+ "victim_records_after": 1,
+ "audit_events_recorded": 24.0,
+ "events_before": {
+  "gateway.degraded_response": 1960.0,
+  "gateway.rate_limited": 467.0,
+  "gateway.unauthorized_request": 27.0,
+  "gateway.upstream_retry": 1505.0,
+  "gateway.validation_rejected": 5.0,
+  "auth.login_failed": 14.0,
+  "auth.login_ok": 6608.0,
+  "auth.login_rejected": 9.0,
+  "auth.token_invalid": 18.0,
+  "auth.validation_rejected": 9.0,
+  "auth.account_locked": 8.0,
+  "registration.db_circuit_open": 2178.0,
+  "registration.db_retry": 1611.0,
+  "registration.db_unavailable": 684.0,
+  "registration.duplicate_registration": 1140.0,
+  "registration.forbidden_access": 18.0,
+  "registration.registration_created": 2281.0,
+  "registration.validation_rejected": 3.0
+ },
+ "events_after": {
+  "gateway.degraded_response": 1960.0,
+  "gateway.rate_limited": 467.0,
+  "gateway.unauthorized_request": 36.0,
+  "gateway.upstream_retry": 1509.0,
+  "gateway.validation_rejected": 5.0,
+  "auth.login_failed": 17.0,
+  "auth.login_ok": 6624.0,
+  "auth.login_rejected": 12.0,
+  "auth.token_invalid": 24.0,
+  "auth.validation_rejected": 12.0,
+  "auth.account_locked": 8.0,
+  "registration.db_circuit_open": 2178.0,
+  "registration.db_retry": 1619.0,
+  "registration.db_unavailable": 686.0,
+  "registration.duplicate_registration": 1154.0,
+  "registration.forbidden_access": 27.0,
+  "registration.registration_created": 2281.0,
+  "registration.validation_rejected": 3.0
+ },
+ "injected": "8 unauthorized-access patterns x 3 attempts",
+ "criteria": [
+  {
+   "name": "unauthorized attempts denied",
+   "value": "24/24",
+   "limit": "all",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "victim's data changed by the attacker",
+   "value": false,
+   "limit": "False",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "victim's data returned to the attacker",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "every denied attempt left an audit event",
+   "value": 24.0,
+   "limit": ">= 24",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "automated alert for the attack",
+   "value": 1.5,
+   "limit": "<= 10",
+   "unit": "s",
+   "pass": true,
+   "note": ""
+  }
+ ],
+ "experiment": "E5",
+ "config": "endterm",
+ "rep": 2,
+ "netpol_enabled": true,
+ "passed": true
+}

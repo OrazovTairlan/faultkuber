@@ -1,0 +1,51 @@
+
+=== Scenario 1: service failure (one Registration instance) ===
+Killing registration-7796bc5946-svz5w (kubectl delete --force --grace-period=0) while 40 req/s are flowing ...
+  + 1.4s registration pods ready=1/2  last-second requests=40 failed=0
+  + 2.0s ALERT ReplicaUnavailable (warning)
+  + 2.4s registration pods ready=1/2  last-second requests=40 failed=0
+  + 3.4s registration pods ready=2/2  last-second requests=37 failed=0
+  + 4.4s registration pods ready=2/2  last-second requests=38 failed=0
+  + 5.5s registration pods ready=2/2  last-second requests=39 failed=0
+  + 6.5s registration pods ready=2/2  last-second requests=38 failed=0
+  + 7.5s registration pods ready=2/2  last-second requests=39 failed=0
+  + 8.5s registration pods ready=2/2  last-second requests=39 failed=0
+  + 9.5s registration pods ready=2/2  last-second requests=38 failed=0
+  +10.5s registration pods ready=2/2  last-second requests=39 failed=0
+  +11.6s registration pods ready=2/2  last-second requests=40 failed=0
+  +12.6s registration pods ready=2/2  last-second requests=40 failed=0
+  +13.6s registration pods ready=2/2  last-second requests=39 failed=0
+  +14.6s registration pods ready=2/2  last-second requests=39 failed=0
+Result: 583 requests after the failure, 0 failed, success 100.0%, p95 70.1 ms
+
+=== Scenario 2: unauthorized access and broken authorization ===
+-- baseline (midterm configuration)
+   DENIED  HTTP 401  write without token
+   ALLOWED HTTP 201  write for another student
+   ALLOWED HTTP 200  read another student's data
+   ALLOWED HTTP 200  login without password
+   ALLOWED HTTP 500  malformed JSON
+-- endterm (endterm implementation)
+   DENIED  HTTP 401  write without token
+   DENIED  HTTP 403  write for another student
+   DENIED  HTTP 403  read another student's data
+   DENIED  HTTP 400  login without password
+   DENIED  HTTP 400  malformed JSON
+-- audit events recorded by the endterm services (last 6):
+   LOGIN_OK               svc=auth         rid=c77ecabbf4be subject=S9702
+   DUPLICATE_REGISTRATION svc=registration rid=f99f32033306 subject=S9702
+   UNAUTHORIZED_REQUEST   svc=gateway      rid=demo-endterm-write subject=-
+   FORBIDDEN_ACCESS       svc=registration rid=demo-endterm-write subject=S9701
+   FORBIDDEN_ACCESS       svc=registration rid=demo-endterm-read subject=S9701
+   LOGIN_REJECTED         svc=auth         rid=demo-endterm-login subject=-
+
+=== Scenario 3: graceful degradation (Course service down) ===
+Scaling the Course service to 0 replicas ...
+   Course pods ready: 0
+   GET /timetable?group=SE-2301     -> HTTP 200  X-Degraded=stale-cache  (stale copy)
+   GET /courses                     -> HTTP 200  X-Degraded=stale-cache  (stale copy)
+   GET /timetable?group=SE-2302     -> HTTP 200  X-Degraded=stale-cache  (stale copy)
+   POST /registrations (critical workflow)     -> HTTP 200
+Course service restored.
+
+Transcript saved to results/endterm/demo_transcript.txt

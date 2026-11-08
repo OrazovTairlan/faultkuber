@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-headless
+  namespace: aitu-sim
+spec:
+  clusterIP: None
+  publishNotReadyAddresses: false
+  selector: {app: db}
+  ports:
+    - {name: http, port: 8080}
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db
+  namespace: aitu-sim
+spec:
+  serviceName: db-headless
+  replicas: 2
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels: {app: db}
+  template:
+    metadata:
+      labels: {app: db}
+    spec:
+      terminationGracePeriodSeconds: 20
+      securityContext: {fsGroup: 10001}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchLabels: {app: db}
+      containers:
+        - name: db
+          image: aitu-sim:1.2
+          imagePullPolicy: IfNotPresent
+          env:
+            - {name: SERVICE, value: db}
+            - {name: PORT, value: "8080"}
+            - {name: DATA_DIR, value: /data}
+            - name: POD_NAME
+              valueFrom: {fieldRef: {fieldPath: metadata.name}}
+          envFrom:
+            - configMapRef: {name: aitu-config}
+          ports:
+            - {name: http, containerPort: 8080}
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 2
+            failureThreshold: 2
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests: {cpu: 100m, memory: 64Mi}
+            limits: {cpu: 250m, memory: 128Mi}
+          volumeMounts:
+            - {name: data, mountPath: /data}
+  volumeClaimTemplates:
+    - metadata: {name: data}
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources: {requests: {storage: 100Mi}}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: db
+  namespace: aitu-sim
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: {app: db}

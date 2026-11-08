@@ -1,0 +1,285 @@
+{
+ "rps_normal": 50,
+ "t0_epoch": 1794147131.000014,
+ "summary_whole": {
+  "total": 1406,
+  "ok": 1406,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 18.3,
+  "p95_ms": 60.3,
+  "p99_ms": 70.2,
+  "max_ms": 101.3,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 1207,
+   "201": 199
+  }
+ },
+ "summary_pre": {
+  "total": 401,
+  "ok": 401,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 16.7,
+  "p95_ms": 57.6,
+  "p99_ms": 60.9,
+  "max_ms": 74.6,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 337,
+   "201": 64
+  }
+ },
+ "timing": {
+  "k8s_detection_s": 0.9,
+  "k8s_recovery_s": 2.9,
+  "client_first_failure_s": null,
+  "client_last_failure_s": null,
+  "client_failed_requests": 0
+ },
+ "alerts": {
+  "available": false,
+  "note": "baseline exposes no metrics and defines no alerts",
+  "fired": [],
+  "expected": [
+   "ReplicaUnavailable"
+  ],
+  "true_positive": [],
+  "false_negative": [
+   "ReplicaUnavailable"
+  ],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": null
+ },
+ "per_second": [
+  {
+   "t": -10,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 97.3
+  },
+  {
+   "t": -9,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 97.3
+  },
+  {
+   "t": -8,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 57.0
+  },
+  {
+   "t": -7,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 54.8
+  },
+  {
+   "t": -6,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.5
+  },
+  {
+   "t": -5,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 54.5
+  },
+  {
+   "t": -4,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.1
+  },
+  {
+   "t": -3,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 56.8
+  },
+  {
+   "t": -2,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.8
+  },
+  {
+   "t": -1,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 57.6
+  },
+  {
+   "t": 0,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 64.1
+  },
+  {
+   "t": 1,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 63.0
+  },
+  {
+   "t": 2,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 61.5
+  },
+  {
+   "t": 3,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.7
+  },
+  {
+   "t": 4,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 61.5
+  },
+  {
+   "t": 5,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 59.8
+  },
+  {
+   "t": 6,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 64.3
+  },
+  {
+   "t": 7,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 56.7
+  },
+  {
+   "t": 8,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 51.8
+  },
+  {
+   "t": 9,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.1
+  },
+  {
+   "t": 10,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.1
+  },
+  {
+   "t": 11,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.1
+  },
+  {
+   "t": 12,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.4
+  },
+  {
+   "t": 13,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.3
+  },
+  {
+   "t": 14,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.3
+  },
+  {
+   "t": 15,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 55.4
+  },
+  {
+   "t": 16,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 64.5
+  },
+  {
+   "t": 17,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 62.2
+  },
+  {
+   "t": 18,
+   "total": 5,
+   "failed": 0,
+   "p95_ms": 46.0
+  }
+ ],
+ "dashboard": [],
+ "integrity": {
+  "records_db0": 484,
+  "records_db1": 484,
+  "nodes_identical": true,
+  "seconds_to_identical": 2.2,
+  "acked_writes": 184,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "injected": "kubectl delete pod registration-59697f494c-8nptf --force --grace-period=0",
+ "criteria": [
+  {
+   "name": "success ratio during the run",
+   "value": 100.0,
+   "limit": ">= 99.0",
+   "unit": "%",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "all pods Ready again",
+   "value": 2.9,
+   "limit": "<= 30",
+   "unit": "s",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "lost acknowledged writes",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "automated alert for the lost replica",
+   "value": null,
+   "limit": "<= 5",
+   "unit": "s",
+   "pass": false,
+   "note": "baseline has no alerting"
+  }
+ ],
+ "experiment": "E1",
+ "config": "baseline",
+ "rep": 1,
+ "netpol_enabled": true,
+ "passed": false
+}

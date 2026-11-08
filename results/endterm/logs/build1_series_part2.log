@@ -1,0 +1,30 @@
+E4 baseline rep1: FAIL (2/5) 54s
+E4 baseline rep2: FAIL (2/5) 53s
+E4 baseline rep3: FAIL (2/5) 54s
+E4 endterm rep1: FAIL (3/5) 64s
+E4 endterm rep2: FAIL (4/5) 56s
+E4 endterm rep3: FAIL (4/5) 56s
+E5 baseline rep1: FAIL (0/5) 52s
+E5 baseline rep2: FAIL (0/5) 30s
+E5 baseline rep3: FAIL (0/5) 32s
+E5 endterm rep1: PASS (5/5) 49s
+E5 endterm rep2: PASS (5/5) 31s
+E5 endterm rep3: PASS (5/5) 30s
+E6 baseline rep1: FAIL (1/7) 64s
+E6 baseline rep2: FAIL (1/7) 311s
+Traceback (most recent call last):
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 778, in <module>
+    if variant == "fresh-cni":
+    
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 757, in main
+    a = ap.parse_args()
+                ~~~~~^^
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 128, in restore_state
+    self.wait_gateway()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\orazo\PycharmProjects\faulttolerancemicroservices\scripts\endterm_experiments.py", line 140, in wait_gateway
+    raise TimeoutError(f"gateway of {self.name} not reachable from the host")
+TimeoutError: gateway of baseline not reachable from the host
+E3 endterm-no-netpol rep1: PASS (4/4) 71s
+E3 endterm-no-netpol rep2: FAIL (2/4) 58s
+E3 endterm-no-netpol rep3: PASS (4/4) 56s

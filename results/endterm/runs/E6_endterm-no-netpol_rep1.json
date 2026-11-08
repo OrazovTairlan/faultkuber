@@ -1,0 +1,723 @@
+{
+ "rps_normal": 30,
+ "t0_epoch": 1794155365.9644978,
+ "summary_whole": {
+  "total": 974,
+  "ok": 974,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 17.9,
+  "p95_ms": 54.4,
+  "p99_ms": 63.0,
+  "max_ms": 163.4,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 974
+  }
+ },
+ "summary_pre": {
+  "total": 217,
+  "ok": 217,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 18.0,
+  "p95_ms": 54.9,
+  "p99_ms": 57.2,
+  "max_ms": 90.2,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 217
+  }
+ },
+ "timing": {
+  "k8s_detection_s": null,
+  "k8s_recovery_s": null,
+  "client_first_failure_s": null,
+  "client_last_failure_s": null,
+  "client_failed_requests": 0
+ },
+ "alerts": {
+  "available": true,
+  "fired": [
+   {
+    "alert": "RateLimiting",
+    "severity": "warning",
+    "fired_at": 1794155367.7602952,
+    "resolved_at": 1794155380.7602952,
+    "fired_after_s": 1.8,
+    "resolved_after_s": 14.8
+   },
+   {
+    "alert": "MalformedRequestBurst",
+    "severity": "warning",
+    "fired_at": 1794155367.7602952,
+    "resolved_at": null,
+    "fired_after_s": 1.8,
+    "resolved_after_s": null
+   },
+   {
+    "alert": "BruteForceLogin",
+    "severity": "critical",
+    "fired_at": 1794155370.7602952,
+    "resolved_at": null,
+    "fired_after_s": 4.8,
+    "resolved_after_s": null
+   }
+  ],
+  "expected": [
+   "BruteForceLogin",
+   "MalformedRequestBurst",
+   "RateLimiting"
+  ],
+  "optional": [
+   "HighLatencyP95",
+   "UnauthorizedAccessSpike"
+  ],
+  "true_positive": [
+   "BruteForceLogin",
+   "MalformedRequestBurst",
+   "RateLimiting"
+  ],
+  "false_negative": [],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": 1.8
+ },
+ "per_second": [
+  {
+   "t": -8,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 52.7
+  },
+  {
+   "t": -7,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.3
+  },
+  {
+   "t": -6,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.0
+  },
+  {
+   "t": -5,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 50.2
+  },
+  {
+   "t": -4,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 54.7
+  },
+  {
+   "t": -3,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.0
+  },
+  {
+   "t": -2,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.4
+  },
+  {
+   "t": -1,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 51.8
+  },
+  {
+   "t": 0,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 113.4
+  },
+  {
+   "t": 1,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 57.9
+  },
+  {
+   "t": 2,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 51.8
+  },
+  {
+   "t": 3,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 54.4
+  },
+  {
+   "t": 4,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.1
+  },
+  {
+   "t": 5,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.6
+  },
+  {
+   "t": 6,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 52.3
+  },
+  {
+   "t": 7,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 48.6
+  },
+  {
+   "t": 8,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 54.1
+  },
+  {
+   "t": 9,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 69.3
+  },
+  {
+   "t": 10,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.0
+  },
+  {
+   "t": 11,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.0
+  },
+  {
+   "t": 12,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.7
+  },
+  {
+   "t": 13,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.4
+  },
+  {
+   "t": 14,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.4
+  },
+  {
+   "t": 15,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 52.0
+  },
+  {
+   "t": 16,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 51.3
+  },
+  {
+   "t": 17,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.2
+  },
+  {
+   "t": 18,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.6
+  },
+  {
+   "t": 19,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 52.8
+  },
+  {
+   "t": 20,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.6
+  },
+  {
+   "t": 21,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.6
+  },
+  {
+   "t": 22,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 53.6
+  },
+  {
+   "t": 23,
+   "total": 7,
+   "failed": 0,
+   "p95_ms": 51.7
+  }
+ ],
+ "dashboard": [
+  {
+   "t": -9.2,
+   "rps": 86.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 80.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -8.2,
+   "rps": 36.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 79.4,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -7.2,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 79.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -6.2,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 79.0,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -5.2,
+   "rps": 25.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 85.3,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -4.2,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 81.9,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -3.2,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 83.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -2.2,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 83.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -1.2,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 83.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": -0.2,
+   "rps": 27.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 80.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 0.8,
+   "rps": 28.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 79.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 1.8,
+   "rps": 25.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 85.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 2.8,
+   "rps": 25.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 85.3,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 3.8,
+   "rps": 20.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 85.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 4.8,
+   "rps": 31.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 84.1,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 5.8,
+   "rps": 30.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 87.4,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 6.8,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 81.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 7.8,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 80.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 8.8,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 77.0,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 9.8,
+   "rps": 26.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 82.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 10.8,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 80.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 11.8,
+   "rps": 26.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 82.4,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 12.8,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 84.1,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 13.8,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 86.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 14.8,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 84.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 15.8,
+   "rps": 22.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 83.9,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 16.8,
+   "rps": 20.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 81.7,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 17.8,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 80.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 18.8,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 80.2,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 19.8,
+   "rps": 24.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 79.6,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 20.8,
+   "rps": 23.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 77.9,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 21.8,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 75.8,
+   "ready_pods": 10,
+   "degraded": 0.0
+  },
+  {
+   "t": 22.8,
+   "rps": 21.0,
+   "errors_5xx": 0.0,
+   "p95_ms": 76.5,
+   "ready_pods": 10,
+   "degraded": 0.0
+  }
+ ],
+ "integrity": {
+  "records_db0": 4722,
+  "records_db1": 4722,
+  "nodes_identical": true,
+  "seconds_to_identical": 2.1,
+  "acked_writes": 150,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "malformed": [
+  {
+   "case": "invalid JSON",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "JSON array instead of object",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "missing fields",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "unknown course",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "injection-like student id",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "numeric student id",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "5000-character student id",
+   "status": 413,
+   "server_error": false
+  },
+  {
+   "case": "20 KB request body",
+   "status": 413,
+   "server_error": false
+  },
+  {
+   "case": "control characters in student id",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "list as student id",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "path attack /registrations/../../etc/passw",
+   "status": 400,
+   "server_error": false
+  },
+  {
+   "case": "path attack /registrations/AAAAAAAAAAAAAAA",
+   "status": 400,
+   "server_error": false
+  }
+ ],
+ "malformed_server_errors": 0,
+ "junk_records_stored": 0,
+ "junk_examples": [],
+ "burst_status_counts": {
+  "200": 195,
+  "429": 765
+ },
+ "burst_seconds": 2.98,
+ "brute_force_statuses": [
+  401,
+  401,
+  401,
+  401,
+  401,
+  429,
+  429,
+  429,
+  429,
+  429,
+  429,
+  429
+ ],
+ "lockout_after_attempt": 6,
+ "correct_login_status_after_bruteforce": 429,
+ "pod_restarts_during_test": 0,
+ "other_users_during_abuse": {
+  "total": 600,
+  "ok": 600,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 17.4,
+  "p95_ms": 54.4,
+  "p99_ms": 64.0,
+  "max_ms": 163.4,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 600
+  }
+ },
+ "injected": "10 malformed bodies + 2 path attacks, 960-request burst from one account, 12 wrong-password logins",
+ "criteria": [
+  {
+   "name": "malformed requests answered with 4xx (no 5xx, no crash)",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "junk/invalid records stored",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "burst from one account is rate limited (429 seen)",
+   "value": 765,
+   "limit": ">= 1",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "password guessing is stopped within 5 failures",
+   "value": 6,
+   "limit": "<= 6",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "other users unaffected during the abuse (success)",
+   "value": 100.0,
+   "limit": ">= 99.0",
+   "unit": "%",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "pods restarted by the abuse",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "automated alert for the abuse",
+   "value": 1.8,
+   "limit": "<= 10",
+   "unit": "s",
+   "pass": true,
+   "note": ""
+  }
+ ],
+ "experiment": "E6",
+ "config": "endterm-no-netpol",
+ "rep": 1,
+ "netpol_enabled": false,
+ "passed": true
+}

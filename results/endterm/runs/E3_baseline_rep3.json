@@ -1,0 +1,421 @@
+{
+ "rps_normal": 50,
+ "t0_epoch": 1794147916.6864717,
+ "summary_whole": {
+  "total": 3209,
+  "ok": 3207,
+  "failed": 2,
+  "success_pct": 99.938,
+  "avg_ms": 23.6,
+  "p95_ms": 90.8,
+  "p99_ms": 111.0,
+  "max_ms": 439.7,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 2727,
+   "201": 480,
+   "502": 2
+  }
+ },
+ "summary_pre": {
+  "total": 455,
+  "ok": 455,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 25.5,
+  "p95_ms": 92.8,
+  "p99_ms": 107.3,
+  "max_ms": 150.9,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 372,
+   "201": 83
+  }
+ },
+ "timing": {
+  "k8s_detection_s": null,
+  "k8s_recovery_s": null,
+  "client_first_failure_s": 7.7,
+  "client_last_failure_s": 8.23,
+  "client_failed_requests": 2
+ },
+ "alerts": {
+  "available": false,
+  "note": "baseline exposes no metrics and defines no alerts",
+  "fired": [],
+  "expected": [],
+  "true_positive": [],
+  "false_negative": [],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": null
+ },
+ "per_second": [
+  {
+   "t": -10,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 94.5
+  },
+  {
+   "t": -9,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 111.3
+  },
+  {
+   "t": -8,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 91.8
+  },
+  {
+   "t": -7,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 91.1
+  },
+  {
+   "t": -6,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 91.5
+  },
+  {
+   "t": -5,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 90.4
+  },
+  {
+   "t": -4,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 90.4
+  },
+  {
+   "t": -3,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 93.9
+  },
+  {
+   "t": -2,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 89.7
+  },
+  {
+   "t": -1,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 94.8
+  },
+  {
+   "t": 0,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 105.4
+  },
+  {
+   "t": 1,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 98.6
+  },
+  {
+   "t": 2,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 85.6
+  },
+  {
+   "t": 3,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 96.1
+  },
+  {
+   "t": 4,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 75.1
+  },
+  {
+   "t": 5,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 92.2
+  },
+  {
+   "t": 6,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 93.2
+  },
+  {
+   "t": 7,
+   "total": 100,
+   "failed": 2,
+   "p95_ms": 89.5
+  },
+  {
+   "t": 8,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 97.2
+  },
+  {
+   "t": 9,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 77.5
+  },
+  {
+   "t": 10,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 90.8
+  },
+  {
+   "t": 11,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 105.6
+  },
+  {
+   "t": 12,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 93.0
+  },
+  {
+   "t": 13,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 81.6
+  },
+  {
+   "t": 14,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 73.8
+  },
+  {
+   "t": 15,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 73.7
+  },
+  {
+   "t": 16,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 76.0
+  },
+  {
+   "t": 17,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 75.2
+  },
+  {
+   "t": 18,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 91.3
+  },
+  {
+   "t": 19,
+   "total": 100,
+   "failed": 0,
+   "p95_ms": 68.0
+  },
+  {
+   "t": 20,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 67.4
+  },
+  {
+   "t": 21,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 120.9
+  },
+  {
+   "t": 22,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 49.8
+  },
+  {
+   "t": 23,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 88.9
+  },
+  {
+   "t": 24,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 92.1
+  },
+  {
+   "t": 25,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 92.7
+  },
+  {
+   "t": 26,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 73.6
+  },
+  {
+   "t": 27,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 85.6
+  },
+  {
+   "t": 28,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 52.3
+  },
+  {
+   "t": 29,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 88.4
+  },
+  {
+   "t": 30,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 76.9
+  },
+  {
+   "t": 31,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 278.1
+  },
+  {
+   "t": 32,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 87.3
+  },
+  {
+   "t": 33,
+   "total": 4,
+   "failed": 0,
+   "p95_ms": 78.0
+  }
+ ],
+ "dashboard": [],
+ "during_spike": {
+  "total": 1900,
+  "ok": 1898,
+  "failed": 2,
+  "success_pct": 99.895,
+  "avg_ms": 21.4,
+  "p95_ms": 81.6,
+  "p99_ms": 103.8,
+  "max_ms": 431.0,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 1626,
+   "201": 272,
+   "502": 2
+  }
+ },
+ "achieved_rps_during_spike": 95.0,
+ "resource_use": {
+  "gateway": {
+   "cpu_seconds": 3.76,
+   "throttled_periods": 0,
+   "periods": 422
+  },
+  "auth": {
+   "cpu_seconds": 1.26,
+   "throttled_periods": 0,
+   "periods": 414
+  },
+  "registration": {
+   "cpu_seconds": 1.76,
+   "throttled_periods": 0,
+   "periods": 418
+  }
+ },
+ "after_spike": {
+  "total": 504,
+  "ok": 504,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 25.1,
+  "p95_ms": 91.8,
+  "p99_ms": 197.0,
+  "max_ms": 439.7,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 423,
+   "201": 81
+  }
+ },
+ "injected": "request rate raised from 50 to 100 req/s for 20 s",
+ "integrity": {
+  "records_db0": 2558,
+  "records_db1": 2558,
+  "nodes_identical": true,
+  "seconds_to_identical": 2.5,
+  "acked_writes": 389,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "criteria": [
+  {
+   "name": "success ratio during the spike",
+   "value": 99.895,
+   "limit": ">= 99.0",
+   "unit": "%",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "p95 latency during the spike",
+   "value": 81.6,
+   "limit": "<= 500",
+   "unit": "ms",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "throughput reaches the offered load (>= 90 %)",
+   "value": 95.0,
+   "limit": ">= 90",
+   "unit": "req/s",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "lost acknowledged writes",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  }
+ ],
+ "experiment": "E3",
+ "config": "baseline",
+ "rep": 3,
+ "netpol_enabled": true,
+ "passed": true
+}

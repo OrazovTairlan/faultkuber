@@ -28,8 +28,12 @@ def attempt(src, target, ns="aitu-sim", path="/healthz"):
             "s=socket.socket(); s.settimeout(2.5)\n"
             "try:\n s.connect((sys.argv[1],int(sys.argv[2]))); print('ALLOWED')\n"
             "except Exception as e:\n print('BLOCKED')\n")
-    r = subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", ns, "exec", src, "--", "python", "-c", code, host, port],
-                       capture_output=True, text=True, timeout=30)
+    for _ in range(8):
+        r = subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", ns, "exec", src, "--", "python", "-c", code, host, port],
+                           capture_output=True, text=True, timeout=30)
+        if r.stdout.strip() or "container not found" not in r.stderr:
+            break
+        time.sleep(2)
     return r.stdout.strip() or ("ERROR " + r.stderr.strip()[:80])
 
 
@@ -39,7 +43,7 @@ def pod(app, ns="aitu-sim"):
 
 def segmentation():
     rx.kubectl("delete", "pod", "probe", "-n", "default", "--ignore-not-found", "--now", check=False)
-    subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "default", "run", "probe", "--image=aitu-sim:1.2",
+    subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "default", "run", "probe", "--image=aitu-sim:2.0",
                     "--image-pull-policy=IfNotPresent", "--restart=Never", "--command", "--", "sleep", "900"], capture_output=True)
     subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "default", "wait", "--for=condition=Ready", "pod/probe", "--timeout=60s"],
                    capture_output=True)
@@ -77,7 +81,7 @@ def segmentation():
                      "as_designed": ok, "seconds": round(time.time() - t, 1)})
         print(f"{name:26s} -> {dst:26s} expected {rows[-1]['expected']:8s} observed {got:8s} {'OK' if ok else 'MISMATCH'}", flush=True)
     rx.kubectl("delete", "pod", "probe", "-n", "default", "--now", check=False)
-    subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "default", "run", "ctl", "--image=aitu-sim:1.2",
+    subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "default", "run", "ctl", "--image=aitu-sim:2.0",
                     "--image-pull-policy=IfNotPresent", "--restart=Never", "--command", "--", "sleep", "120"], capture_output=True)
     subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "default", "wait", "--for=condition=Ready", "pod/ctl", "--timeout=60s"],
                    capture_output=True)
@@ -119,13 +123,13 @@ def pod_security():
     }
     rows = []
     for name, extra in cases.items():
-        spec = {"containers": [{"name": "x", "image": "aitu-sim:1.4", "command": ["sleep", "5"], **(extra or {})}]}
+        spec = {"containers": [{"name": "x", "image": "aitu-sim:2.0", "command": ["sleep", "5"], **(extra or {})}]}
         if name == "hostPath volume":
             spec["volumes"] = [{"name": "h", "hostPath": {"path": "/"}}]
         if name == "host network":
             spec["hostNetwork"] = True
         override = json.dumps({"spec": spec})
-        r = subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "aitu-sim", "run", "pss-test", "--image=aitu-sim:1.4",
+        r = subprocess.run(["kubectl", "--context", "kind-ft-aitu", "-n", "aitu-sim", "run", "pss-test", "--image=aitu-sim:2.0",
                             "--restart=Never", "--overrides", override], capture_output=True, text=True)
         rejected = r.returncode != 0 and "violate" in r.stderr.lower()
         rows.append({"attempt": name, "rejected_by_pod_security": rejected, "message": (r.stderr or r.stdout).strip().replace("\n", " ")[:200]})

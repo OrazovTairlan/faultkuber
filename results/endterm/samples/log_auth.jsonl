@@ -1,0 +1,30 @@
+{"ts": 1794156784.396, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "2dc9ea62f8f3", "method": "POST", "route": "/auth/login", "status": 200, "ms": 0.7, "client": "10.244.2.123"}
+{"ts": 1794156784.555, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "fad5bfff7442", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.3, "client": "10.244.2.123"}
+{"ts": 1794156784.564, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "be3d6053e43d", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156784.621, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "a3e6755ce302", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156784.636, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "fed1e05d8d35", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156784.732, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "d99375b86ec9", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156784.756, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "f602d0d815f8", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156784.821, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "2ce23bc19e94", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156784.921, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "cb1f76770266", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156785.154, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "593c1a19ecd0", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.3, "client": "10.244.2.123"}
+{"audit": true, "ts": 1794156785.268, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "f282d145c3f6", "event": "LOGIN_OK", "subject": "S2387", "client": "172.20.0.4"}
+{"ts": 1794156785.268, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "f282d145c3f6", "method": "POST", "route": "/auth/login", "status": 200, "ms": 0.8, "client": "10.244.2.123"}
+{"ts": 1794156785.421, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "6670d6a7412a", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156785.922, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "9a2a25513efc", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156786.121, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "7704070270bc", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.3, "client": "10.244.2.123"}
+{"ts": 1794156786.129, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "1f6ad5957ffa", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156786.155, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "19a659eca827", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.3, "client": "10.244.2.123"}
+{"ts": 1794156786.188, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "7b327e69bba4", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156786.621, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "6cfc26528687", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"ts": 1794156786.688, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "2efe4edbed9b", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.3, "client": "10.244.2.123"}
+{"ts": 1794156786.721, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "7537f39b74f5", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"audit": true, "ts": 1794156786.868, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "1e44df7308a0", "event": "LOGIN_OK", "subject": "S2435", "client": "172.20.0.4"}
+{"ts": 1794156786.868, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "1e44df7308a0", "method": "POST", "route": "/auth/login", "status": 200, "ms": 0.7, "client": "10.244.2.123"}
+{"ts": 1794156787.197, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "4a94954f1bef", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.5, "client": "10.244.2.123"}
+{"ts": 1794156787.233, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "5e469f489cf5", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.2, "client": "10.244.2.123"}
+{"audit": true, "ts": 1794156816.225, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "50e1c8615a40", "event": "LOGIN_OK", "subject": "S9901", "client": "172.20.0.4"}
+{"ts": 1794156816.225, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "50e1c8615a40", "method": "POST", "route": "/auth/login", "status": 200, "ms": 0.7, "client": "10.244.2.123"}
+{"ts": 1794156816.274, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "demo-trace-0001", "method": "GET", "route": "/auth/verify", "status": 200, "ms": 0.3, "client": "10.244.2.123"}
+{"audit": true, "ts": 1794156816.378, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "demo-failed-login", "event": "LOGIN_FAILED", "subject": "S9901", "client": "172.20.0.4", "locked": false}
+{"ts": 1794156816.378, "svc": "auth", "pod": "auth-6d94b774f9-8qrjd", "rid": "demo-failed-login", "method": "POST", "route": "/auth/login", "status": 401, "ms": 0.8, "client": "10.244.2.123"}

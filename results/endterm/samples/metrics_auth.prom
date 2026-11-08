@@ -1,0 +1,39 @@
+# TYPE aitu_http_requests_total counter
+aitu_http_requests_total{service="auth",route="/auth/login",status="200"} 950
+aitu_http_requests_total{service="auth",route="/auth/login",status="400"} 3
+aitu_http_requests_total{service="auth",route="/auth/login",status="401"} 4
+aitu_http_requests_total{service="auth",route="/auth/verify",status="200"} 1108
+aitu_http_requests_total{service="auth",route="/auth/verify",status="401"} 7
+# TYPE aitu_http_request_duration_seconds histogram
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.005"} 947
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.01"} 956
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.025"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.05"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.1"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.25"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="0.5"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="1.0"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="2.5"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/login",le="+Inf"} 957
+aitu_http_request_duration_seconds_sum{service="auth",route="/auth/login"} 1.002443
+aitu_http_request_duration_seconds_count{service="auth",route="/auth/login"} 957
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.005"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.01"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.025"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.05"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.1"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.25"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="0.5"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="1.0"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="2.5"} 1115
+aitu_http_request_duration_seconds_bucket{service="auth",route="/auth/verify",le="+Inf"} 1115
+aitu_http_request_duration_seconds_sum{service="auth",route="/auth/verify"} 0.318751
+aitu_http_request_duration_seconds_count{service="auth",route="/auth/verify"} 1115
+# TYPE aitu_events_total counter
+aitu_events_total{service="auth",event="login_failed"} 4
+aitu_events_total{service="auth",event="login_ok"} 950
+aitu_events_total{service="auth",event="login_rejected"} 3
+aitu_events_total{service="auth",event="token_invalid"} 7
+aitu_events_total{service="auth",event="validation_rejected"} 3
+# TYPE aitu_gauge gauge
+aitu_process_uptime_seconds{service="auth"} 305.1

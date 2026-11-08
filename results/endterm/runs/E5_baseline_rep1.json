@@ -1,0 +1,455 @@
+{
+ "rps_normal": 30,
+ "t0_epoch": 1794148624.5574303,
+ "summary_whole": {
+  "total": 725,
+  "ok": 575,
+  "failed": 150,
+  "success_pct": 79.31,
+  "avg_ms": 122.2,
+  "p95_ms": 275.4,
+  "p99_ms": 2832.2,
+  "max_ms": 3006.5,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 503,
+   "201": 72,
+   "502": 3,
+   "0": 147
+  }
+ },
+ "summary_pre": {
+  "total": 189,
+  "ok": 189,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 22.3,
+  "p95_ms": 57.5,
+  "p99_ms": 71.8,
+  "max_ms": 88.5,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 155,
+   "201": 34
+  }
+ },
+ "timing": {
+  "k8s_detection_s": null,
+  "k8s_recovery_s": null,
+  "client_first_failure_s": 9.31,
+  "client_last_failure_s": 21.66,
+  "client_failed_requests": 150
+ },
+ "alerts": {
+  "available": false,
+  "note": "baseline exposes no metrics and defines no alerts",
+  "fired": [],
+  "expected": [
+   "ForbiddenAccessSpike",
+   "UnauthorizedAccessSpike"
+  ],
+  "true_positive": [],
+  "false_negative": [
+   "ForbiddenAccessSpike",
+   "UnauthorizedAccessSpike"
+  ],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": null
+ },
+ "per_second": [
+  {
+   "t": -8,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 80.6
+  },
+  {
+   "t": -7,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 58.9
+  },
+  {
+   "t": -6,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.6
+  },
+  {
+   "t": -5,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.3
+  },
+  {
+   "t": -4,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.4
+  },
+  {
+   "t": -3,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 56.5
+  },
+  {
+   "t": -2,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 58.0
+  },
+  {
+   "t": -1,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 71.8
+  },
+  {
+   "t": 0,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 58.6
+  },
+  {
+   "t": 1,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 51.5
+  },
+  {
+   "t": 2,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 49.4
+  },
+  {
+   "t": 3,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 62.8
+  },
+  {
+   "t": 4,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 58.2
+  },
+  {
+   "t": 5,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 52.8
+  },
+  {
+   "t": 6,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 45.4
+  },
+  {
+   "t": 7,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 55.7
+  },
+  {
+   "t": 8,
+   "total": 30,
+   "failed": 0,
+   "p95_ms": 64.4
+  },
+  {
+   "t": 9,
+   "total": 30,
+   "failed": 7,
+   "p95_ms": 3003.7
+  },
+  {
+   "t": 10,
+   "total": 30,
+   "failed": 25,
+   "p95_ms": 2889.4
+  },
+  {
+   "t": 11,
+   "total": 30,
+   "failed": 29,
+   "p95_ms": 1316.6
+  },
+  {
+   "t": 12,
+   "total": 30,
+   "failed": 17,
+   "p95_ms": 575.3
+  },
+  {
+   "t": 13,
+   "total": 30,
+   "failed": 17,
+   "p95_ms": 1255.7
+  },
+  {
+   "t": 14,
+   "total": 30,
+   "failed": 29,
+   "p95_ms": 182.4
+  },
+  {
+   "t": 15,
+   "total": 26,
+   "failed": 26,
+   "p95_ms": null
+  }
+ ],
+ "dashboard": [],
+ "integrity": {
+  "records_db0": 2942,
+  "records_db1": 2942,
+  "nodes_identical": true,
+  "seconds_to_identical": 17.1,
+  "acked_writes": 72,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "attempts": [
+  {
+   "attempt": "A1 write without any token",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A1 write without any token",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A1 write without any token",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A2 write with a forged signature",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A2 write with a forged signature",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A2 write with a forged signature",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A3 write on behalf of another student (valid token of the attacker)",
+   "status": 201,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A3 write on behalf of another student (valid token of the attacker)",
+   "status": 201,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A3 write on behalf of another student (valid token of the attacker)",
+   "status": 201,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A4 read another student's registrations",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": true,
+   "token_issued": false
+  },
+  {
+   "attempt": "A4 read another student's registrations",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": true,
+   "token_issued": false
+  },
+  {
+   "attempt": "A4 read another student's registrations",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": true,
+   "token_issued": false
+  },
+  {
+   "attempt": "A5 token with the subject replaced by the victim",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A5 token with the subject replaced by the victim",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A5 token with the subject replaced by the victim",
+   "status": 401,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A6 student calls the administrator endpoint",
+   "status": 404,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A6 student calls the administrator endpoint",
+   "status": 404,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A6 student calls the administrator endpoint",
+   "status": 404,
+   "denied": true,
+   "exposed_victim_data": false,
+   "token_issued": false
+  },
+  {
+   "attempt": "A7 login without a password",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": true
+  },
+  {
+   "attempt": "A7 login without a password",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": true
+  },
+  {
+   "attempt": "A7 login without a password",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": true
+  },
+  {
+   "attempt": "A8 login with a wrong password",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": true
+  },
+  {
+   "attempt": "A8 login with a wrong password",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": true
+  },
+  {
+   "attempt": "A8 login with a wrong password",
+   "status": 200,
+   "denied": false,
+   "exposed_victim_data": false,
+   "token_issued": true
+  }
+ ],
+ "attempt_count": 24,
+ "denied_count": 12,
+ "violation_count": 12,
+ "violations": [
+  "A3 write on behalf of another student (valid token of the attacker)",
+  "A4 read another student's registrations",
+  "A7 login without a password",
+  "A8 login with a wrong password"
+ ],
+ "data_exposed_responses": 3,
+ "victim_records_before": 1,
+ "victim_records_after": 2,
+ "audit_events_recorded": 0,
+ "events_before": {},
+ "events_after": {},
+ "injected": "8 unauthorized-access patterns x 3 attempts",
+ "criteria": [
+  {
+   "name": "unauthorized attempts that succeeded for the attacker (2xx)",
+   "value": "12/24",
+   "limit": "0/24",
+   "unit": "",
+   "pass": false,
+   "note": ""
+  },
+  {
+   "name": "victim's data changed by the attacker's write attempts",
+   "value": true,
+   "limit": "False",
+   "unit": "",
+   "pass": false,
+   "note": ""
+  },
+  {
+   "name": "victim's data returned to the attacker",
+   "value": 3,
+   "limit": "== 0",
+   "unit": "",
+   "pass": false,
+   "note": ""
+  },
+  {
+   "name": "every denied attempt left an audit event",
+   "value": 0,
+   "limit": ">= 12",
+   "unit": "",
+   "pass": false,
+   "note": "baseline has no audit log"
+  },
+  {
+   "name": "automated alert for the attack",
+   "value": null,
+   "limit": "<= 10",
+   "unit": "s",
+   "pass": false,
+   "note": "baseline has no alerting"
+  }
+ ],
+ "experiment": "E5",
+ "config": "baseline",
+ "rep": 1,
+ "netpol_enabled": true,
+ "passed": false,
+ "inconclusive_attempts": 0,
+ "attacker_writes_succeeded": 3,
+ "reanalysed": "E5 criteria refined after the series: only 2xx counts as a successful attack, 5xx/transport errors are inconclusive"
+}

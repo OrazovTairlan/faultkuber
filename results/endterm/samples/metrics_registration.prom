@@ -1,0 +1,51 @@
+# TYPE aitu_http_requests_total counter
+aitu_http_requests_total{service="registration",route="/admin/count",status="403"} 6
+aitu_http_requests_total{service="registration",route="/registrations",status="200"} 5
+aitu_http_requests_total{service="registration",route="/registrations",status="201"} 200
+aitu_http_requests_total{service="registration",route="/registrations",status="403"} 2
+aitu_http_requests_total{service="registration",route="/registrations/{id}",status="200"} 396
+aitu_http_requests_total{service="registration",route="/registrations/{id}",status="403"} 4
+# TYPE aitu_http_request_duration_seconds histogram
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.005"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.01"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.025"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.05"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.1"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.25"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="0.5"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="1.0"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="2.5"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/admin/count",le="+Inf"} 6
+aitu_http_request_duration_seconds_sum{service="registration",route="/admin/count"} 0.001934
+aitu_http_request_duration_seconds_count{service="registration",route="/admin/count"} 6
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.005"} 4
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.01"} 14
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.025"} 206
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.05"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.1"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.25"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="0.5"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="1.0"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="2.5"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations",le="+Inf"} 207
+aitu_http_request_duration_seconds_sum{service="registration",route="/registrations"} 2.605646
+aitu_http_request_duration_seconds_count{service="registration",route="/registrations"} 207
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.005"} 370
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.01"} 391
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.025"} 397
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.05"} 400
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.1"} 400
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.25"} 400
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="0.5"} 400
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="1.0"} 400
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="2.5"} 400
+aitu_http_request_duration_seconds_bucket{service="registration",route="/registrations/{id}",le="+Inf"} 400
+aitu_http_request_duration_seconds_sum{service="registration",route="/registrations/{id}"} 1.407138
+aitu_http_request_duration_seconds_count{service="registration",route="/registrations/{id}"} 400
+# TYPE aitu_events_total counter
+aitu_events_total{service="registration",event="duplicate_registration"} 5
+aitu_events_total{service="registration",event="forbidden_access"} 12
+aitu_events_total{service="registration",event="registration_created"} 200
+# TYPE aitu_gauge gauge
+aitu_circuit_breaker_open{service="registration",target="db"} 0
+aitu_process_uptime_seconds{service="registration"} 175.2

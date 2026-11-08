@@ -1,0 +1,53 @@
+flowchart LR
+    C["Clients / attacker"] --> LB["Load balancer<br/>Service NodePort"]
+
+    subgraph EDGE["Edge (new)"]
+        GW["API Gateway x2<br/>request id, token check + ownership<br/>rate limit 429, input limits<br/>breaker per upstream, stale cache"]
+    end
+
+    subgraph SVC["Services, 2 replicas each"]
+        AUTH["Auth<br/>PBKDF2, lockout, signed tokens"]
+        COURSE["Course (non-critical)"]
+        REG["Registration<br/>validation, ownership<br/>idempotent id, DB breaker"]
+    end
+
+    subgraph DATA["Data"]
+        DB0["db-0 (fail-closed)"] <-->|sync| DB1["db-1 (fail-closed)"]
+    end
+
+    subgraph OBS["Observability (new)"]
+        MET["/metrics on every pod"] --> COL["Collector 1 s"]
+        COL --> ALR["Alert engine<br/>10 rules"]
+        ALR --> DASH["Dashboard + runbook"]
+        LOG["JSON access + audit logs<br/>correlation id"]
+    end
+
+    subgraph SEC["Security"]
+        NP["NetworkPolicy default deny"]
+        PSS["Pod Security, Secret, config checks"]
+    end
+
+    LB --> GW
+    GW --> AUTH
+    GW --> COURSE
+    GW --> REG
+    REG --> DB0
+    REG --> DB1
+    GW -.-> MET
+    AUTH -.-> MET
+    REG -.-> MET
+    GW -.-> LOG
+    NP -.-> SVC
+
+    BASE["Midterm baseline (git a6b1daa)<br/>same services, no metrics, alerts,<br/>authz, validation, rate limit, NetworkPolicy"]
+
+    classDef new fill:#e3f4ea,stroke:#2e8b57,color:#1f2933
+    classDef old fill:#f1f3f5,stroke:#7b8794,color:#1f2933
+    classDef obs fill:#fde9e4,stroke:#c0562f,color:#1f2933
+    classDef sec fill:#f3e5f5,stroke:#7b3f98,color:#1f2933
+    classDef data fill:#fdf1d6,stroke:#c28a00,color:#1f2933
+    class GW,AUTH,REG new
+    class COURSE,C,LB,BASE old
+    class MET,COL,ALR,DASH,LOG obs
+    class NP,PSS sec
+    class DB0,DB1 data

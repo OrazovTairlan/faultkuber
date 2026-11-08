@@ -1,0 +1,446 @@
+{
+ "rps_normal": 50,
+ "t0_epoch": 1794148276.4033093,
+ "summary_whole": {
+  "total": 2408,
+  "ok": 1975,
+  "failed": 433,
+  "success_pct": 82.018,
+  "avg_ms": 19.0,
+  "p95_ms": 58.2,
+  "p99_ms": 74.2,
+  "max_ms": 215.3,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 1618,
+   "201": 357,
+   "502": 433
+  }
+ },
+ "summary_pre": {
+  "total": 401,
+  "ok": 401,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 16.5,
+  "p95_ms": 54.2,
+  "p99_ms": 58.1,
+  "max_ms": 209.5,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 337,
+   "201": 64
+  }
+ },
+ "timing": {
+  "k8s_detection_s": 0.8,
+  "k8s_recovery_s": 22.8,
+  "client_first_failure_s": 5.18,
+  "client_last_failure_s": 22.31,
+  "client_failed_requests": 433
+ },
+ "alerts": {
+  "available": false,
+  "note": "baseline exposes no metrics and defines no alerts",
+  "fired": [],
+  "expected": [
+   "DegradedMode",
+   "ReplicaUnavailable"
+  ],
+  "true_positive": [],
+  "false_negative": [
+   "DegradedMode",
+   "ReplicaUnavailable"
+  ],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": null
+ },
+ "per_second": [
+  {
+   "t": -10,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 94.2
+  },
+  {
+   "t": -9,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 53.7
+  },
+  {
+   "t": -8,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 57.8
+  },
+  {
+   "t": -7,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 54.4
+  },
+  {
+   "t": -6,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 54.0
+  },
+  {
+   "t": -5,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 50.1
+  },
+  {
+   "t": -4,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 53.9
+  },
+  {
+   "t": -3,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 56.0
+  },
+  {
+   "t": -2,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 48.4
+  },
+  {
+   "t": -1,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 53.3
+  },
+  {
+   "t": 0,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 50.5
+  },
+  {
+   "t": 1,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 51.2
+  },
+  {
+   "t": 2,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 54.2
+  },
+  {
+   "t": 3,
+   "total": 49,
+   "failed": 0,
+   "p95_ms": 52.8
+  },
+  {
+   "t": 4,
+   "total": 51,
+   "failed": 0,
+   "p95_ms": 54.9
+  },
+  {
+   "t": 5,
+   "total": 49,
+   "failed": 20,
+   "p95_ms": 85.6
+  },
+  {
+   "t": 6,
+   "total": 51,
+   "failed": 22,
+   "p95_ms": 53.3
+  },
+  {
+   "t": 7,
+   "total": 50,
+   "failed": 34,
+   "p95_ms": 97.1
+  },
+  {
+   "t": 8,
+   "total": 50,
+   "failed": 32,
+   "p95_ms": 57.3
+  },
+  {
+   "t": 9,
+   "total": 50,
+   "failed": 28,
+   "p95_ms": 51.2
+  },
+  {
+   "t": 10,
+   "total": 50,
+   "failed": 26,
+   "p95_ms": 48.7
+  },
+  {
+   "t": 11,
+   "total": 50,
+   "failed": 28,
+   "p95_ms": 46.7
+  },
+  {
+   "t": 12,
+   "total": 50,
+   "failed": 25,
+   "p95_ms": 58.5
+  },
+  {
+   "t": 13,
+   "total": 50,
+   "failed": 23,
+   "p95_ms": 51.4
+  },
+  {
+   "t": 14,
+   "total": 50,
+   "failed": 23,
+   "p95_ms": 56.6
+  },
+  {
+   "t": 15,
+   "total": 50,
+   "failed": 22,
+   "p95_ms": 58.2
+  },
+  {
+   "t": 16,
+   "total": 50,
+   "failed": 25,
+   "p95_ms": 51.1
+  },
+  {
+   "t": 17,
+   "total": 49,
+   "failed": 25,
+   "p95_ms": 52.7
+  },
+  {
+   "t": 18,
+   "total": 51,
+   "failed": 24,
+   "p95_ms": 58.0
+  },
+  {
+   "t": 19,
+   "total": 50,
+   "failed": 28,
+   "p95_ms": 46.1
+  },
+  {
+   "t": 20,
+   "total": 50,
+   "failed": 23,
+   "p95_ms": 67.7
+  },
+  {
+   "t": 21,
+   "total": 50,
+   "failed": 25,
+   "p95_ms": 58.2
+  },
+  {
+   "t": 22,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.7
+  },
+  {
+   "t": 23,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.8
+  },
+  {
+   "t": 24,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 71.0
+  },
+  {
+   "t": 25,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.2
+  },
+  {
+   "t": 26,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 72.2
+  },
+  {
+   "t": 27,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 59.6
+  },
+  {
+   "t": 28,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 58.9
+  },
+  {
+   "t": 29,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 53.2
+  },
+  {
+   "t": 30,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.3
+  },
+  {
+   "t": 31,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 56.2
+  },
+  {
+   "t": 32,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 57.4
+  },
+  {
+   "t": 33,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 60.4
+  },
+  {
+   "t": 34,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 56.6
+  },
+  {
+   "t": 35,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 52.8
+  },
+  {
+   "t": 36,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 63.0
+  },
+  {
+   "t": 37,
+   "total": 50,
+   "failed": 0,
+   "p95_ms": 59.7
+  },
+  {
+   "t": 38,
+   "total": 7,
+   "failed": 0,
+   "p95_ms": 10.5
+  }
+ ],
+ "dashboard": [],
+ "integrity": {
+  "records_db0": 2803,
+  "records_db1": 2803,
+  "nodes_identical": true,
+  "seconds_to_identical": 1.8,
+  "acked_writes": 302,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "non_critical_during_outage": {
+  "total": 469,
+  "ok": 83,
+  "failed": 386,
+  "success_pct": 17.697,
+  "avg_ms": 3.6,
+  "p95_ms": 5.4,
+  "p99_ms": 8.2,
+  "max_ms": 8.2,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 83,
+   "502": 386
+  }
+ },
+ "critical_during_outage": {
+  "total": 434,
+  "ok": 434,
+  "failed": 0,
+  "success_pct": 100.0,
+  "avg_ms": 21.4,
+  "p95_ms": 55.3,
+  "p99_ms": 67.5,
+  "max_ms": 97.1,
+  "degraded_responses": 0,
+  "status_counts": {
+   "200": 326,
+   "201": 108
+  }
+ },
+ "injected": "Course service scaled to 0 replicas for 20 s (non-critical feature)",
+ "criteria": [
+  {
+   "name": "non-critical reads (timetable, courses) keep succeeding (graceful degradation)",
+   "value": 17.697,
+   "limit": ">= 99.0",
+   "unit": "%",
+   "pass": false,
+   "note": ""
+  },
+  {
+   "name": "critical workflow (login, registration) unaffected",
+   "value": 100.0,
+   "limit": ">= 99.0",
+   "unit": "%",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "degraded answers are flagged to the client (X-Degraded)",
+   "value": 0,
+   "limit": "> 0",
+   "unit": "",
+   "pass": false,
+   "note": ""
+  },
+  {
+   "name": "automated alert for the outage",
+   "value": null,
+   "limit": "<= 10",
+   "unit": "s",
+   "pass": false,
+   "note": "baseline has no alerting"
+  },
+  {
+   "name": "lost acknowledged writes",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  }
+ ],
+ "experiment": "E4",
+ "config": "baseline",
+ "rep": 2,
+ "netpol_enabled": true,
+ "passed": false
+}

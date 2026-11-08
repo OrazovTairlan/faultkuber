@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aitu-sim
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aitu-config
+  namespace: aitu-sim
+data:
+  AUTH_URL: "auth:8080"
+  COURSE_URL: "course:8080"
+  REGISTRATION_URL: "registration:8080"
+  DB_NODES: "db-0.db-headless:8080,db-1.db-headless:8080"
+  UPSTREAM_TIMEOUT: "0.20"
+  DB_TIMEOUT: "0.15"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: auth-secret
+  namespace: aitu-sim
+type: Opaque
+stringData:
+  AUTH_SECRET: "synthetic-educational-secret-not-real"

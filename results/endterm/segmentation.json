@@ -1,0 +1,157 @@
+{
+ "checks": [
+  {
+   "from": "external pod (default ns)",
+   "to": "gateway:8080",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0.2
+  },
+  {
+   "from": "external pod (default ns)",
+   "to": "db:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.7
+  },
+  {
+   "from": "external pod (default ns)",
+   "to": "registration:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.7
+  },
+  {
+   "from": "gateway",
+   "to": "auth:8080",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0.3
+  },
+  {
+   "from": "gateway",
+   "to": "course:8080",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0.3
+  },
+  {
+   "from": "gateway",
+   "to": "registration:8080",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0.3
+  },
+  {
+   "from": "gateway",
+   "to": "db:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "registration",
+   "to": "db:8080",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0.4
+  },
+  {
+   "from": "registration",
+   "to": "auth:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "registration",
+   "to": "course:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "registration",
+   "to": "internet 1.1.1.1:443",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "auth",
+   "to": "db:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "course",
+   "to": "db:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.9
+  },
+  {
+   "from": "course",
+   "to": "registration:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "course",
+   "to": "internet 1.1.1.1:443",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "db-0",
+   "to": "db-1:8080 (replication)",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0.4
+  },
+  {
+   "from": "db-0",
+   "to": "auth:8080",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.9
+  },
+  {
+   "from": "db-0",
+   "to": "internet 1.1.1.1:443",
+   "expected": "BLOCKED",
+   "observed": "BLOCKED",
+   "as_designed": true,
+   "seconds": 2.8
+  },
+  {
+   "from": "control pod (default ns, no policy)",
+   "to": "internet 1.1.1.1:443",
+   "expected": "ALLOWED",
+   "observed": "ALLOWED",
+   "as_designed": true,
+   "seconds": 0
+  }
+ ],
+ "all_as_designed": true
+}

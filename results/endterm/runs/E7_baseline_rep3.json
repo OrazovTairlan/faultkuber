@@ -1,0 +1,119 @@
+{
+ "rps_normal": 0,
+ "t0_epoch": 1794151999.097506,
+ "summary_whole": {
+  "total": 301,
+  "ok": 300,
+  "failed": 1,
+  "success_pct": 100.0,
+  "avg_ms": null,
+  "p95_ms": null,
+  "max_ms": null
+ },
+ "summary_pre": {
+  "total": 0,
+  "ok": 0,
+  "failed": 0,
+  "success_pct": null,
+  "avg_ms": null,
+  "p95_ms": null,
+  "p99_ms": null,
+  "max_ms": null,
+  "degraded_responses": 0,
+  "status_counts": {}
+ },
+ "timing": {
+  "k8s_detection_s": 4.1,
+  "k8s_recovery_s": 6.1,
+  "client_first_failure_s": null,
+  "client_last_failure_s": null,
+  "client_failed_requests": 0
+ },
+ "alerts": {
+  "available": false,
+  "note": "baseline exposes no metrics and defines no alerts",
+  "fired": [],
+  "expected": [
+   "ReplicaUnavailable"
+  ],
+  "true_positive": [],
+  "false_negative": [
+   "ReplicaUnavailable"
+  ],
+  "false_positive": [],
+  "pre_fault_alerts": 0,
+  "first_expected_delay_s": null
+ },
+ "per_second": [],
+ "dashboard": [],
+ "integrity": {
+  "records_db0": 1063,
+  "records_db1": 1063,
+  "nodes_identical": true,
+  "seconds_to_identical": 4.9,
+  "acked_writes": 300,
+  "lost_acked": [],
+  "lost_acked_count": 0,
+  "duplicate_lines": 0,
+  "invalid_or_junk_records": 0,
+  "junk_examples": []
+ },
+ "writes_attempted": 300,
+ "writes_acknowledged": 300,
+ "writes_failed_after_retries": 0,
+ "client_attempts": 301,
+ "client_retries": 1,
+ "unacknowledged_but_stored": 0,
+ "replay_new_records": 0,
+ "replay_status_counts": {
+  "201": 300
+ },
+ "injected": "300 unique registrations (30/s, client retries up to 5x); db-0 killed at +3 s, a Registration pod at +6 s",
+ "criteria": [
+  {
+   "name": "lost acknowledged writes",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "duplicate records",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "both database nodes identical after recovery",
+   "value": 4.9,
+   "limit": "<= 60",
+   "unit": "s",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "replaying all 300 requests creates no new records",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  },
+  {
+   "name": "every write acknowledged after bounded retries",
+   "value": 0,
+   "limit": "== 0",
+   "unit": "",
+   "pass": true,
+   "note": ""
+  }
+ ],
+ "experiment": "E7",
+ "config": "baseline",
+ "rep": 3,
+ "netpol_enabled": true,
+ "passed": true
+}
